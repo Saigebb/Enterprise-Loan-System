@@ -1,5 +1,10 @@
 from django.shortcuts import render
 
 # Create your views here.
-def pagezsr(request):
-    return render(request,'pagezsr.html')
+def pageC(request):
+    return render(request,'pageC.html')
+
+def pageW(request):
+    return render(request,'pageW.html')
+
+

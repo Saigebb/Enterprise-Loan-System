@@ -19,7 +19,6 @@ from loanmanagement2 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pagezsr/',views.pagezsr)
+    path('pageC/',views.pageC)
+    path('pageW/',views.pageW)
 ]
-
-
