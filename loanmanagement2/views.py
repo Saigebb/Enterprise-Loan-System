@@ -4,3 +4,7 @@ from django.shortcuts import render
 def pageC(request):
     return render(request,'pageC.html')
 
+def pageW(request):
+    return render(request,'pageW.html')
+
+
