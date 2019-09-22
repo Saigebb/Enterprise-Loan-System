@@ -6,5 +6,8 @@ def pageC(request):
 
 def pageW(request):
     return render(request,'pageW.html')
+def pageSyn(request):
+    return render(request,'pageSyn.html')
+
 
 
