@@ -9,5 +9,8 @@ def pageW(request):
 def pageSyn(request):
     return render(request,'pageSyn.html')
 
+def pageCyrilP(request):
+    return render(request,'pageCyrilP.html')
+
 
 

@@ -23,5 +23,6 @@ urlpatterns = [
     path('pageC/',views.pageC),
     path('pageW/',views.pageW),
     path('pageSyn/',views.pageSyn),
+    path('pageCyrilP/',views.pageCyrilP),
 
 ]
