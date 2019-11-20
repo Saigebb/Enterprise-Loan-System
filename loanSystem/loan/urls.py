@@ -7,6 +7,7 @@ urlpatterns = [
     url('home/', views.home, name='home'),
     url('login/', views.login, name='login'),
     url('apply/', views.apply, name='apply'),
+    url('loans/', views.loans, name='loans'),
     url('aboutus/', views.aboutus, name='aboutus'),
     url('connect/', views.connect, name='connect'),
     url('company/', views.company, name='company'),

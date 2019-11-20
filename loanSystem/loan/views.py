@@ -10,22 +10,25 @@ from django.http import HttpResponse
 # Create your views here.
 
 def login(request):
-    return render(request, 'user/login.html')
+    return render(request, 'user/login/login.html')
 
 def aboutus(request):
-    return render(request, 'user/aboutus.html')
+    return render(request, 'user/aboutus/aboutus.html')
 
 def connect(request):
-    return render(request, 'user/connect.html')
+    return render(request, 'user/aboutus/connect.html')
 
 def company(request):
-    return render(request, 'user/company.html')
+    return render(request, 'user/aboutus/company.html')
 
 def home(request):
-    return render(request, 'user/home.html')
+    return render(request, 'user/home/home.html')
+
+def loans(request):
+    return render(request, 'user/loans/loans.html')
 
 def apply(request):
-    return render(request, 'user/apply.html')
+    return render(request, 'user/apply/apply.html')
 
 def code():  
     code=""
