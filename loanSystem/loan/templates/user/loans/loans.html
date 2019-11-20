@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】高庄效贷{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+    <link rel="stylesheet" type="text/css" href="{% static 'loans/loans.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{% static 'loans/loans.js' %}"></script>
+{% endblock %}
