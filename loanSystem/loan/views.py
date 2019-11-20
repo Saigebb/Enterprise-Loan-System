@@ -22,7 +22,10 @@ def company(request):
     return render(request, 'user/company.html')
 
 def home(request):
-    return render(request,'user/home.html')
+    return render(request, 'user/home.html')
+
+def apply(request):
+    return render(request, 'user/apply.html')
 
 def code():  
     code=""
