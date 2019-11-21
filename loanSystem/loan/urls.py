@@ -12,6 +12,8 @@ urlpatterns = [
     url('connect/', views.connect, name='connect'),
     url('company/', views.company, name='company'),
     url('loginPost/', views.loginPost, name='loginPost'),
+    url('applyPost/', views.loginPost, name='applyPost'),
+    url('signupPost/', views.loginPost, name='signupPost'),
     url('sendMail/', views.sendMail, name='sendMail'),
     url('', views.home, name='home'),
 ]

@@ -57,42 +57,30 @@ def sendMail(request):
         else:
             return HttpResponse('0', status=200)
 
-# def sendMail(mail):
-#     #request.encoding='utf-8'
-#     #request.session["code"]=code()
-#     email_title = '发送验证码'
-#     email_body= '欢迎登录高老庄银行，您的验证码为'+str(123456)
-#     email = mail  #对方的邮箱
-#     #email='413469406@qq.com'
-#     send_status = send_mail(email_title, email_body, EMAIL_FROM, [email])
-#     if send_status:
-#         return 1
-#     else:
-#         return 0
-
-#接收POST请求数据
+#登录逻辑
 def loginPost(request):
     request.encoding='utf-8'
     ctx ={}
-    # if re.match('\w+',request.POST['password']):
-    #     return  redirect('home')
-    if re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
-        #['checkName']=1
-        if models.Customer.objects.filter(email = request.POST['phone_email']):
-            #ctx['name']=1
-            if request.POST['password']==request.session["code"]:
-                #ctx['psd']=1
-                return redirect('loan:home')
-            else:
-                #ctx['name'] = 0
-                ctx["msg"]="验证码不正确"
-        else:
-            #ctx['name'] = 0
-             ctx["msg"]="用户不存在"
+    if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
+        ctx["msg"]="邮箱格式不正确"
+        return render(request, "user/login.html", ctx)
+    if not models.Customer.objects.filter(email = request.POST['phone_email']):
+        ctx["msg"]="用户不存在"
+        return render(request, "user/login.html", ctx)
+    if not request.POST['password']==request.session["code"]:
+        ctx["msg"]="验证码不正确"
+        return render(request, "user/login.html", ctx)
     else:
-         ctx["msg"]="邮箱格式不正确"
-        #ctx['checkName'] = 0
-        #ctx['name'] = request.POST['phone_email']
-        #ctx['psd'] = request.POST['password']
-    return render(request, "user/login.html", ctx)
-    #return render(request, "hello.html", ctx)
+        return redirect('loan:home')
+
+#申请逻辑
+def applyPost(request):
+    add = models.Customer(key='00003',title='Test Company')
+    add.save()
+    return render(request,'')
+
+#注册逻辑
+def signupPost(request):
+    add = models.Customer(key='00003',title='Test Company')
+    add.save()
+    return render(request,'')
