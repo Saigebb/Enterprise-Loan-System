@@ -25,7 +25,57 @@ def home(request):
     return render(request, 'user/home/home.html')
 
 def loans(request):
-    return render(request, 'user/loans/loans.html')
+    credit = [
+        {
+            'title': '高庄效贷-易企贷',
+            'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
+            'amount': '5-100',
+            'month': '12-36',
+            'monthIr': '0.85%'
+        },
+        {
+            'title': '高庄效贷-金数贷',
+            'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
+            'amount': '1-100',
+            'month': '6-12',
+            'monthIr': '0.65%'
+        },
+        {
+            'title': '高庄效贷-阳光贷',
+            'titleIntro': '纯信用贷款，审批放款方便快捷！',
+            'amount': '1-100',
+            'month': '6-12',
+            'monthIr': '0.85%'
+        },
+        {
+            'title': '高庄效贷-商通贷',
+            'titleIntro': '借款额度最高达100万；最快24小时放款！',
+            'amount': '1-100',
+            'month': '3-24',
+            'monthIr': '1.02%'
+        },
+        {
+            'title': '高庄效贷-易企贷',
+            'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
+            'amount': '5-100',
+            'month': '12-36',
+            'monthIr': '0.85%'
+        },
+
+    ]
+
+    mortgage = [
+        {
+            'title': '高庄房抵贷',
+            'titleIntro': '1对1金融VIP顾问',
+            'amount': '30-1000',
+            'month': '1-12',
+            'monthIr': '0.58%'
+        },
+    ]
+    return render(request, 'user/loans/loans.html', {
+        'credit': credit, 'mortgage': mortgage})
+
 
 def apply(request):
     return render(request, 'user/apply/apply.html')
