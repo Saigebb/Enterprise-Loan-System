@@ -80,6 +80,12 @@ def loans(request):
 def apply(request):
     return render(request, 'user/apply/apply.html')
 
+def register(request):
+    return render(request, 'user/register/register.html')
+
+def personal(request):
+    return render(request, 'user/personal/personal.html')
+
 def code():  
     code=""
     while len(code)<5:

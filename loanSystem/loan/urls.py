@@ -6,6 +6,8 @@ urlpatterns = [
 
     url('home/', views.home, name='home'),
     url('login/', views.login, name='login'),
+    url('register/', views.register, name='register'),
+    url('personal/', views.personal, name='personal'),
     url('apply/', views.apply, name='apply'),
     url('loans/', views.loans, name='loans'),
     url('aboutus/', views.aboutus, name='aboutus'),

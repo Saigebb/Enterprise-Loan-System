@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+
 <!-- 轮播图 -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -51,10 +52,10 @@
 </div>
 
 <!-- 左右切换按钮 -->
-<a class="carousel-control-prev" href="#demo" data-slide="prev">
+<a class="carousel-control-prev" href="#demo" data-slide="prev" style="top:100px">
     <span class="carousel-control-prev-icon"></span>
 </a>
-<a class="carousel-control-next" href="#demo" data-slide="next">
+<a class="carousel-control-next" href="#demo" data-slide="next" style="top:100px">
     <span class="carousel-control-next-icon"></span>
 </a>
 <!-- 轮播图end -->
@@ -65,30 +66,64 @@
             <h3><strong>选择最适合你的贷款，提前试算</strong></h3>
             <p style="opacity: 0.5;">我们根据企业资质，精确匹配最合适的产品</p>
         </div>
-        <div class="main1_left">
-            <div main1_left_much>
-                <div class="stepCont stepCont1" style="width:500px;margin-top:40px">
-                    <p style="display: block;margin-bottom: -30px;position: relative;top:34px">借多少</p>
-                    <!-- 菜单导航显示-->
-                    <div class='ystep-container ystep-lg ystep-blue'></div>
+        
+        <div class="main_lr">
+            <div class="main1_left">
+                <div main1_left_much>
+                    <div class="stepCont stepCont1" style="width:500px;margin-top:40px;margin-left: -10px;">
+                        <p style="display: block;margin-bottom: -30px;position: relative;top:34px;left:10px">借多少</p>
+                        <!-- 菜单导航显示-->
+                        <div class='ystep-container ystep-lg ystep-blue'></div>
+                    </div>
                 </div>
-            </div>
-            <div class="main1_time">
-                <span>借多久</span>
-                <div class="btn-group" style="margin-left:20px">
-                    <button type="button" class="time_btn" style=" outline:none;">3个月</button>
-                    <button type="button" class="time_btn" style=" outline:none;">6个月</button>
-                    <button type="button" class="time_btn" style=" outline:none;">9个月</button>
-                    <button type="button" class="time_btn" style=" outline:none;">12个月</button>
+                <div class="main1_time"style="margin-top:20px">
+                    <span>借多久</span>
+                    <div class="btn-group" style="margin-left:20px;">
+                        <button type="button" class="time_btn" id="three" style=" outline:none;" onclick="dj(this);"value="3">3个月</button>
+                        <button type="button" class="time_btn" id="six" style=" outline:none;" onclick="dj(this);"value="6">6个月</button>
+                        <button type="button" class="time_btn" id="nine" style=" outline:none;" onclick="dj(this);"value="9">9个月</button>
+                        <button type="button" class="time_btn" id="twelve" style=" outline:none;" onclick="dj(this);"value="12">12个月</button>
+                    </div>
                 </div>
+                <div class="Monthly_interest" style="margin-top:40px">
+                    <span>月利息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span style="color:rgb(99, 151, 248)">0.55%</span>
+                </div>
+                <hr style="width: 420px;display: block;margin-left: 0px;margin-top:40px;background : rgb(190, 190, 190);">
+                <div style="margin-top: 40px;">
+                <p>利率基于企业征信和营业状况表现，一般是月息在0.55%-1.8%;</p>
+                <p style="line-height: 5px;">贷款审批通过后，我们会收取审批金额1.5%的费用</p>
+                </div>
+
             </div>
-            <div class="Monthly_interest" style="margin-top:20px">
-                <span>月利息&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <span style="color:rgb(99, 151, 248)">0.55%</span>
+
+            <div class="main1_right">
+                <h6 style="color: rgb(13, 90, 206);">还款计算表</h6>
+                <div class="main1_right_p">
+                <p>
+                    <span>借款计算成本：</span>
+                    <span id="cost"class="main1_span">5000,000,00</span>
+                    <span>元</span>
+                </p>
+                <p>
+                    <span>借款总利息：</span>
+                    <span id="interest"class="main1_span">8,250.00</span>
+                    <span>元</span>
+                </p>
+                <p>
+                    <span>手续费：</span>
+                    <span is="Handling_fee"class="main1_span">7500</span>
+                    <span>元</span>
+                </p>
+                <hr>
+                <p>
+                    <span>还款总额：</span>
+                    <span id="Total_repayment">508,250.00</span>
+                    <span>元</span>
+                </p>
             </div>
-            <hr style="width: 420px;display: block;margin-left: 0px;background : rgb(190, 190, 190);">
-            <p>利率基于企业征信和营业状况表现，一般是月息在0.55%-1.8%;</p>
-            <p style="line-height: 5px;">贷款审批通过后，我们会收取审批金额1.5%的费用</p>
+                <button type="button" id="Immediate_loan"class="btn btn-primary">立即贷款</button>
+            </div>
         </div>
     </div>
 </div>
@@ -208,8 +243,8 @@
 
         </div>
         <div style="text-align:center;margin-bottom: 30px;">
-        <a href="#">查看更多贷款帮助>></a>
-    </div>
+            <a href="#">查看更多贷款帮助>></a>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="{% static 'home/home.js' %}"></script>
