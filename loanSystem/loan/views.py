@@ -27,6 +27,7 @@ def home(request):
 def loans(request):
     credit = [
         {
+            'id':'1',
             'title': '高庄效贷-易企贷',
             'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
             'amount': '5-100',
@@ -34,6 +35,7 @@ def loans(request):
             'monthIr': '0.85%'
         },
         {
+            'id':'2',
             'title': '高庄效贷-金数贷',
             'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
             'amount': '1-100',
@@ -41,6 +43,7 @@ def loans(request):
             'monthIr': '0.65%'
         },
         {
+            'id':'3',
             'title': '高庄效贷-阳光贷',
             'titleIntro': '纯信用贷款，审批放款方便快捷！',
             'amount': '1-100',
@@ -48,20 +51,13 @@ def loans(request):
             'monthIr': '0.85%'
         },
         {
+            'id':'4',
             'title': '高庄效贷-商通贷',
             'titleIntro': '借款额度最高达100万；最快24小时放款！',
             'amount': '1-100',
             'month': '3-24',
             'monthIr': '1.02%'
         },
-        {
-            'title': '高庄效贷-易企贷',
-            'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
-            'amount': '5-100',
-            'month': '12-36',
-            'monthIr': '0.85%'
-        },
-
     ]
 
     mortgage = [
@@ -85,6 +81,12 @@ def register(request):
 
 def personal(request):
     return render(request, 'user/personal/personal.html')
+
+def certify(request):
+        return render(request, 'user/certify/certify.html')
+
+def applyForm(request):
+    return render(request, 'user/apply/applyForm.html')
 
 def code():  
     code=""

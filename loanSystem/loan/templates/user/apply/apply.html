@@ -12,7 +12,9 @@
 
 {% block content %}
     <div class="breadnav">
-        <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/apply"> 信贷申请</a>
+        <a href="/index/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>
+        > <a href="/loans/"  style="color:#000"> 高庄效贷</a>
+        > <a href="/loans/"> 信贷详情</a>
     </div>
     <hr>
 
@@ -33,19 +35,7 @@
 
                         <div class="time">
                             <span style="color: red">*</span><label>申请期限：</label>
-                            <select id="month" class="formstyle">
-                                <option selected="selected">请选择</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>8</option>
-                                <option>12</option>
-                                <option>24</option>
-                                <option>36</option>
-                                <option>48</option>
-                                <option>60</option>
-                            </select>
+                            <input type="text" name="month" class="formstyle" placeholder="贷款期限为12-36个月">
                             <span> 个月</span>
                         </div>
 
@@ -75,8 +65,6 @@
                         <label class="waysLabel">还款付息方式</label>
                         <select id="ways" class="formstyle">
                             <option selected="selected">等本等息</option>
-                            <option>等额本金</option>
-                            <option>等额本息</option>
                         </select>
                     </div>
                     <div class="intesInfo">
@@ -143,6 +131,12 @@
                     <p>公司工商注册满2年；</p>
                     <p>使用金蝶软件审批通过更高；</p>
                     <p>在工商、税务、法院、质检等相关部门的记录中，该经营实体及法人无实质性不良信息记录。</p>
+
+                    <p>1、申请人：为企业法定代表人或占股20%以上的股东；</p>
+                    <p>2、年龄要求：22周岁（含）-55周岁（含）；</p>
+                    <p>3、具有完全民事行为能力的中华人民共和国大陆公民；</p>
+                    <p>请提前准备好身份证、营业执照、银行卡、网上个人征信查询账号。</p>
+
 
                     <h5 style="color: #000;font-weight: bolder">所需材料</h5>
                     <p>申贷资料：借款人身份证、银行卡、企业营业执照。</p>
