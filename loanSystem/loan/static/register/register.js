@@ -2,6 +2,7 @@ var $email_text = $("#email_text");
 var $idCard = $("#idCard");
 var $phone = $("#phone");
 var $objInfo = $("#info");
+var $username = $("#username");
 // 注册按钮
 var $btn_register = $("#btn_register");
 
@@ -22,6 +23,13 @@ function isCorrectIdCard(s) {
 //手机号码的校验
 function isCorrectPhone(s) {
     var $re = /^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$/;
+    if (!$re.test(s)) return false;
+    return true;
+}
+
+//姓名校验
+function isCorrectUsername(s) {
+    var $re =/^[\u4E00-\u9FA5]{2,4}$/;
     if (!$re.test(s)) return false;
     return true;
 }
@@ -60,5 +68,17 @@ $phone.blur(function() {
     } else {
         $objInfo.html("手机号码格式输入错误").css("color", "red");
         $phone.focus();
+    }
+});
+
+//手机号码输入信息校验
+$username.blur(function() {
+    // console.log("1");
+    var $username_info = $username.val();
+    if (isCorrectUsername($username_info)) {
+        $objInfo.html("姓名格式输入正确").css("color", "green");
+    } else {
+        $objInfo.html("姓名格式输入错误").css("color", "red");
+        $username.focus();
     }
 });

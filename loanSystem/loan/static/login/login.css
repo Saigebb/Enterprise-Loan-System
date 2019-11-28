@@ -153,9 +153,11 @@ footer{
     height: 30px;
     line-height: 10px;
     margin-left: 10px;
+    outline: none; 
 }
 .info{
     color:red;
     font-size: 14px;
     text-align: center;
 }
+

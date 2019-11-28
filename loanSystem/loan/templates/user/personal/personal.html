@@ -16,7 +16,30 @@
 </div>
 <hr>
 <div class="mainbar">
-    <p></p>
+    <p class="mainbar_p1">绑定信息</p>
+    <p class="mainbar_p2">密保邮箱：259****12@qq.com</p>
+    <p class="mainbar_p1">修改密保邮箱</p>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">新的邮箱</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="firstname" placeholder="需要绑定的邮箱号">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">输入验证码</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="lastname" >
+                <input type="button" value="获取验证码" id="btn" class="email_btn2">
+                
+            </div>
+        </div>
+        <div style="margin-left: 80px;display: flex;flex-direction: row;margin-top: 15px;">
+                <input type="submit" value="确认修改" class="btn_change" name="submit">
+                <!-- <p class="login_bar_p">&nbsp;&nbsp;免费注册</p> -->
+            </div>
+    </form>
+
 </div>
 
 <!-- <img src="{% static 'image/lb1.jpg' %}" > -->
