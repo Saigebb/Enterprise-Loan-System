@@ -41,10 +41,12 @@ def register(request):
     return render(request, 'user/register/register.html')
 
 def personal(request):
-    return render(request, 'user/personal/personal.html')
+    ctx={}
+    ctx["user"]=request.session["user"]
+    return render(request, 'user/personal/personal.html',ctx)
 
 def certify(request):
-        return render(request, 'user/certify/certify.html')
+    return render(request, 'user/certify/certify.html')
 
 def applyForm(request):
     return render(request, 'user/apply/applyForm.html')
@@ -89,9 +91,9 @@ def signupPost(request):
     if not re.match('^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$',request.POST['phone']):
         ctx["msg"]="手机号格式不正确"
         return render(request, "user/register/register.html", ctx)
-    # if not request.POST['password']==request.session["code"]:
-    #     ctx["msg"]="验证码不正确"
-    #     return render(request, "user/register/register.html", ctx)
+    if not request.POST['password']==request.session["code"]:
+        ctx["msg"]="验证码不正确"
+        return render(request, "user/register/register.html", ctx)
     else:
         add = models.Customer(email=request.POST['phone_email'],cname=request.POST['username'],idcard=request.POST['idCard'],phone=request.POST['phone'])
         add.save()
@@ -112,5 +114,18 @@ def loginPost(request):
         ctx["msg"]="验证码不正确"
         return render(request, "user/login/login.html", ctx)
     else:
+        request.session["user"]=request.POST['phone_email']
         return redirect('loan:home')
 
+#修改邮箱
+def personalPost(request):
+    request.encoding='utf-8'
+    ctx ={}
+    if not request.POST['code']==request.session["code"]:
+        ctx["msg"]="验证码不正确"
+        return render(request, "user/login/login.html", ctx)
+    else:
+        user = models.Customer.objects.get(email=request.session["user"])
+        user.email = request.POST['phone_email']
+        user.save()
+        return render(request, 'user/personal/personal.html')

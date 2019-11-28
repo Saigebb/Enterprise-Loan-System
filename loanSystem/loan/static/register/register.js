@@ -82,3 +82,41 @@ $username.blur(function() {
         $username.focus();
     }
 });
+
+$("#btn").click(function() {
+    if (!isCorrectEmail_text($("#email_text").val())) {
+        alert('邮箱格式错误');
+    } else {
+        data = {}
+        data.email = $("#email_text").val();
+        console.log($("#email_text").val());
+        $.ajaxSetup({
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+        });
+        $.post("http://127.0.0.1:8000/sendMail/", data, function(data) {
+            if (data == '0') {
+                alert('邮件没有发送成功');
+            }
+        })
+    }
+})
+
+$('#btn').click(function () {
+    var count = 30;
+    var countdown = setInterval(CountDown, 500);
+    function CountDown() {
+        $("#btn").attr("disabled", true);
+        $("#btn").val( count + " seconds!");
+        $("#btn").css({'background-color':'#0b76d3'})
+        $("#btn").css({'color':'white'})
+        if (count == 0) {
+            $("#btn").val("发送验证码").removeAttr("disabled");
+            clearInterval(countdown);
+            $("#btn").css({'background-color':'#ebebeb'})
+            $("#btn").css({'color':'#696969'})
+        }
+        count--;
+    }
+})

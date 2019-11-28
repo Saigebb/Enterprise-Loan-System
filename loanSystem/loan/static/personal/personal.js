@@ -1,3 +1,10 @@
+//邮箱的校验
+function isCorrectEmail_text(s) {
+    var $re = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    if (!$re.test(s)) return false;
+    return true;
+}
+
 $('#btn').click(function () {
     var count = 30;
     var countdown = setInterval(CountDown, 500);
@@ -13,5 +20,25 @@ $('#btn').click(function () {
             $("#btn").css({'color':'#696969'})
         }
         count--;
+    }
+})
+
+$("#btn").click(function() {
+    if (!isCorrectEmail_text($("#firstname").val())) {
+        alert('邮箱格式错误');
+    } else {
+        data = {}
+        data.email = $("#firstname").val();
+        console.log($("#firstname").val());
+        $.ajaxSetup({
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+        });
+        $.post("http://127.0.0.1:8000/sendMail/", data, function(data) {
+            if (data == '0') {
+                alert('邮件没有发送成功');
+            }
+        })
     }
 })

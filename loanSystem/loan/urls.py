@@ -18,6 +18,6 @@ urlpatterns = [
     url('sendMail/', views.sendMail, name='sendMail'),
     url('certify/', views.certify, name='certify'),
     url('applyForm/', views.applyForm, name='applyForm'),
-    url('signupPost/', views.signupPost, name='signupPost'),
+    url('personalPost/', views.personalPost, name='personalPost'),
     #url('', views.home, name='home'),
 ]
