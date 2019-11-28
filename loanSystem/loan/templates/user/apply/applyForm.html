@@ -139,14 +139,26 @@
                     <div class="form-group">
                         <label for="inputfile">个人征信授权书</label><br>
                         <input type="file"
-                               id="personCredit"
-                               name="personCredit"
+                               id="personRight"
+                               name="personRight"
                                class="btn btn-light">
                         <p>请上传法定代表人的个人征信授权书</p>
                     </div>
-
-
-
+                    <div class="form-group">
+                        <label for="inputfile">请下载以下文件</label><br>
+                        <a download="" href="" class="btn btn-light">
+                            点此下载
+                        </a>
+                        <p>请下载按要求填写后上传</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputfile">请上传填写后的文件</label><br>
+                        <input type="file"
+                               id="personFile"
+                               name="personFile"
+                               class="btn btn-light">
+                        <p>请上传填写后的文件</p>
+                    </div>
                     <br>
                     <button type="button" class="btn btn-success">下一步</button>
                 </form>
@@ -193,5 +205,5 @@
 
         </div>
     </div>
-    <script type="text/javascript" src="{% static 'apply/apply.js' %}"></script>
+    <script type="text/javascript" src="{% static 'apply/applyForm.js' %}"></script>
 {% endblock %}
