@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% load static %}
 <html>
 
@@ -89,4 +90,46 @@
 </footer>
 
 
+=======
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+    <link rel="icon" href="../static/image/piggy_bank.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {% block header %}{% endblock %}
+</head>
+
+<body>
+<div class="topnav">
+    <a class="logo" href="index.html">
+        <img src="{% static 'image/logo.png' %}" alt="高庄效贷" class="logo">
+    </a>
+    <span class="title"> | 让信用贷款更简单</span>
+    <div class="rightlink">
+        <a class="nav-link link" id="index" href="/home/">首页</a>
+        <a class="nav-link link" id="loan" href="/loans/">高庄效贷</a>
+        <a class="nav-link link" id="myloan" href="/myloan/">我的贷款</a>
+        <a class="nav-link link" id="aboutus" href="/aboutus/">关于我们</a>
+        <!-- <div class="btn" id="login"><a href="/login/">登录</a> | <a href="/register/">注册</a></div> -->
+    </div>
+</div>
+    {% block content %}{% endblock %}
+</body>
+
+<footer>
+    <span class="footer1">高庄效贷 | 联系我们 | 服务条款 | 论坛 | 帮助</span>
+    <br>
+    <span>copyright @ 2019 高庄银行</span>
+</footer>
+
+
+>>>>>>> Stashed changes
 </html>
