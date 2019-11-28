@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% extends "afterBase.html" %}
 {% load static %}
 {% load staticfiles %}
@@ -21,4 +22,21 @@
 
 <!-- <img src="{% static 'image/lb1.jpg' %}" > -->
 <script type="text/javascript" src="{% static 'personal/personal.js' %}"></script>
+=======
+{% extends "afterBase.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】个人中心{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'personal/personal.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="{% static 'personal/personal.js' %}"></script>
+>>>>>>> Stashed changes
 {% endblock %}

@@ -25,56 +25,17 @@ def home(request):
     return render(request, 'user/home/home.html')
 
 def loans(request):
-    credit = [
-        {
-            'id':'1',
-            'title': '高庄效贷-易企贷',
-            'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
-            'amount': '5-100',
-            'month': '12-36',
-            'monthIr': '0.85%'
-        },
-        {
-            'id':'2',
-            'title': '高庄效贷-金数贷',
-            'titleIntro': '线上申请最快10分钟完成审批，1小时放款',
-            'amount': '1-100',
-            'month': '6-12',
-            'monthIr': '0.65%'
-        },
-        {
-            'id':'3',
-            'title': '高庄效贷-阳光贷',
-            'titleIntro': '纯信用贷款，审批放款方便快捷！',
-            'amount': '1-100',
-            'month': '6-12',
-            'monthIr': '0.85%'
-        },
-        {
-            'id':'4',
-            'title': '高庄效贷-商通贷',
-            'titleIntro': '借款额度最高达100万；最快24小时放款！',
-            'amount': '1-100',
-            'month': '3-24',
-            'monthIr': '1.02%'
-        },
-    ]
-
-    mortgage = [
-        {
-            'title': '高庄房抵贷',
-            'titleIntro': '1对1金融VIP顾问',
-            'amount': '30-1000',
-            'month': '1-12',
-            'monthIr': '0.58%'
-        },
-    ]
+    credit=models.Credit.objects.all()
+    mortgage=models.Mortgage.objects.all()
     return render(request, 'user/loans/loans.html', {
         'credit': credit, 'mortgage': mortgage})
 
-
 def apply(request):
-    return render(request, 'user/apply/apply.html')
+    credit=models.Credit.objects.filter(id = request.GET['id'])
+    print (credit)
+    for x in credit:
+        print (x.detail)
+    return render(request, 'user/apply/apply.html',{'credit': credit})
 
 def register(request):
     return render(request, 'user/register/register.html')
@@ -115,30 +76,41 @@ def sendMail(request):
         else:
             return HttpResponse('0', status=200)
 
+#注册逻辑
+def signupPost(request):
+    request.encoding='utf-8'
+    ctx ={}
+    if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
+        ctx["msg"]="邮箱格式不正确"
+        return render(request, "user/register/register.html", ctx)
+    if not re.match('^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$',request.POST['idCard']):
+        ctx["msg"]="身份证格式不正确"
+        return render(request, "user/register/register.html", ctx)
+    if not re.match('^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$',request.POST['phone']):
+        ctx["msg"]="手机号格式不正确"
+        return render(request, "user/register/register.html", ctx)
+    # if not request.POST['password']==request.session["code"]:
+    #     ctx["msg"]="验证码不正确"
+    #     return render(request, "user/register/register.html", ctx)
+    else:
+        add = models.Customer(email=request.POST['phone_email'],cname=request.POST['username'],idcard=request.POST['idCard'],phone=request.POST['phone'])
+        add.save()
+        # models.Customer.objects.create(id=null,email=request.email_text,idcard=request.idCard,phone=request.phone)
+        return redirect('loan:login')
+
 #登录逻辑
 def loginPost(request):
     request.encoding='utf-8'
     ctx ={}
     if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
         ctx["msg"]="邮箱格式不正确"
-        return render(request, "user/login.html", ctx)
+        return render(request, "user/login/login.html", ctx)
     if not models.Customer.objects.filter(email = request.POST['phone_email']):
         ctx["msg"]="用户不存在"
-        return render(request, "user/login.html", ctx)
+        return render(request, "user/login/login.html", ctx)
     if not request.POST['password']==request.session["code"]:
         ctx["msg"]="验证码不正确"
-        return render(request, "user/login.html", ctx)
+        return render(request, "user/login/login.html", ctx)
     else:
         return redirect('loan:home')
 
-#申请逻辑
-def applyPost(request):
-    add = models.Customer(key='00003',title='Test Company')
-    add.save()
-    return render(request,'')
-
-#注册逻辑
-def signupPost(request):
-    add = models.Customer(key='00003',title='Test Company')
-    add.save()
-    return render(request,'')

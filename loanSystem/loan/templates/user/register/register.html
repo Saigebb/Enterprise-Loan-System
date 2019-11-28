@@ -57,7 +57,7 @@
 
         <div class="login_text_bar">
 
-            <form action="/loginPost/" method="post">
+            <form action="/signupPost/" method="post">
                 {% csrf_token %}
                 <!-- 邮箱 -->
                 <div style="display: flex;flex-direction: column;margin-left: 50px;">
@@ -74,7 +74,11 @@
                 <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
                     <p class="login_bar_p">验证码: </p>
                     <input type="password" name="password">
-                    <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
+                </div>
+                <!-- 姓名 -->
+                <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
+                        <p class="login_bar_p">姓名: </p>
+                        <input name="username" id="username"style=" margin-left:15px;">
                 </div>
                 <!-- 身份证 -->
                 <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
