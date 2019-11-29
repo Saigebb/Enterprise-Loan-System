@@ -40,6 +40,9 @@ def apply(request):
 def register(request):
     return render(request, 'user/register/register.html')
 
+def certification(request):
+    return render(request, 'user/certification/certification.html')
+
 def personal(request):
     ctx={}
     ctx["user"]=request.session["user"]
