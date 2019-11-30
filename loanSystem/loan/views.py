@@ -43,6 +43,9 @@ def register(request):
 def certification(request):
     return render(request, 'user/certification/certification.html')
 
+def myLoan(request):
+    return render(request, 'user/myLoan/myLoan.html')
+
 def personal(request):
     ctx={}
     ctx["user"]=request.session["user"]

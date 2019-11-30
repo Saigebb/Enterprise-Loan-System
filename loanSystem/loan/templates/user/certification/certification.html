@@ -1,4 +1,4 @@
-{% extends "afterBase.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% load staticfiles %}
 <!--预先加载基本模板-->
@@ -8,6 +8,8 @@
 
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'certification/certification.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'afterBase.css' %}" />
+
 {% endblock %}
 
 {% block content %}
@@ -15,6 +17,22 @@
     <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/certification"> 企业认证</a>
 </div>
 <hr>
+
+<!-- 侧边栏 -->
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu">
+            <li class="header" style="font-size:13px">我的金融助手</li>
+            <li><a href="#"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+            <li class="header" style="font-size:13px">公司资料管理</li>
+            <li><a href="#"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+            <li class="header" style="font-size:13px">基本设置</li>
+            <li><a href="#"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+            <li><a href="#"><i class="fa fa-user-circle-o"></i> <span>成为金蝶用户</span></a></li>
+        </ul>
+    </section>
+</aside>
+
 <div class="form_bar">
     <form class="form-horizontal" role="form"action="//" method="post">
             {% csrf_token %}
@@ -63,11 +81,15 @@
         </div>
         <p id="info"></p>
         <div style="margin-left: 80px;display: flex;flex-direction: row;margin-top: 15px;">
-            <input type="submit" value="提交" class="btn_submit" name="submit">
+            <input type="button" value="提交" class="btn_submit" name="submit">
             <!-- <p class="login_bar_p">&nbsp;&nbsp;免费注册</p> -->
         </div>
     </form>
 
 </div>
 <script type="text/javascript" src="{% static 'certification/certification.js' %}"></script>
+<script type="text/javascript" src="{% static 'afterBase.js' %}"></script>
+<script>
+    $.sidebarMenu($('.sidebar-menu'))
+</script>
 {% endblock %}
