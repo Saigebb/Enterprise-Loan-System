@@ -1,59 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="mock:///apply.html" description="&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream" line="0" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bb3e08a9-5478-476c-b6f1-03d5a3222a61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/afterBase.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/afterBase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/image/icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/templates/errorPages/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ELoan-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ELoan-System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/certification/certification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/myLoan/myLoan.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/myLoan/myLoan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/certification/certification.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/certify/certify.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/certify/certify.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/home/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/loans/loans.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/loans/loans.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/afterBase.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/afterBase.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/login/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/login/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/register/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/register/register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/register/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/afterBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/afterBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/afterBase.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutBase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/company.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/connect.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/connect.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/certify/certify.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/certify/certify.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/loans/loans.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/loans/loans.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/login/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/register/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loanSystem/loan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loanSystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loanSystem/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loanSystem/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loanSystem/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loanSystem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loanSystem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loanSystem/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loanSystem/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,8 +41,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="262" column="51" lean-forward="true" selection-start-line="262" selection-start-column="51" selection-end-line="262" selection-end-column="51" />
+            <state relative-caret-position="-5118">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#1;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#2;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#6686#6693#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/base.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -75,9 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/connect.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-185">
-              <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-            </state>
+            <state relative-caret-position="-251" />
           </provider>
         </entry>
       </file>
@@ -104,29 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/applyForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="264">
               <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/register/register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/apply/apply.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -187,10 +185,10 @@
         <option value="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/base.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/connect.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/base.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html" />
       </list>
     </option>
   </component>
@@ -207,10 +205,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="493" />
-    <option name="y" value="23" />
+    <option name="x" value="603" />
+    <option name="y" value="10" />
     <option name="width" value="1460" />
-    <option name="height" value="998" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -245,38 +243,7 @@
               <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
               <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
               <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="alert" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="errorPages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
@@ -285,42 +252,6 @@
               <item name="loan" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="aboutus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="apply" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="loans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
@@ -337,7 +268,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575127897011" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575130331043" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -394,7 +325,7 @@
       <workItem from="1574836748632" duration="10608000" />
       <workItem from="1575011496922" duration="4970000" />
       <workItem from="1575017345484" duration="8004000" />
-      <workItem from="1575106067896" duration="5680000" />
+      <workItem from="1575106067896" duration="7948000" />
     </task>
     <task id="LOCAL-00001" summary="写了部分申请页">
       <created>1574219112658</created>
@@ -445,15 +376,28 @@
       <option name="project" value="LOCAL" />
       <updated>1574678157999</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cc更新">
+      <created>1575127935239</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575127935239</updated>
+    </task>
+    <task id="LOCAL-00009" summary="cc更新">
+      <created>1575128067112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575128067112</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79896000" />
+    <option name="totallyTimeSpent" value="82164000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="395" y="19" width="1168" height="798" extended-state="0" />
-    <editor active="true" />
+    <frame x="483" y="8" width="1168" height="806" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17567568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -470,10 +414,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4894309" visible="true" weight="0.2225564" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5105691" side_tool="true" weight="0.37337193" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.498374" weight="0.3617945" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4894309" weight="0.2225564" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5063063" side_tool="true" visible="true" weight="0.3254086" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.498374" weight="0.36090225" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49369368" visible="true" weight="0.3254086" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -499,7 +443,10 @@
     <MESSAGE value="完成了贷款种类页面和申请页（部分）" />
     <MESSAGE value="更新css" />
     <MESSAGE value="cc更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="cc更新" />
+    <MESSAGE value="cc commit" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/zhujianqiang666/Enterprise-Loan-System&#10;&#10;# Conflicts:&#10;#&#9;loanSystem/loan/__pycache__/__init__.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/admin.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/apps.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/models.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/urls.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/views.cpython-37.pyc&#10;#&#9;loanSystem/loan/static/personal/personal.css&#10;#&#9;loanSystem/loan/templates/base.html&#10;#&#9;loanSystem/loan/templates/user/aboutus/connect.html&#10;#&#9;loanSystem/loan/templates/user/apply/apply.html&#10;#&#9;loanSystem/loan/templates/user/apply/applyForm.html&#10;#&#9;loanSystem/loan/templates/user/loans/loans.html&#10;#&#9;loanSystem/loanSystem/__pycache__/settings.cpython-37.pyc&#10;#&#9;loanSystem/loanSystem/__pycache__/urls.cpython-37.pyc&#10;#&#9;loanSystem/loanSystem/__pycache__/wsgi.cpython-37.pyc" />
+    <MESSAGE value="cc" />
+    <option name="LAST_COMMIT_MESSAGE" value="cc" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -635,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/register/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="264">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -698,18 +645,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="262" column="51" lean-forward="true" selection-start-line="262" selection-start-column="51" selection-end-line="262" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/connect.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185">
-          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
+        <state relative-caret-position="-251" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css">
@@ -731,8 +669,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/applyForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="264">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5118">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#2;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#6686#6693#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

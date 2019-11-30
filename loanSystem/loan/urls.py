@@ -8,6 +8,8 @@ urlpatterns = [
     url('login/', views.login, name='login'),
     url('register/', views.register, name='register'),
     url('personal/', views.personal, name='personal'),
+    url('certification/', views.certification, name='certification'),
+    url('myLoan/', views.myLoan, name='myLoan'),
     url('apply/', views.apply, name='apply'),
     url('loans/', views.loans, name='loans'),
     url('aboutus/', views.aboutus, name='aboutus'),
@@ -18,6 +20,6 @@ urlpatterns = [
     url('sendMail/', views.sendMail, name='sendMail'),
     url('certify/', views.certify, name='certify'),
     url('applyForm/', views.applyForm, name='applyForm'),
-    url('signupPost/', views.signupPost, name='signupPost'),
+    url('personalPost/', views.personalPost, name='personalPost'),
     #url('', views.home, name='home'),
 ]

@@ -2,6 +2,7 @@ var $email_text = $("#email_text");
 var $idCard = $("#idCard");
 var $phone = $("#phone");
 var $objInfo = $("#info");
+var $username = $("#username");
 // 注册按钮
 var $btn_register = $("#btn_register");
 
@@ -22,6 +23,13 @@ function isCorrectIdCard(s) {
 //手机号码的校验
 function isCorrectPhone(s) {
     var $re = /^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$/;
+    if (!$re.test(s)) return false;
+    return true;
+}
+
+//姓名校验
+function isCorrectUsername(s) {
+    var $re =/^[\u4E00-\u9FA5]{2,4}$/;
     if (!$re.test(s)) return false;
     return true;
 }
@@ -63,25 +71,7 @@ $phone.blur(function() {
     }
 });
 
-$('#btn').click(function () {
-    var count = 30;
-    var countdown = setInterval(CountDown, 500);
-    function CountDown() {
-        $("#btn").attr("disabled", true);
-        $("#btn").val( count + " seconds!");
-        $("#btn").css({'background-color':'#0b76d3'})
-        $("#btn").css({'color':'white'})
-        if (count == 0) {
-            $("#btn").val("发送验证码").removeAttr("disabled");
-            clearInterval(countdown);
-            $("#btn").css({'background-color':'#ebebeb'})
-            $("#btn").css({'color':'#696969'})
-        }
-        count--;
-    }
-})
-
-//姓名输入信息校验
+//手机号码输入信息校验
 $username.blur(function() {
     // console.log("1");
     var $username_info = $username.val();
@@ -110,5 +100,23 @@ $("#btn").click(function() {
                 alert('邮件没有发送成功');
             }
         })
+    }
+})
+
+$('#btn').click(function () {
+    var count = 30;
+    var countdown = setInterval(CountDown, 500);
+    function CountDown() {
+        $("#btn").attr("disabled", true);
+        $("#btn").val( count + " seconds!");
+        $("#btn").css({'background-color':'#0b76d3'})
+        $("#btn").css({'color':'white'})
+        if (count == 0) {
+            $("#btn").val("发送验证码").removeAttr("disabled");
+            clearInterval(countdown);
+            $("#btn").css({'background-color':'#ebebeb'})
+            $("#btn").css({'color':'#696969'})
+        }
+        count--;
     }
 })

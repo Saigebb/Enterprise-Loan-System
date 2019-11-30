@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】个人中心{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'myLoan/myLoan.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'afterBase.css' %}" />
+<style>
+    .table td {
+        /* padding: 3px 4px; */
+        text-align: center;
+    }
+
+    /* .table th {
+        padding: 0.4rem;
+        text-align: center;
+
+    } */
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="breadnav">
+    <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/personal"> 个人中心</a>
+</div>
+<hr>
+<!-- 侧边栏 -->
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu">
+            <li class="header" style="font-size:13px">我的金融助手</li>
+            <li><a href="#"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+            <li class="header" style="font-size:13px">公司资料管理</li>
+            <li><a href="#"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+            <li class="header" style="font-size:13px">基本设置</li>
+            <li><a href="#"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+            <li><a href="#"><i class="fa fa-user-circle-o"></i> <span>成为金蝶用户</span></a></li>
+        </ul>
+    </section>
+</aside>
+<!-- 表格 -->
+
+<div class="mainbar">
+    <table class="table table-bordered">
+        <p><strong>贷款编号：</strong>a0012</p>
+        <thead>
+            <tr>
+                <td>
+                    <p>金额/万</p>
+                    <h6 id="money">43</h6>
+                </td>
+                <td>
+                    <p>利率</p>
+                    <h6 id="interest_rate">0.025%</h6>
+                </td>
+                <td>
+                    <p>申请时间</p>
+                    <h6 id="time">2019/04/05</h6>
+                </td>
+                <td>
+                    <p>贷款期限</p>
+                    <h6 id="the_term">12个月</h6>
+                </td>
+                <td>
+                    <p>贷款进度</p>
+                    <h6 class="loan_status"id="progress">正在审核</h6>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+<!-- <img src="{% static 'image/lb1.jpg' %}" > -->
+<script type="text/javascript" src="{% static 'myLoan/myLoan.js' %}"></script>
+<script type="text/javascript" src="{% static 'afterBase.js' %}"></script>
+<script>
+    $.sidebarMenu($('.sidebar-menu'))
+</script>
+{% endblock %}
