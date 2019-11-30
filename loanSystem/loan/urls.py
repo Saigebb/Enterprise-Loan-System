@@ -14,10 +14,10 @@ urlpatterns = [
     url('connect/', views.connect, name='connect'),
     url('company/', views.company, name='company'),
     url('loginPost/', views.loginPost, name='loginPost'),
-    url('applyPost/', views.loginPost, name='applyPost'),
-    url('signupPost/', views.loginPost, name='signupPost'),
+    url('signupPost/', views.signupPost, name='signupPost'),
     url('sendMail/', views.sendMail, name='sendMail'),
     url('certify/', views.certify, name='certify'),
     url('applyForm/', views.applyForm, name='applyForm'),
-    url('', views.home, name='home'),
+    url('signupPost/', views.signupPost, name='signupPost'),
+    #url('', views.home, name='home'),
 ]

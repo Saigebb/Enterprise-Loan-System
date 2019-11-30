@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'loanSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'enterprisecredit',     # 数据库名
+        'NAME': 'loansystem',     # 数据库名
         'USER': 'root',     # 用户名
-        'PASSWORD': '',  # 密码
+        'PASSWORD': '123456',  # 密码
         'HOST': '127.0.0.1',
     }
 }

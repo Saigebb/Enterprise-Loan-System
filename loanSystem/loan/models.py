@@ -97,6 +97,27 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user_id', 'permission_id'),)
 
 
+class Credit(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    info = models.CharField(max_length=500, blank=True, null=True)
+    amountmin = models.IntegerField(db_column='amountMin', blank=True, null=True)  # Field name made lowercase.
+    amountmax = models.IntegerField(db_column='amountMax', blank=True, null=True)  # Field name made lowercase.
+    monthmin = models.IntegerField(db_column='monthMin', blank=True, null=True)  # Field name made lowercase.
+    monthmax = models.IntegerField(db_column='monthMax', blank=True, null=True)  # Field name made lowercase.
+    monthirmin = models.CharField(db_column='monthIrMin', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    monthirmax = models.CharField(db_column='monthIrMax', max_length=11, blank=True, null=True)  # Field name made lowercase.
+    way = models.CharField(max_length=11, blank=True, null=True)
+    else_field = models.CharField(max_length=50, blank=True, null=True)
+    advance = models.CharField(max_length=50, blank=True, null=True)
+    detail = models.CharField(max_length=1000, blank=True, null=True)
+    condition = models.CharField(max_length=1000, blank=True, null=True)
+    material = models.CharField(max_length=1000, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'credit'
+
+
 class Creditofficer(models.Model):
     cono = models.CharField(primary_key=True, max_length=8)
     coname = models.CharField(max_length=20)
@@ -110,26 +131,25 @@ class Creditofficer(models.Model):
 
 
 class Customer(models.Model):
-    cno = models.CharField(primary_key=True, max_length=8)
-    cname = models.CharField(max_length=20)
-    email = models.CharField(max_length=50, blank=True, null=True)
-    sex = models.CharField(max_length=2)
+    cno = models.AutoField(primary_key=True)
+    cname = models.CharField(max_length=20, blank=True, null=True)
     c_addr = models.CharField(max_length=20, blank=True, null=True)
     money = models.BigIntegerField(blank=True, null=True)
     idcard = models.CharField(max_length=18)
-    is_loan = models.CharField(max_length=2)
-    level = models.CharField(max_length=2)
-    dno = models.CharField(max_length=8)
-    lno = models.CharField(max_length=8)
-    ino = models.CharField(max_length=8)
-    cono = models.CharField(max_length=8)
-    eap = models.CharField(max_length=8)
-    loanmoney = models.CharField(max_length=20)
+    is_loan = models.CharField(max_length=2, blank=True, null=True)
+    level = models.CharField(max_length=2, blank=True, null=True)
+    dno = models.CharField(max_length=8, blank=True, null=True)
+    lno = models.CharField(max_length=8, blank=True, null=True)
+    ino = models.CharField(max_length=8, blank=True, null=True)
+    cono = models.CharField(max_length=8, blank=True, null=True)
+    eap = models.CharField(max_length=8, blank=True, null=True)
+    loanmoney = models.CharField(max_length=20, blank=True, null=True)
+    email = models.CharField(max_length=40)
+    phone = models.CharField(max_length=40, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'customer'
-        unique_together = (('cno', 'dno', 'lno', 'ino', 'cono', 'eap'),)
 
 
 class Department(models.Model):
@@ -219,3 +239,20 @@ class Loan(models.Model):
         managed = False
         db_table = 'loan'
         unique_together = (('lno', 'cno', 'ino'),)
+
+
+class Mortgage(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    info = models.CharField(max_length=500, blank=True, null=True)
+    amountmin = models.IntegerField(db_column='amountMin', blank=True, null=True)  # Field name made lowercase.
+    amountmax = models.IntegerField(db_column='amountMax', blank=True, null=True)  # Field name made lowercase.
+    monthmin = models.IntegerField(db_column='monthMin', blank=True, null=True)  # Field name made lowercase.
+    monthmax = models.IntegerField(db_column='monthMax', blank=True, null=True)  # Field name made lowercase.
+    monthirmin = models.CharField(db_column='monthIrMin', max_length=11, blank=True, null=True)  # Field name made lowercase.
+    monthirmax = models.CharField(db_column='monthIrMax', max_length=11, blank=True, null=True)  # Field name made lowercase.
+    way = models.CharField(max_length=11, blank=True, null=True)
+    else_field = models.IntegerField(db_column='else', blank=True, null=True)  # Field renamed because it was a Python reserved word.
+
+    class Meta:
+        managed = False
+        db_table = 'mortgage'
