@@ -21,5 +21,6 @@ urlpatterns = [
     url('certify/', views.certify, name='certify'),
     url('applyForm/', views.applyForm, name='applyForm'),
     url('personalPost/', views.personalPost, name='personalPost'),
+    url('sendCertification/', views.sendCertification, name='sendCertification'),
     #url('', views.home, name='home'),
 ]

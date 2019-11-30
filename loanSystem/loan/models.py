@@ -146,6 +146,12 @@ class Customer(models.Model):
     loanmoney = models.CharField(max_length=20, blank=True, null=True)
     email = models.CharField(max_length=40)
     phone = models.CharField(max_length=40, blank=True, null=True)
+    company = models.CharField(max_length=100, blank=True, null=True)
+    credit_id = models.CharField(max_length=100, blank=True, null=True)
+    legal_name = models.CharField(max_length=20, blank=True, null=True)
+    legal_id = models.CharField(max_length=50, blank=True, null=True)
+    card = models.CharField(max_length=50, blank=True, null=True)
+    bank_phone = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
         managed = False
