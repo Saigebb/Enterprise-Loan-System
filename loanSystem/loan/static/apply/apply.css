@@ -19,6 +19,9 @@
     color:#7c7c7c;
 
 }
+.applyInput p{
+    margin-left: 90px;
+}
 .applytitle{
     width: 100%;
     padding:10px 10px 0px 10px;
@@ -44,18 +47,13 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
 }
-#money{
-}
 
-#month{
-}
-
-.time{
-    margin-top: 10px;
-}
+/*.time{*/
+    /*margin-top: 10px;*/
+/*}*/
 
 .agree{
-    padding-top: 20px;
+    /*padding-top: 12px;*/
     padding-left: 90px;
 }
 .submit{

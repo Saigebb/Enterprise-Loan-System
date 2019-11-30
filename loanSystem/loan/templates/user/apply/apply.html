@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 {% extends "base.html" %}
 {% load static %}
 {% load staticfiles %}
@@ -19,6 +18,7 @@
     </div>
     <hr>
 
+{#    {% for x in credit %}#}
     <div class="apply-info">
         <div class="info">
             <div class="applyInfo">
@@ -26,33 +26,44 @@
                     <label><i class="fa fa-edit" style="color: #2192f5"></i>
                         贷款申请信息</label>
                 </div>
-                <div>
-                    <form action="/applyPost/" method="post">
+                <div class="applyInput" style="margin-left: 13%">
                         <div class="value">
                             <span style="color: red">*</span><label>申请金额：</label>
-                            <input type="text" name="money" class="formstyle" id="money" placeholder="申请额度为5-100万元">
+                            <input type="text"
+                                   name="money"
+                                   class="formstyle"
+                                   id="money"
+                                   placeholder="申请额度为{{ credit.amountmin }}-{{ credit.amountmax }}万元">
                             <span> 万元</span>
+                            <p class="moneyhint"></p>
                         </div>
 
                         <div class="time">
                             <span style="color: red">*</span><label>申请期限：</label>
-                            <input type="text" name="month" class="formstyle" placeholder="贷款期限为12-36个月">
+                            <input type="text"
+                                   name="month"
+                                   id="month"
+                                   class="formstyle"
+                                   placeholder="贷款期限为{{ credit.monthmin }}-{{ credit.monthmax }}个月">
                             <span> 个月</span>
+                            <p class="monthhint"></p>
                         </div>
 
                         <div class="agree">
+
                             <input type="checkbox">我已阅读并同意以下协议：
                             <br>
                             <span>《互联网金融协议》</span>
                             <br>
                             <span>《信息查询申请表》</span>
                             <br>
-                            <button type="submit" class="submit btn btn-success">提交申请</button>
+                            <p class="accepthint"></p>
+
+                            <button type="button" id="predictPay" class="btn"
+                                    style="background-color: #ced4da;margin-top: 10px">查看预计费用</button>
 
                         </div>
 
-
-                    </form>
                 </div>
             </div>
 
@@ -61,18 +72,34 @@
                     <label><i class="fa fa-money" style="color: #2192f5">
                     </i> 预计费用</label>
                 </div>
-                <div class="calInfo">
+                <div class="calInfo" style="margin-left:15%">
                     <div class="calcu">
                         <label class="waysLabel">还款付息方式</label>
                         <select id="ways" class="formstyle">
                             <option selected="selected">等本等息</option>
                         </select>
                     </div>
-                    <div class="intesInfo">
+                    <div class="intesInfo" style="margin-bottom: 10px">
                         <label class="waysLabel">利息合计(元)</label>
-                        <input type="text" name="interest" class="formstyle" id="interest">
+                        <input type="text"
+                               name="interest"
+                               class="formstyle"
+                               id="interest"
+                               disabled="disabled"
+                            >
+                    </div>
+                    <div class="intesInfo">
+                        <label class="waysLabel">月供(元)</label>
+                        <input type="text"
+                               name="monthPay"
+                               class="formstyle"
+                               id="monthPay"
+                               disabled="disabled"
+                            >
                     </div>
                     <span style="color: red">*以上结果仅供参考，以金融机构实际审批结果为准</span>
+
+                    <button type="button" id="applySubmit" class="submit btn btn-success">提交申请</button>
                 </div>
             </div>
             <hr>
@@ -91,11 +118,11 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>等本等息</td>
-                    <td>12~36</td>
-                    <td>0.85~1.12</td>
-                    <td>放款金额1.5%服务费</td>
-                    <td>剩余本金5%</td>
+                    <td>{{ credit.way }}</td>
+                    <td>{{ credit.monthmin }}-{{ credit.monthmax }}</td>
+                    <td>{{ credit.monthirmin }}-{{ credit.monthirmax }}</td>
+                    <td>{{ credit.else_field }}</td>
+                    <td>{{ credit.advance }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -115,32 +142,14 @@
             <div class="tab-content">
                 <div id="intro" class="tab-pane active"><br>
                     <h5 style="color: #000;font-weight: bolder">详细描述</h5>
-                    <p>无抵押纯信用贷款，线上申请最快10分钟完成审批，1小时内放款，匹配稠州银行放款成功第二天代扣保费，保费金额为（本金+利息）x1.5%。</p>
-                    <p>目前支持以下城市：</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;江苏省：南京、苏州、无锡、常州、南通、连云港、扬州、镇江、泰州</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;浙江省：杭州、嘉兴、金华</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;广东省：广州、深圳、东莞、佛山、中山、珠海、肇庆、江门、惠州</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;其他：上海、重庆、成都、福州、南昌</p>
-                    <p>新增区域：北京、天津、石家庄、郑州、洛阳、济南、西安、武汉、长沙、合肥、宁波</p>
-                    <p>地区逐渐开放，敬请期待。</p>
+                    {{credit.detail | safe}}
 
 
                     <h5 style="color: #000;font-weight: bolder">申请条件</h5>
-                    <p>申请人：企业法人，具有完全民事行为能力的中国大陆公民；</p>
-                    <p>年龄要求：25周岁（含）-55周岁（含）；</p>
-                    <p>申请人征信当前无逾期；</p>
-                    <p>公司工商注册满2年；</p>
-                    <p>使用金蝶软件审批通过更高；</p>
-                    <p>在工商、税务、法院、质检等相关部门的记录中，该经营实体及法人无实质性不良信息记录。</p>
-
-                    <p>1、申请人：为企业法定代表人或占股20%以上的股东；</p>
-                    <p>2、年龄要求：22周岁（含）-55周岁（含）；</p>
-                    <p>3、具有完全民事行为能力的中华人民共和国大陆公民；</p>
-                    <p>请提前准备好身份证、营业执照、银行卡、网上个人征信查询账号。</p>
-
+                    {{credit.condition | safe}}
 
                     <h5 style="color: #000;font-weight: bolder">所需材料</h5>
-                    <p>申贷资料：借款人身份证、银行卡、企业营业执照。</p>
+                    {{credit.material | safe}}
                 </div>
 
                 <div id="query" class="tab-pane fade"><br>
@@ -213,207 +222,60 @@
             </div>
         </div>
 
-    </div>
+    <script>
+        let moneyInput = $("#money");
+        let monthInput = $("#month");
+        let predictBtn = $("#predictPay");
+        let submitBtn = $("#applySubmit");
+
+        moneyInput.blur(function () {
+            if(moneyInput.val() > {{ credit.amountmin }} 
+                && moneyInput.val() < {{ credit.amountmax }}){
+                //申请额度在范围内
+                moneyInput.css("border","1px #0f0 solid");
+                $(".moneyhint").html("")
+                
+            }
+            else{
+                moneyInput.css("border","1px #f00 solid");
+                $(".moneyhint").html("申请额度有误").css("color","red");
+            }
+        });
+
+        monthInput.blur(function () {
+            if(monthInput.val() > {{ credit.monthmin }} 
+                && monthInput.val() < {{ credit.monthmax }}){
+                monthInput.css("border","1px #0f0 solid");
+                $(".monthhint").html("");
+            }
+            else{
+                monthInput.css("border","1px #f00 solid");
+                $(".monthhint").html("贷款期限有误").css("color","red");
+
+            }
+        });
+
+        predictBtn.click(function () {
+
+            if(moneyInput.val() > {{ credit.amountmin }}
+                && moneyInput.val() < {{ credit.amountmax }}
+                && monthInput.val() > {{ credit.monthmin }}
+                && monthInput.val() < {{ credit.monthmax }}){
+                    
+            }
+            else{
+                var txt = "信息有误";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function(){
+                    window.location.reload();
+                });
+            }
+        });
+        
+        submitBtn.click(function () {
+
+        })
+    </script>
     <script type="text/javascript" src="{% static 'apply/apply.js' %}"></script>
 {% endblock %}
 
-=======
-{% extends "base.html" %}
-{% load static %}
-{% load staticfiles %}
-<!--预先加载基本模板-->
-
-{% block title %}【高庄银行】信贷申请{% endblock %}
-<!--填充title模块-->
-
-{% block header %}
-    <link rel="stylesheet" type="text/css" href="{% static 'apply/apply.css' %}" />
-{% endblock %}
-
-{% block content %}
-    <div class="breadnav">
-        <a href="/index/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>
-        > <a href="/loans/"  style="color:#000"> 高庄效贷</a>
-        > <a href="/loans/"> 信贷详情</a>
-    </div>
-    <hr>
-
-    {% for x in credit %}
-    <div class="apply-info">
-        <div class="info">
-            <div class="applyInfo">
-                <div class="applytitle">
-                    <label><i class="fa fa-edit" style="color: #2192f5"></i>
-                        贷款申请信息</label>
-                </div>
-                <div>
-                    <form action="/applyPost/" method="post">
-                        <div class="value">
-                            <span style="color: red">*</span><label>申请金额：</label>
-                            <input type="text" name="money" class="formstyle" id="money" placeholder="申请额度为5-100万元">
-                            <span> 万元</span>
-                        </div>
-
-                        <div class="time">
-                            <span style="color: red">*</span><label>申请期限：</label>
-                            <input type="text" name="month" class="formstyle" placeholder="贷款期限为12-36个月">
-                            <span> 个月</span>
-                        </div>
-
-                        <div class="agree">
-                            <input type="checkbox">我已阅读并同意以下协议：
-                            <br>
-                            <span>《互联网金融协议》</span>
-                            <br>
-                            <span>《信息查询申请表》</span>
-                            <br>
-                            <button type="submit" class="submit btn btn-success">提交申请</button>
-
-                        </div>
-
-
-                    </form>
-                </div>
-            </div>
-
-            <div class="cost">
-                <div class="applytitle">
-                    <label><i class="fa fa-money" style="color: #2192f5">
-                    </i> 预计费用</label>
-                </div>
-                <div class="calInfo">
-                    <div class="calcu">
-                        <label class="waysLabel">还款付息方式</label>
-                        <select id="ways" class="formstyle">
-                            <option selected="selected">{{x.way}}</option>
-                        </select>
-                    </div>
-                    <div class="intesInfo">
-                        <label class="waysLabel">利息合计(元)</label>
-                        <input type="text" name="interest" class="formstyle" id="interest">
-                    </div>
-                    <span style="color: red">*以上结果仅供参考，以金融机构实际审批结果为准</span>
-                </div>
-            </div>
-            <hr>
-        </div>
-
-        <div>
-            <table class="table">
-                <thead style="background-color: #eeeeee">
-                <tr>
-                    <th>还款付息方式</th>
-                    <th>贷款期限(月)</th>
-                    <th>贷款月利率(%)</th>
-                    <th>其他费用说明</th>
-                    <th>提前还款说明</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr> 
-                    <td>{{x.way}}</td>
-                    <td>{{ x.monthmin }}-{{ x.monthmax }}</td>
-                    <td>{{ x.monthirmin }}-{{ x.monthirmax }}</td>
-                    <td>{{x.else_field}}</td>
-                    <td>{{x.advance}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="intro">
-            <!-- Nav pills -->
-            <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#intro">产品说明</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#query">产品问答</a>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div id="intro" class="tab-pane active"><br>
-                    <h5 style="color: #000;font-weight: bolder" >详细描述</h5>
-                        {{x.detail | safe}}
-                    <h5 style="color: #000;font-weight: bolder">申请条件</h5>
-                        {{x.condition | safe}}
-                    <h5 style="color: #000;font-weight: bolder">所需材料</h5>
-                    {{x.material | safe}}
-                </div>
-
-                <div id="query" class="tab-pane fade"><br>
-                    <p>暂时还没有人提问</p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        我要提问</button>
-
-                    <!-- 模态框 -->
-                    <div class="modal fade" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                                <!-- 模态框头部 -->
-                                <div class="modal-header">
-                                    <p class="modal-title">提问</p>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-
-                                <!-- 模态框主体 -->
-                                <div class="modal-body">
-
-                                    <form class="form-horizontal" role="form">
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">请输入您的问题</label>
-                                            <div class="col-sm-10">
-                                                <textarea class="form-control"
-                                                          rows=""
-                                                          name="question"
-                                                          id="question"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">称呼</label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control"
-                                                       name="username"
-                                                       id="username"
-                                                       type="text"
-                                                       placeholder="用于接收问题答复" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">手机号码</label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control"
-                                                       name="phone"
-                                                       id="phone"
-                                                       type="text"
-                                                       placeholder="必要时给您电话答疑" />
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-light" type="button" data-dismiss="modal">取消</button>
-                                            <button class="btn btn-success" type="submit">提交</button>
-                                        </div>
-
-
-                                    </form>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>            
-    {% endfor %}
-            
-{% endblock %}
-
->>>>>>> Stashed changes

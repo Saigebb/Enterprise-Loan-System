@@ -42,11 +42,11 @@ footer{
     font-size: 12px;
 }
 
-@media all and (max-width: 1200px){
+@media all and (max-width: 1220px){
     body{
-        width: 1200px;
+        width: 1220px;
     }
     .container{
-        width: 1200px;
+        width: 1220px;
     }
 }

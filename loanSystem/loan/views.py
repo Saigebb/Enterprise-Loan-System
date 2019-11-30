@@ -3,6 +3,7 @@ from django.views.decorators import csrf
 from django.shortcuts import redirect  #重新定向模块
 import re
 from . import models
+import json
 from django.core.mail import send_mail
 import random
 from django.http import HttpResponse
@@ -27,15 +28,18 @@ def home(request):
 def loans(request):
     credit=models.Credit.objects.all()
     mortgage=models.Mortgage.objects.all()
+    # print(credit[1].monthmin)
     return render(request, 'user/loans/loans.html', {
         'credit': credit, 'mortgage': mortgage})
 
 def apply(request):
-    credit=models.Credit.objects.filter(id = request.GET['id'])
-    print (credit)
-    for x in credit:
-        print (x.detail)
-    return render(request, 'user/apply/apply.html',{'credit': credit})
+    credit = models.Credit.objects.filter(id=request.GET['id'])
+
+    print(credit[0].detail)
+    return render(request, 'user/apply/apply.html',
+                  {
+                      'credit': credit[0],
+                  })
 
 def register(request):
     return render(request, 'user/register/register.html')
@@ -51,8 +55,8 @@ def applyForm(request):
 
 def code():  
     code=""
-    while len(code)<5:
-        code+=str(random.randint(0, 10))
+    while len(code) < 5:
+        code += str(random.randint(0, 10))
     return code
 
 EMAIL_HOST = 'smtp.qq.com'

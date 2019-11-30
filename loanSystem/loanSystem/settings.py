@@ -24,6 +24,7 @@ SECRET_KEY = '4(hw3%1+%c8w-0x!4c1!3)$3wc7y1v1&f=9e)=f#j3&nr!^a5@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#创建404页面修改
 
 ALLOWED_HOSTS = []
 
@@ -79,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'loansystem',     # 数据库名
         'USER': 'root',     # 用户名
-        'PASSWORD': '123456',  # 密码
+        'PASSWORD': '',  # 密码
         'HOST': '127.0.0.1',
     }
 }
