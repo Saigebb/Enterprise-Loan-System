@@ -33,8 +33,8 @@
             <a class="nav-link link" id="aboutus" href="/aboutus/">关于我们</a>
             <!-- 二者选择 -->
             <!-- <div id="login_or_personal"></div> -->
-            <!-- {% if  user== 1 %}
-       
+            {% if  login == 0 %}
+
             <div class="btn" id="login"><a href="/login/">登录</a> | <a href="/register/">注册</a></div>
 
             {% else %}
@@ -64,7 +64,7 @@
                     </li>
                 </ul>
             </div>
-            {% endif %} -->
+            {% endif %}
         </div>
     </div>
     {% block content %}{% endblock %}

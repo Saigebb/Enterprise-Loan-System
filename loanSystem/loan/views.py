@@ -10,52 +10,110 @@ from django.http import HttpResponse
 # Create your views here.
 
 def login(request):
-    return render(request, 'user/login/login.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+        return render(request, 'user/login/login.html',msg)
+    else:
+        msg["login"]=1
+        return redirect('loan:home')
 
 def aboutus(request):
-    return render(request, 'user/aboutus/aboutus.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+    else:
+        msg["login"]=1
+    return render(request, 'user/aboutus/aboutus.html',msg)
 
 def connect(request):
-    return render(request, 'user/aboutus/connect.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+    else:
+        msg["login"]=1
+    return render(request, 'user/aboutus/connect.html',msg)
 
 def company(request):
-    return render(request, 'user/aboutus/company.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+    else:
+        msg["login"]=1
+    return render(request, 'user/aboutus/company.html',msg)
 
 def home(request):
-    return render(request, 'user/home/home.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+    else:
+        msg["login"]=1
+    return render(request, 'user/home/home.html',msg)
 
 def loans(request):
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+    else:
+        msg["login"]=1
     credit=models.Credit.objects.all()
     mortgage=models.Mortgage.objects.all()
-    return render(request, 'user/loans/loans.html', {
-        'credit': credit, 'mortgage': mortgage})
+    return render(request, 'user/loans/loans.html', {'credit': credit, 'mortgage': mortgage,"msg":msg})
 
 def apply(request):
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+    else:
+        msg["login"]=1
     credit=models.Credit.objects.filter(id = request.GET['id'])
     print (credit)
     for x in credit:
         print (x.detail)
-    return render(request, 'user/apply/apply.html',{'credit': credit})
+    return render(request, 'user/apply/apply.html',{'credit': credit,"msg":msg})
 
 def register(request):
     return render(request, 'user/register/register.html')
 
 def certification(request):
-    return render(request, 'user/certification/certification.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+        return redirect('loan:login')
+    else:
+        msg["login"]=1
+        return render(request, 'user/certification/certification.html',msg)
 
 def myLoan(request):
-    return render(request, 'user/myLoan/myLoan.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+        return redirect('loan:login')
+    else:
+        msg["login"]=1
+        return render(request, 'user/myLoan/myLoan.html')
 
 def personal(request):
-    ctx={}
-    ctx["user"]=request.session["user"]
-    return render(request, 'user/personal/personal.html',ctx)
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+        return redirect('loan:login')
+    else:
+        msg["login"]=1
+        msg["user"]=request.session["user"]
+        return render(request, 'user/personal/personal.html',msg)
 
 def certify(request):
     return render(request, 'user/certify/certify.html')
 
 def applyForm(request):
-    return render(request, 'user/apply/applyForm.html')
+    msg={}
+    if not request.session["user"]:
+        msg["login"]=0
+        return redirect('loan:login')
+    else:
+        msg["login"]=1
+        return render(request, 'user/apply/applyForm.html',msg)
 
 def code():  
     code=""
@@ -135,3 +193,19 @@ def personalPost(request):
         user.email = request.POST['phone_email']
         user.save()
         return render(request, 'user/personal/personal.html')
+
+#企业认证
+def sendCertification(request):
+    request.encoding='utf-8'
+    user = models.Customer.objects.get(email=request.session["user"])
+    user.company=request.POST['Company_Name']
+    user.credit_id=request.POST['Credit_code']
+    user.legal_name=request.POST['Legal_representative_name']
+    user.legal_id=request.POST['Legal_representative_id']
+    user.card=request.POST['Legal_representative_card']
+    user.phone=request.POST['Bank_phone']
+    #user.save()
+    if user.save():
+            return HttpResponse('0', status=200)
+    else:
+            return HttpResponse('1', status=200)
