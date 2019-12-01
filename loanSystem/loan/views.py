@@ -18,10 +18,9 @@ def login(request):
         msg["login"]=1
         return redirect('loan:home')
 
-
 def aboutus(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
     else:
         msg["login"]=1
@@ -29,7 +28,7 @@ def aboutus(request):
 
 def connect(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
     else:
         msg["login"]=1
@@ -37,7 +36,7 @@ def connect(request):
 
 def company(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
     else:
         msg["login"]=1
@@ -45,7 +44,7 @@ def company(request):
 
 def home(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
     else:
         msg["login"]=1
@@ -53,7 +52,7 @@ def home(request):
 
 def loans(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
     else:
         msg["login"]=1
@@ -67,7 +66,7 @@ def loans(request):
 
 def apply(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
     else:
         msg["login"]=1
@@ -84,7 +83,7 @@ def register(request):
 
 def certification(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -93,7 +92,7 @@ def certification(request):
 
 def myLoan(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -102,7 +101,7 @@ def myLoan(request):
 
 def personal(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -115,7 +114,7 @@ def certify(request):
 
 def applyForm(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
         return redirect('loan:login')
     else:
