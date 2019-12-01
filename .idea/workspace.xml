@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb3e08a9-5478-476c-b6f1-03d5a3222a61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/admin/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/admin/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loanSystem/loan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="154">
+              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -194,8 +186,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="502" />
-    <option name="y" value="5" />
+    <option name="x" value="343" />
+    <option name="y" value="3" />
     <option name="width" value="1460" />
     <option name="height" value="1008" />
   </component>
@@ -232,46 +224,7 @@
               <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
               <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
               <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="afterBase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="apply" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="sidebar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
@@ -280,39 +233,6 @@
               <item name="loan" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="aboutus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="apply" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="myLoan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,7 +243,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575178256879" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575178346403" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -380,7 +300,7 @@
       <workItem from="1574836748632" duration="10608000" />
       <workItem from="1575011496922" duration="4970000" />
       <workItem from="1575017345484" duration="8004000" />
-      <workItem from="1575106067896" duration="19217000" />
+      <workItem from="1575106067896" duration="19506000" />
     </task>
     <task id="LOCAL-00001" summary="写了部分申请页">
       <created>1574219112658</created>
@@ -459,15 +379,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575165462062</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="更新管理端模板">
+      <created>1575178372805</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575178372805</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93433000" />
+    <option name="totallyTimeSpent" value="93722000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="402" y="4" width="1168" height="806" extended-state="0" />
-    <editor active="true" />
+    <frame x="275" y="3" width="1168" height="806" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17567568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -484,8 +410,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.48828828" visible="true" weight="0.39673105" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5117117" side_tool="true" weight="0.24071322" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.48828828" visible="true" weight="0.3922734" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5117117" side_tool="true" visible="true" weight="0.3922734" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4972973" weight="0.35958394" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49369368" weight="0.34918275" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -517,7 +443,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/zhujianqiang666/Enterprise-Loan-System&#10;&#10;# Conflicts:&#10;#&#9;loanSystem/loan/__pycache__/__init__.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/admin.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/apps.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/models.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/urls.cpython-37.pyc&#10;#&#9;loanSystem/loan/__pycache__/views.cpython-37.pyc&#10;#&#9;loanSystem/loan/static/personal/personal.css&#10;#&#9;loanSystem/loan/templates/base.html&#10;#&#9;loanSystem/loan/templates/user/aboutus/connect.html&#10;#&#9;loanSystem/loan/templates/user/apply/apply.html&#10;#&#9;loanSystem/loan/templates/user/apply/applyForm.html&#10;#&#9;loanSystem/loan/templates/user/loans/loans.html&#10;#&#9;loanSystem/loanSystem/__pycache__/settings.cpython-37.pyc&#10;#&#9;loanSystem/loanSystem/__pycache__/urls.cpython-37.pyc&#10;#&#9;loanSystem/loanSystem/__pycache__/wsgi.cpython-37.pyc" />
     <MESSAGE value="cc" />
     <MESSAGE value="更新+注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新+注释" />
+    <MESSAGE value="更新管理端模板" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新管理端模板" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -857,8 +784,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="154">
+          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>
