@@ -23,4 +23,5 @@ urlpatterns = [
     url('personalPost/', views.personalPost, name='personalPost'),
     url('sendCertification/', views.sendCertification, name='sendCertification'),
     #url('', views.home, name='home'),
+    url('sidebar/', views.sidebar, name='sidebar'),
 ]

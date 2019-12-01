@@ -11,12 +11,13 @@ from django.http import HttpResponse
 
 def login(request):
     msg={}
-    if not request.session["user"]:
+    if not request.session.get["user"]:
         msg["login"]=0
         return render(request, 'user/login/login.html',msg)
     else:
         msg["login"]=1
         return redirect('loan:home')
+
 
 def aboutus(request):
     msg={}
@@ -217,3 +218,6 @@ def sendCertification(request):
             return HttpResponse('1', status=200)
 
 
+def sidebar(request):
+    request.encoding='utf-8'
+    return render(request, 'admin/sidebar.html')

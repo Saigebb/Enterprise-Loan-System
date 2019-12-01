@@ -27,65 +27,138 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
+
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+    <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin5">
+
+                <a class="navbar-brand" href="index.html">
+                    <span class="logo-text" style="width: 50px;margin-left: 60px">
+                        <img src="{% static 'image/logo.JPG' %}" alt="" style="width: 45px">
+                    </span>
+                </a>
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                <!-- Search -->
+                <h3 style="color: aliceblue">高庄效贷 </h3>
+                <!-- Right side toggle and nav items -->
+                <h5 style="color: aliceblue;margin-left: 20px"> 让企业贷款更简单</h5>
+            </div>
+        </nav>
+    </header>
+
+    <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav" style="margin-left: 20px">
+                    <!-- User Profile-->
+                    <li>
+                        <!-- User Profile-->
+                        <div class="user-profile d-flex no-block dropdown m-t-20">
+                            <div class="user-pic"><img src="{% static 'image/piggy_bank.ico' %}" alt="users" class="rounded-circle" width="40" /></div>
+                            <div class="user-content hide-menu m-l-10">
+                                <a href="javascript:void(0)" class="" id="Userdd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <h5 class="m-b-0 user-name font-medium">Steave Jobs <i class="fa fa-angle-down"></i></h5>
+                                    <span class="op-5 user-email">varun@gmail.com</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End User Profile-->
+                    </li>
+
+
+                    <!-- User Profile-->
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                            <i class="fa fa-money"></i>
+                            <span class="hide-menu">贷款管理</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html" aria-expanded="false">
+                            <i class="fa fa-check"></i>
+                            <span class="hide-menu">贷款审批</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html" aria-expanded="false">
+                            <i class="fa fa-street-view"></i>
+                            <span class="hide-menu">人员管理</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </nav>
+            <!-- End Sidebar navigation -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search...">
-            </form>
+        <!-- End Sidebar scroll-->
+    </aside>
+
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-5">
+                    <h4 class="page-title">Basic Table</h4>
+                    <div class="d-flex align-items-center">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">
+                                    <i class="fa fa-home"></i>Home</a></li>
+                                <li class="breadcrumb-item active">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Default Table</h4>
+                            <h6 class="card-subtitle">Using the most basic table markup, here’s how <code>.table</code>-based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</h6>
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+</div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">Nav item</a></li>
-                <li><a href="">Nav item again</a></li>
-                <li><a href="">One more nav</a></li>
-                <li><a href="">Another nav item</a></li>
-                <li><a href="">More navigation</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">Nav item again</a></li>
-                <li><a href="">One more nav</a></li>
-                <li><a href="">Another nav item</a></li>
-            </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Dashboard</h1>
-        </div>
-{% block content %}{% endblock %}
 </body>
 
-<footer>
+<footer class="footer text-center">
     <span class="footer1">高庄效贷 | 联系我们 | 服务条款 | 论坛 | 帮助</span>
     <br>
     <span>copyright @ 2019 高庄银行</span>
 </footer>
 
-<script type="text/javascript" src="{% static 'sidebar.js' %}"></script>
-
+<script type="text/javascript" src="{% static 'sidebar/sidebar.js' %}"></script>
 </html>
