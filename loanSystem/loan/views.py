@@ -37,7 +37,7 @@ def connect(request):
 
 def company(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
     else:
         msg["login"]=1
@@ -69,6 +69,7 @@ def apply(request):
     msg={}
     if not request.session.get("user"):
         msg["login"]=0
+        return redirect('loan:login')
     else:
         msg["login"]=1
     credit=models.Credit.objects.filter(id = request.GET['id'])
