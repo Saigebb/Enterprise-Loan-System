@@ -215,3 +215,5 @@ def sendCertification(request):
             return HttpResponse('0', status=200)
     else:
             return HttpResponse('1', status=200)
+
+
