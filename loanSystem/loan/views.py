@@ -5,13 +5,14 @@ import re
 from . import models
 from django.core.mail import send_mail
 import random
+import json
 from django.http import HttpResponse
 
 # Create your views here.
 
 def login(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
         return render(request, 'user/login/login.html',msg)
     else:
@@ -20,7 +21,7 @@ def login(request):
 
 def aboutus(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
     else:
         msg["login"]=1
@@ -28,7 +29,7 @@ def aboutus(request):
 
 def connect(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
     else:
         msg["login"]=1
@@ -44,7 +45,7 @@ def company(request):
 
 def home(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
     else:
         msg["login"]=1
@@ -52,7 +53,7 @@ def home(request):
 
 def loans(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
     else:
         msg["login"]=1
@@ -66,7 +67,7 @@ def loans(request):
 
 def apply(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
     else:
         msg["login"]=1
@@ -83,7 +84,7 @@ def register(request):
 
 def certification(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -92,7 +93,7 @@ def certification(request):
 
 def myLoan(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -101,7 +102,7 @@ def myLoan(request):
 
 def personal(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -114,7 +115,7 @@ def certify(request):
 
 def applyForm(request):
     msg={}
-    if not request.session.get["user"]:
+    if not request.session.get("user"):
         msg["login"]=0
         return redirect('loan:login')
     else:
@@ -215,6 +216,29 @@ def sendCertification(request):
             return HttpResponse('0', status=200)
     else:
             return HttpResponse('1', status=200)
+
+# 贷款详情页的表单提交
+def applyFirst(request):
+    request.encoding='utf-8'
+    msg={}
+    if not request.session.get("user"):
+        msg["login"]=0
+        return redirect('loan:login')
+    if request.method == "POST":
+        money = request.POST.get("applyAmount")
+        month = request.POST.get("applyMonth")
+        res = {"status": '', 'message': ''}
+        if (re.match('^[0-9]*$', money)) or (re.match('^[0-9]*$', month)):
+            res['status'] = 'success'
+            res['message'] = '提交成功'
+            return HttpResponse(json.dumps(res))
+        else:
+            res['status'] = 'fail'
+            res['message'] = '信息有误'
+            return HttpResponse(json.dumps(res))
+
+
+
 
 
 def sidebar(request):

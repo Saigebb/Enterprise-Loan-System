@@ -54,7 +54,7 @@
 
                         <div class="agree">
 
-                            <input type="checkbox">我已阅读并同意以下协议：
+                            <input type="checkbox" id="agree" name="check" value="1">我已阅读并同意以下协议：
                             <br>
                             <span>《互联网金融协议》</span>
                             <br>
@@ -231,9 +231,10 @@
         let predictBtn = $("#predictPay");
         let submitBtn = $("#applySubmit");
 
+        {#申请额度的校验#}
         moneyInput.blur(function () {
-            if(moneyInput.val() > {{ credit.amountmin }} 
-                && moneyInput.val() < {{ credit.amountmax }}){
+            if(moneyInput.val() >= {{ credit.amountmin }}
+                && moneyInput.val() <= {{ credit.amountmax }}){
                 //申请额度在范围内
                 moneyInput.css("border","1px #0f0 solid");
                 $(".moneyhint").html("")
@@ -245,9 +246,10 @@
             }
         });
 
+        {#申请月份的校验#}
         monthInput.blur(function () {
-            if(monthInput.val() > {{ credit.monthmin }} 
-                && monthInput.val() < {{ credit.monthmax }}){
+            if(monthInput.val() >= {{ credit.monthmin }}
+                && monthInput.val() <= {{ credit.monthmax }}){
                 monthInput.css("border","1px #0f0 solid");
                 $(".monthhint").html("");
             }
@@ -258,14 +260,63 @@
             }
         });
 
+        {#预计金额事件#}
         predictBtn.click(function () {
-
-            if(moneyInput.val() > {{ credit.amountmin }}
-                && moneyInput.val() < {{ credit.amountmax }}
-                && monthInput.val() > {{ credit.monthmin }}
-                && monthInput.val() < {{ credit.monthmax }}){
-                    
+            if(moneyInput.val() >= {{ credit.amountmin }}
+                && moneyInput.val() <= {{ credit.amountmax }}
+                && monthInput.val() >= {{ credit.monthmin }}
+                && monthInput.val() <= {{ credit.monthmax }}){
+                console.log(111111);
+                    let ir = '{{ credit.monthirmin }}'.replace("%","");
+                    let interst = monthInput.val()*moneyInput.val()*parseFloat(ir);
+                    $("#interest").val("最低"+parseFloat(interst*100).toFixed(2));
+                    $("#interest").css("color","#ff8a00");
+                    $("#monthPay").val("最低"+parseFloat(interst/monthInput.val()*100).toFixed(2));
+                    $("#monthPay").css("color","#ff8a00");
+                    $("#ways").css("color","#ff8a00");
             }
+            else{
+                let txt = "信息有误";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function(){
+                    window.location.reload();
+                });
+            }
+        });
+
+        {#提交申请金额和月份的校验#}
+        submitBtn.click(function () {
+            if(moneyInput.val() >= {{ credit.amountmin }}
+                && moneyInput.val() <= {{ credit.amountmax }}
+                && monthInput.val() >= {{ credit.monthmin }}
+                && monthInput.val() <= {{ credit.monthmax }}
+                && $("input[type='checkbox']").attr('value') == 1) {
+
+                {# 前端校验通过 发送请求#}
+                $.ajax({
+                    url:'http://127.0.0.1:8000/applyFirst',
+                    type:'post',
+                    data:{
+                        'applyAmount':moneyInput.val(),
+                        'applyMonth':monthInput.val()
+                    },
+                    scriptCharset:'utf-8',
+                    success:function (res) {
+                        if(res.status == 'success'){
+                            window.location.href = '/applyForm';
+                        }
+                        else{
+                            let txt = res.message;
+                            window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                            $('.ok').click(function(){
+                                window.location.reload();
+                            });
+                        }
+                    }
+                })
+            }
+
+            {#信息错误(前端校验)#}
             else{
                 var txt = "信息有误";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
@@ -273,9 +324,6 @@
                     window.location.reload();
                 });
             }
-        });
-        
-        submitBtn.click(function () {
 
         })
     </script>
