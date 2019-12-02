@@ -161,6 +161,30 @@ $(".btn_submit").click(function() {
         });
         $.post("/sendCertification/", data, function(data) {
             if (data == '0') {
+                alert('企业名称格式输入错误');
+                window.location.href ="/certification/";      
+            }
+            else if (data == '1') {
+                alert('社会信用代码格式输入错误');
+                window.location.href ="/certification/";      
+            }
+            else if (data == '2') {
+                alert('法人代表姓名格式输入错误');
+                window.location.href ="/certification/";      
+            }
+            else if (data == '3') {
+                alert('法人代表身份证格式输入错误');
+                window.location.href ="/certification/";      
+            }
+            else if (data == '4') {
+                alert('银行卡格式输入错误');
+                window.location.href ="/certification/";      
+            }
+            else if (data == '5') {
+                alert('手机号码格式输入错误');
+                window.location.href ="/certification/";      
+            }
+            else if (data == '6') {
                 alert('保存失败');
                 window.location.href ="/certification/";      
             }
