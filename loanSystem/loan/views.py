@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 import random
 import json
 from django.http import HttpResponse
-
+import os
 # Create your views here.
 
 def login(request):
@@ -270,7 +270,10 @@ def applyFirst(request):
             res['message'] = '信息有误'
             return HttpResponse(json.dumps(res))
 
+def send(request):
+    os.system("python lastmodel.py")
 
 def sidebar(request):
     request.encoding='utf-8'
     return render(request, 'admin/sidebar.html')
+
