@@ -218,25 +218,24 @@ def sendCertification(request):
     else:
             return HttpResponse('1', status=200)
 
+APPLY_FIRST_FAIL = 0
+APPLY_FIRST_TRUE = 1
+
 # 贷款详情页的表单提交
 def applyFirst(request):
     request.encoding='utf-8'
-    msg={}
-    if not request.session.get("user"):
-        msg["login"]=0
-        return redirect('loan:login')
+    # msg={}
+    # if not request.session.get("user"):
+    #     msg["login"]=0
+    #     return redirect('loan:login')
     if request.method == "POST":
         money = request.POST.get("applyAmount")
         month = request.POST.get("applyMonth")
         res = {"status": '', 'message': ''}
         if (re.match('^[0-9]*$', money)) or (re.match('^[0-9]*$', month)):
-            res['status'] = 'success'
-            res['message'] = '提交成功'
-            return HttpResponse(json.dumps(res))
+            return HttpResponse(APPLY_FIRST_TRUE, status=200)
         else:
-            res['status'] = 'fail'
-            res['message'] = '信息有误'
-            return HttpResponse(json.dumps(res))
+            return HttpResponse(APPLY_FIRST_FAIL, status=200)
 
 
 

@@ -25,22 +25,22 @@
         <!-- Nav tabs -->
         <ul class="nav nav-pills steps" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#step1">基础资料</a>
+                <a class="nav-link active" id="stepOne" data-toggle="pill" href="#step1">基础资料</a>
             </li>
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#step2">财务资料</a>
+                <a class="nav-link" id="stepTwo" data-toggle="pill" href="#step2">财务资料</a>
             </li>
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#step3">法定代表人资料</a>
+                <a class="nav-link" id="stepThree" data-toggle="pill" href="#step3">法定代表人资料</a>
             </li>
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#step4">其他资料</a>
+                <a class="nav-link" id="stepFour" data-toggle="pill" href="#step4">其他资料</a>
             </li>
         </ul>
 
@@ -56,15 +56,17 @@
                                id="name"
                                name="companyName"
                                placeholder="请输入企业名称">
+                        <p id="nameHint"></p>
                     </div>
 
                     <div class="form-group">
                         <label for="name">统一社会信用代码</label>
                         <input type="text"
                                class="form-control"
-                               id="name"
+                               id="creditCode"
                                name="credieCode"
                                placeholder="请输入统一社会信用代码">
+                        <p id="codeHint"></p>
                     </div>
 
                     <div class="form-group">
@@ -72,6 +74,8 @@
                         <input type="file"
                                id="license"
                                name="license"
+                               accept="image/png, image/jpeg, image/jpg"
+                               onchange="upImage(this)"
                                class="btn btn-light">
                         <p>请上传企业营业执照</p>
                     </div>
@@ -81,6 +85,8 @@
                         <input type="file"
                                id="taxRegist"
                                name="taxRegist"
+                               accept="image/png, image/jpeg, image/jpg"
+                               onchange="upImage(this)"
                                class="btn btn-light">
                         <p>请上传税务登记证</p>
                     </div>
@@ -95,7 +101,7 @@
                     </div>
 
                     <br>
-                    <button type="button" class="btn btn-success">下一步</button>
+                    <button type="button" id="nextStep1" class="btn btn-success">下一步</button>
                 </form>
             </div>
 
@@ -131,7 +137,7 @@
                     </div>
 
                     <br>
-                    <button type="button" class="btn btn-success">下一步</button>
+                    <button type="button" id="nextStep2" class="btn btn-success">下一步</button>
                 </form>
             </div>
 
@@ -163,7 +169,7 @@
                         <p>请上传填写后的文件</p>
                     </div>
                     <br>
-                    <button type="button" class="btn btn-success">下一步</button>
+                    <button type="button" id="nextStep3" class="btn btn-success">下一步</button>
                 </form>
             </div>
 
@@ -200,7 +206,7 @@
 
                     <br>
 
-                    <button type="button" class="btn btn-success">提交</button>
+                    <button type="button" id="submit" class="btn btn-success">提交</button>
 
 
                 </form>

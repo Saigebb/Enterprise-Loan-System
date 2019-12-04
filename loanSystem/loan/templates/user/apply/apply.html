@@ -101,7 +101,7 @@
                             >
                     </div>
                     <span style="color: red">*以上结果仅供参考，以金融机构实际审批结果为准</span>
-
+                    <br/>
                     <button type="button" id="applySubmit" class="submit btn btn-success">提交申请</button>
                 </div>
             </div>
@@ -292,26 +292,28 @@
                 && monthInput.val() <= {{ credit.monthmax }}
                 && $("input[type='checkbox']").attr('value') == 1) {
 
+                let data = {
+                    'applyAmount':moneyInput.val(),
+                    'applyMonth':monthInput.val()
+                };
                 {# 前端校验通过 发送请求#}
-                $.ajax({
-                    url:'http://127.0.0.1:8000/applyFirst',
-                    type:'post',
-                    data:{
-                        'applyAmount':moneyInput.val(),
-                        'applyMonth':monthInput.val()
+                $.ajaxSetup({
+                    data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
                     },
-                    scriptCharset:'utf-8',
-                    success:function (res) {
-                        if(res.status == 'success'){
-                            window.location.href = '/applyForm';
-                        }
-                        else{
-                            let txt = res.message;
-                            window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-                            $('.ok').click(function(){
-                                window.location.reload();
-                            });
-                        }
+                });
+
+                $.post('/applyFirst/', data, function (res) {
+                    console.log(1121212);
+                    if(res == '1'){
+                        window.location.href = '/applyForm/';
+                    }
+                    else{
+                        let txt = res.message;
+                        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                        $('.ok').click(function(){
+                            window.location.reload();
+                        });
                     }
                 })
             }
