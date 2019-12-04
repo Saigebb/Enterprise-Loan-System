@@ -53,7 +53,7 @@ $("#btn").click(function() {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("http://127.0.0.1:8000/sendMail/", data, function(data) {
+        $.post("/sendMail/", data, function(data) {
             if (data == '0') {
                 alert('邮件没有发送成功');
             }

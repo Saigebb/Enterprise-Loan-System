@@ -1,0 +1,43 @@
+{# page:贷款审批 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】我的贷款{% endblock %}
+{% block BasicTable %}贷款审批{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'loanApproval/loanApproval.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- Nav tabs -->
+<ul class="nav nav-pills steps" role="tablist">
+    <!-- <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#step1">基础资料</a>
+    </li>
+    <i class="fa fa-chevron-right" aria-hidden="true"></i> -->
+
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#step2">财务资料</a>
+    </li>
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#step3">法定代表人资料</a>
+    </li>
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#step4">其他资料</a>
+    </li>
+</ul>
+
+
+<script type="text/javascript" src="{% static 'loanApproval/loanApproval.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
+{% endblock %}

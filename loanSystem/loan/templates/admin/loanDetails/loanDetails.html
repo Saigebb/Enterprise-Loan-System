@@ -1,0 +1,113 @@
+{# page:贷款详情页面可编辑 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】我的贷款{% endblock %}
+{% block BasicTable %}贷款详情{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'loanDetails/loanDetails.css' %}" />
+
+<style>
+    .btn-info {
+        background-color: rgb(131, 174, 255);
+        border: none;
+        width: 200px;
+        border-radius: 40px;
+        margin-left: 190px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainbar">
+    <div class="mainbar_input">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">编号</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="firstname" placeholder="请输入编号">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">贷款产品</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="lastname" placeholder="请输入贷款产品">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">贷款额度</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="firstname" placeholder="请输入贷款额度">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">贷款期限</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="lastname" placeholder="请输入贷款期限">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">利率</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="firstname" placeholder="请输入利率">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">还款付息方式</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="lastname" placeholder="请输入还款付息方式">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="firstname" placeholder="请输入简介">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">费用说明</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="lastname" placeholder="请输入费用说明">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">还款说明</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="firstname" placeholder="请输入还款说明">
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="mainbar_textarea">
+        <div>
+            <span>详细描述</span>
+            <textarea></textarea>
+        </div>
+        <div>
+            <span>申请条件</span>
+            <textarea class="textArea"></textarea>
+        </div>
+
+        <div>
+            <span>所需材料</span>
+            <textarea></textarea>
+        </div>
+        <button type="button" class="btn btn-info"style="margin-left:100px; opacity: 1;margin-top:20px">提交</button>
+    </div>
+    
+</div>
+<!-- <img src="{% static 'image/lb1.jpg' %}" > -->
+<script type="text/javascript" src="{% static 'loanDetails/loanDetails.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
+{% endblock %}

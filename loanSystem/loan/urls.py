@@ -22,6 +22,10 @@ urlpatterns = [
     url('applyForm/', views.applyForm, name='applyForm'),
     url('personalPost/', views.personalPost, name='personalPost'),
     url('sendCertification/', views.sendCertification, name='sendCertification'),
+    # 后台
+    url('loanManage/', views.loanManage, name='loanManage'),
+    url('loanDetails/', views.loanDetails, name='loanDetails'),
+    url('loanApproval/', views.loanApproval, name='loanApproval'),
     #url('', views.home, name='home'),
     url('sidebar/', views.sidebar, name='sidebar'),
     url('applyFirst/', views.applyFirst, name='applyFirst'),

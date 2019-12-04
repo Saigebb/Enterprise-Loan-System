@@ -3,11 +3,12 @@ from django.views.decorators import csrf
 from django.shortcuts import redirect  #重新定向模块
 import re
 from . import models
+from . import credit
 from django.core.mail import send_mail
 import random
 import json
 from django.http import HttpResponse
-
+import os
 # Create your views here.
 
 def login(request):
@@ -111,6 +112,16 @@ def personal(request):
         msg["user"]=request.session["user"]
         return render(request, 'user/personal/personal.html',msg)
 
+# 后台的“贷款管理”
+def loanManage(request):
+    return render(request, 'admin/loanManage/loanManage.html')
+
+def loanDetails(request):
+    return render(request, 'admin/loanDetails/loanDetails.html')
+
+def loanApproval(request):
+    return render(request, 'admin/loanApproval/loanApproval.html')
+
 def certify(request):
     return render(request, 'user/certify/certify.html')
 
@@ -136,6 +147,9 @@ EMAIL_HOST_PASSWORD = 'gkgcapcopbajcbcg'
 EMAIL_USE_TLS = True # 这里必须是 True，否则发送不成功
 EMAIL_FROM = '413469406@qq.com' # 你的 QQ 账号
 
+EMAIL_FALSE=0
+EMAIL_TRUE=1
+
 def sendMail(request):
     request.encoding='utf-8'
     if request.POST:
@@ -146,77 +160,114 @@ def sendMail(request):
         #email='413469406@qq.com'
         send_status = send_mail(email_title, email_body, EMAIL_FROM, [email])
         if send_status:
-            return HttpResponse('1', status=200)
+            return HttpResponse(EMAIL_TRUE, status=200)
         else:
-            return HttpResponse('0', status=200)
+            return HttpResponse(EMAIL_FALSE, status=200)
 
 #注册逻辑
 def signupPost(request):
     request.encoding='utf-8'
-    ctx ={}
-    if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
-        ctx["msg"]="邮箱格式不正确"
-        return render(request, "user/register/register.html", ctx)
-    if not re.match('^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$',request.POST['idCard']):
-        ctx["msg"]="身份证格式不正确"
-        return render(request, "user/register/register.html", ctx)
-    if not re.match('^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$',request.POST['phone']):
-        ctx["msg"]="手机号格式不正确"
-        return render(request, "user/register/register.html", ctx)
-    if not request.POST['password']==request.session["code"]:
-        ctx["msg"]="验证码不正确"
-        return render(request, "user/register/register.html", ctx)
-    else:
-        add = models.Customer(email=request.POST['phone_email'],cname=request.POST['username'],idcard=request.POST['idCard'],phone=request.POST['phone'])
-        add.save()
-        # models.Customer.objects.create(id=null,email=request.email_text,idcard=request.idCard,phone=request.phone)
-        return redirect('loan:login')
+    if request.POST:
+        ctx ={}
+        if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
+            ctx["msg"]="邮箱格式不正确"
+            return render(request, "user/register/register.html", ctx)
+        if not re.match('^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$',request.POST['idCard']):
+            ctx["msg"]="身份证格式不正确"
+            return render(request, "user/register/register.html", ctx)
+        if not re.match('^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$',request.POST['phone']):
+            ctx["msg"]="手机号格式不正确"
+            return render(request, "user/register/register.html", ctx)
+        if not request.POST['password']==request.session["code"]:
+            ctx["msg"]="验证码不正确"
+            return render(request, "user/register/register.html", ctx)
+        else:
+            add = models.Customer(email=request.POST['phone_email'],cname=request.POST['username'],idcard=request.POST['idCard'],phone=request.POST['phone'])
+            add.save()
+            # models.Customer.objects.create(id=null,email=request.email_text,idcard=request.idCard,phone=request.phone)
+            return redirect('loan:login')
 
 #登录逻辑
 def loginPost(request):
     request.encoding='utf-8'
-    ctx ={}
-    if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
-        ctx["msg"]="邮箱格式不正确"
-        return render(request, "user/login/login.html", ctx)
-    if not models.Customer.objects.filter(email = request.POST['phone_email']):
-        ctx["msg"]="用户不存在"
-        return render(request, "user/login/login.html", ctx)
-    if not request.POST['password']==request.session["code"]:
-        ctx["msg"]="验证码不正确"
-        return render(request, "user/login/login.html", ctx)
-    else:
-        request.session["user"]=request.POST['phone_email']
-        return redirect('loan:home')
+    if request.POST:
+        ctx ={}
+        if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
+            ctx["msg"]="邮箱格式不正确"
+            return render(request, "user/login/login.html", ctx)
+        if not models.Customer.objects.filter(email = request.POST['phone_email']):
+            ctx["msg"]="用户不存在"
+            return render(request, "user/login/login.html", ctx)
+        if not request.POST['password']==request.session["code"]:
+            ctx["msg"]="验证码不正确"
+            return render(request, "user/login/login.html", ctx)
+        else:
+            request.session["user"]=request.POST['phone_email']
+            return redirect('loan:home')
 
 #修改邮箱
 def personalPost(request):
     request.encoding='utf-8'
-    ctx ={}
-    if not request.POST['code']==request.session["code"]:
-        ctx["msg"]="验证码不正确"
-        return render(request, "user/login/login.html", ctx)
-    else:
-        user = models.Customer.objects.get(email=request.session["user"])
-        user.email = request.POST['phone_email']
-        user.save()
-        return render(request, 'user/personal/personal.html')
+    msg={}
+    if not request.session.get("user"):
+        msg["login"]=0
+        return render(request, 'user/login/login.html',msg)
+    if request.POST:
+        ctx ={}
+        if not request.POST['code']==request.session["code"]:
+            ctx["msg"]="验证码不正确"
+            return render(request, "user/login/login.html", ctx)
+        else:
+            user = models.Customer.objects.get(email=request.session["user"])
+            user.email = request.POST['phone_email']
+            user.save()
+            return render(request, 'user/personal/personal.html')
 
 #企业认证
+COMPANY_NAME_FALSE=0
+CREDIT_ID_FALSE=1
+LEGAL_NAME_FALSE=2
+LEGAL_ID_FALSE=3
+CARD_FALSE=4
+PHONE_FALSE=5
+SQL_FALSE=6
+SQL_TURE=7
 def sendCertification(request):
     request.encoding='utf-8'
-    user = models.Customer.objects.get(email=request.session["user"])
-    user.company=request.POST['Company_Name']
-    user.credit_id=request.POST['Credit_code']
-    user.legal_name=request.POST['Legal_representative_name']
-    user.legal_id=request.POST['Legal_representative_id']
-    user.card=request.POST['Legal_representative_card']
-    user.phone=request.POST['Bank_phone']
-    #user.save()
-    if user.save():
-            return HttpResponse('0', status=200)
-    else:
-            return HttpResponse('1', status=200)
+    msg={}
+    if not request.session.get("user"):
+        msg["login"]=0
+        return render(request, 'user/login/login.html',msg)
+
+    if request.POST:
+        if not re.match('^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$',request.POST['Company_Name']):
+            return HttpResponse(COMPANY_NAME_FALSE, status=200)
+        Legal_representative_name=credit.UnifiedSocialCreditIdentifier()
+        if not Legal_representative_name.check_social_credit_code(code=request.POST['Credit_code']):
+            return HttpResponse(CREDIT_ID_FALSE, status=200)
+        if not re.match('^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$',request.POST['Legal_representative_name']):
+            return HttpResponse(LEGAL_NAME_FALSE, status=200)
+        if not re.match('^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$',request.POST['Legal_representative_id']):
+            return HttpResponse(LEGAL_ID_FALSE, status=200)
+        if not re.match('^([1-9]{1})(\d{15}|\d{18})$',request.POST['Legal_representative_card']):
+            return HttpResponse(CARD_FALSE, status=200)
+        if not re.match('^1[3456789]\d{9}$',request.POST['Bank_phone']):
+            return HttpResponse(PHONE_FALSE, status=200)
+
+        else:    
+            user = models.Customer.objects.get(email=request.session["user"])
+            user.company=request.POST['Company_Name']
+            user.credit_id=request.POST['Credit_code']
+            user.legal_name=request.POST['Legal_representative_name']
+            user.legal_id=request.POST['Legal_representative_id']
+            user.card=request.POST['Legal_representative_card']
+            user.phone=request.POST['Bank_phone']
+            #user.save()
+            
+            if user.save():
+                    return HttpResponse(SQL_FALSE, status=200)
+            else:
+                    return HttpResponse(SQL_TURE, status=200)
 
 APPLY_FIRST_FAIL = 0
 APPLY_FIRST_TRUE = 1
@@ -237,10 +288,10 @@ def applyFirst(request):
         else:
             return HttpResponse(APPLY_FIRST_FAIL, status=200)
 
-
-
-
+def send(request):
+    os.system("python lastmodel.py")
 
 def sidebar(request):
     request.encoding='utf-8'
     return render(request, 'admin/sidebar.html')
+
