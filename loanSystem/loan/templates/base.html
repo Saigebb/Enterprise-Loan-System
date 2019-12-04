@@ -19,17 +19,22 @@
     <script type="text/javascript" src="{% static 'alert/xcConfirm.js' %}"></script>
     {% block header %}{% endblock %}
     <style type="text/css">
-        .xcConfirm .popBox .txtBox .bigIcon{
+        .xcConfirm .popBox .txtBox .bigIcon {
             background-image: url({% static 'image/icons.png' %});
             background-repeat: no-repeat;
             background-position: 48px 0;
         }
 
-        .xcConfirm .popBox .ttBox .clsBtn{
+        .xcConfirm .popBox .ttBox .clsBtn {
             background: url({% static 'image/icons.png' %}) -48px -96px no-repeat;
         }
+
         .dropdown-toggle::after {
             opacity: 0;
+        }
+
+        .btn{
+            font-size: 16px;
         }
     </style>
 </head>
@@ -60,21 +65,24 @@
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"
                     style="text-align:center;line-height:40px;margin-left: -80px;">
                     <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="#"
+                        <a role="menuitem" tabindex="-1" href="/myLoan/"
                             style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">我的贷款</a>
                     </li>
                     <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="#"
+                        <a role="menuitem" tabindex="-1" href="/certification/"
                             style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">企业认证</a>
                     </li>
                     <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="#"
+                        <a role="menuitem" tabindex="-1" href="/personal/"
                             style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">设置</a>
                     </li>
                     <li role="presentation" class="divider"></li>
                     <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="#"
-                            style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">退出登录</a>
+                        <!-- <form role="menuitem" tabindex="-1" href="#"style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">退出登录</form> -->
+                        <form class="inline-form" method="post" action="loginOut">
+                            <input class="btn" type="submit" name="loginOut" value="退出登录"
+                                onclick="return confirm('Are you sure?')">
+                        </form>
                     </li>
                 </ul>
             </div>

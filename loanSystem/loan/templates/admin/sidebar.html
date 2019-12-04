@@ -121,7 +121,7 @@
         <div class="page-breadcrumb">
             <div class="row align-items-center">
                 <div class="col-5">
-                    <h4 class="page-title">Basic Table</h4>
+                    <h4 class="page-title">{% block BasicTable %}{% endblock %}</h4>
                     <div class="d-flex align-items-center">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -141,8 +141,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Default Table</h4>
-                            <h6 class="card-subtitle">Using the most basic table markup, here’s how <code>.table</code>-based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</h6>
+                            <h4 class="card-title">{% block DefaultTable %}{% endblock %}</h4>
+                            <h6 class="card-subtitle">{% block DefaultTableText %}{% endblock %}</h6>
                             {% block content %}{% endblock %}
                         </div>
                     </div>

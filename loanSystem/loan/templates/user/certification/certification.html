@@ -11,7 +11,7 @@
 
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'certification/certification.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'afterBase.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}" />
 
 {% endblock %}
 
@@ -25,11 +25,11 @@
 <aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu">
-            <li class="header" style="font-size:13px">我的金融助手</li>
+            <li class="header" style="font-size:17px">我的金融助手</li>
             <li><a href="#"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
-            <li class="header" style="font-size:13px">公司资料管理</li>
+            <li class="header" style="font-size:17px">公司资料管理</li>
             <li><a href="#"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
-            <li class="header" style="font-size:13px">基本设置</li>
+            <li class="header" style="font-size:17px">基本设置</li>
             <li><a href="#"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
             <li><a href="#"><i class="fa fa-user-circle-o"></i> <span>成为金蝶用户</span></a></li>
         </ul>
@@ -91,7 +91,7 @@
 
 </div>
 <script type="text/javascript" src="{% static 'certification/certification.js' %}"></script>
-<script type="text/javascript" src="{% static 'afterBase.js' %}"></script>
+<script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script>
 <script>
     $.sidebarMenu($('.sidebar-menu'))
 </script>

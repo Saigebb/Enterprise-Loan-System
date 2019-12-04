@@ -112,6 +112,16 @@ def personal(request):
         msg["user"]=request.session["user"]
         return render(request, 'user/personal/personal.html',msg)
 
+# 后台的“贷款管理”
+def loanManage(request):
+    return render(request, 'admin/loanManage/loanManage.html')
+
+def loanDetails(request):
+    return render(request, 'admin/loanDetails/loanDetails.html')
+
+def loanApproval(request):
+    return render(request, 'admin/loanApproval/loanApproval.html')
+
 def certify(request):
     return render(request, 'user/certify/certify.html')
 
