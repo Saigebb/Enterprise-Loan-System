@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4(hw3%1+%c8w-0x!4c1!3)$3wc7y1v1&f=9e)=f#j3&nr!^a5@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #创建404页面修改
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'loanSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,7 +123,9 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILE_DIRS = [os.path.join(BASE_DIR, 'static/')]
+STATIC_ROOT = 'static'
+STATICFILE_DIRS = [os.path.join(BASE_DIR, '/static/')]
+
 
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25

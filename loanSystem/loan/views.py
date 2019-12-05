@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.views.decorators import csrf
 from django.shortcuts import redirect  #重新定向模块
 import re
@@ -295,3 +295,8 @@ def sidebar(request):
     request.encoding='utf-8'
     return render(request, 'admin/sidebar.html')
 
+def page_error(request):
+    return render(request, 'errorPages/404.html', status=404)
+
+def page_not_found(request, exception):
+    return render(request, 'errorPages/404.html', status=500)

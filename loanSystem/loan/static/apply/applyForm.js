@@ -82,4 +82,25 @@ $("#nextStep3").click(function () {
     $("#stepFour").addClass("active");
 });
 
+function upImage(target){
+    let fileSize = 0;
+    if(!target.files){
+        let filePath = target.value;
+        let fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+        let file = fileSystem.GetFile(filePath);
+        fileSize = file.size;
+    }
+    else{
+        fileSize = target.files[0].size;
+    }
+    let size = fileSize/1024;
+    if(size < 0){
+        let txt = "";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function(){
+            window.location.reload();
+        });
+    }
+}
+
 

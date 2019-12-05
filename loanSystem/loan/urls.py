@@ -30,3 +30,4 @@ urlpatterns = [
     url('sidebar/', views.sidebar, name='sidebar'),
     url('applyFirst/', views.applyFirst, name='applyFirst'),
 ]
+
