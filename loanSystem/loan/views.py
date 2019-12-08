@@ -114,13 +114,20 @@ def personal(request):
 
 # 后台的“贷款管理”
 def loanManage(request):
-    return render(request, 'admin/loanManage/loanManage.html')
+    credit=models.Credit.objects.all()
+    return render(request, 'admin/loanManage/loanManage.html',{'credit': credit})
 
 def loanDetails(request):
     return render(request, 'admin/loanDetails/loanDetails.html')
 
+def loanDetails2(request):
+    return render(request, 'admin/loanDetails2/loanDetails2.html')
+
 def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html')
+
+def personnelManage(request):
+    return render(request, 'admin/personnelManage/personnelManage.html')
 
 def certify(request):
     return render(request, 'user/certify/certify.html')

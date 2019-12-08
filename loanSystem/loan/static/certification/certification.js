@@ -13,13 +13,6 @@ var $Bank_phone = $("#Bank_phone");
 var $btn_submit = $("#btn_submit");
 var $objInfo = $("#info");  
 
-//企业名称的校验
-// function isCompany_Name(s) {
-//     var $re = /^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$/;
-//     if (!$re.test(s)) return false;
-//     return true;
-// }
-
 //企业名称输入信息校验
 $Company_Name.blur(function () {
     var $re = /^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$/;

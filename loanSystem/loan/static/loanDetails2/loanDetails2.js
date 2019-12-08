@@ -18,7 +18,6 @@ var $re3=/[\u4e00-\u9fa5]///纯中文
 var $re4=/\d+-?\d*///数字加-
 var $re5=/-?\d+[.]?\d*%?/g//数字加- %
 
-
 //贷款编号输入信息校验
 $num.blur(function () {
     if ($re1.test($num.val())) {
@@ -141,7 +140,7 @@ $material.blur(function () {
     }
 });
 
-$("#edit_btn").click(function() {
+$("#add_btn").click(function() {
     var $num = $("#num");
     var $name = $("#name");
     var $quota = $("#quota");
