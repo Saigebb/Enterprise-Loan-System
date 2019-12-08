@@ -15,6 +15,7 @@ urlpatterns = [
     url('aboutus/', views.aboutus, name='aboutus'),
     url('connect/', views.connect, name='connect'),
     url('company/', views.company, name='company'),
+    url('service/', views.service, name='company'),
     url('loginPost/', views.loginPost, name='loginPost'),
     url('signupPost/', views.signupPost, name='signupPost'),
     url('sendMail/', views.sendMail, name='sendMail'),

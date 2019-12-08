@@ -44,6 +44,14 @@ def company(request):
         msg["login"]=1
     return render(request, 'user/aboutus/company.html',msg)
 
+def service(request):
+    msg={}
+    if not request.session.get("user"):
+        msg["login"]=0
+    else:
+        msg["login"]=1
+    return render(request, 'user/aboutus/service.html',msg)
+
 def home(request):
     msg={}
     if not request.session.get("user"):
