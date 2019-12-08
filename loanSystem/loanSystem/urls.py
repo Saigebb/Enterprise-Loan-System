@@ -27,5 +27,5 @@ urlpatterns = [
         {'document_root':settings.STATIC_ROOT}, name='static'),
 ]
 
-handler404 = views.page_not_found
-handler500 = views.page_error
+# handler404 = views.page_not_found
+# handler500 = views.page_error

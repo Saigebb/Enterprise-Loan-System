@@ -94,7 +94,7 @@ function upImage(target){
         fileSize = target.files[0].size;
     }
     let size = fileSize/1024;
-    if(size < 0){
+    if(size > 0){
         let txt = "";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
         $('.ok').click(function(){

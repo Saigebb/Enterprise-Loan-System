@@ -296,7 +296,7 @@ def sidebar(request):
     return render(request, 'admin/sidebar.html')
 
 def page_error(request):
-    return render(request, 'errorPages/404.html', status=404)
+    return render(request, 'errorPages/500.html', status=500)
 
-def page_not_found(request, exception):
-    return render(request, 'errorPages/404.html', status=500)
+def page_not_found(request):
+    return render(request, 'errorPages/404.html', status=404)
