@@ -18,3 +18,7 @@
 .loan_status{
     color:rgb(19, 19, 19)
 }
+footer{
+    position: relative;
+    top:520px
+}

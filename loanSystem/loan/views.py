@@ -134,8 +134,17 @@ def loanDetails2(request):
 def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html')
 
+def loanApprovalDetails(request):
+    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html')
+
 def personnelManage(request):
     return render(request, 'admin/personnelManage/personnelManage.html')
+
+def personnelEdit(request):
+    return render(request, 'admin/personnelEdit/personnelEdit.html')
+
+def personnelAdd(request):
+    return render(request, 'admin/personnelAdd/personnelAdd.html')
 
 def certify(request):
     return render(request, 'user/certify/certify.html')

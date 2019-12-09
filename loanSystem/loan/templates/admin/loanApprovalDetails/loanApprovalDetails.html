@@ -1,0 +1,27 @@
+{# page:贷款审批详情 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】贷款审批详情{% endblock %}
+{% block BasicTable %}贷款审批详情{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'loanApprovalDetails/loanApprovalDetails.css' %}" />
+<style>
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<script type="text/javascript" src="{% static 'loanApprovalDetails/loanApprovalDetails.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
+{% endblock %}
