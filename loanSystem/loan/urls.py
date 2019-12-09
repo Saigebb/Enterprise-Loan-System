@@ -3,7 +3,7 @@ from . import views
 
 app_name = 'loan'
 urlpatterns = [
-
+    url(r'^$',views.home),
     url('home/', views.home, name='home'),
     url('login/', views.login, name='login'),
     url('register/', views.register, name='register'),
