@@ -32,8 +32,10 @@ urlpatterns = [
     url('personnelEdit/', views.personnelEdit, name='personnelEdit'),
     url('personnelAdd/', views.personnelAdd, name='personnelAdd'),
     url('loanApprovalDetails/', views.loanApprovalDetails, name='loanApprovalDetails'),
-    
-    
+    url('loanDetailsPost/', views.loanDetailsPost, name='loanDetailsPost'),
+    url('addloanPost/', views.addloanPost, name='addloanPost'),
+    url('personnelEditPost/', views.personnelEditPost, name='personnelEditPost'),
+    url('personnelAddPost/', views.personnelAddPost, name='personnelAddPost'),
     #url('', views.home, name='home'),
     url('sidebar/', views.sidebar, name='sidebar'),
     url('applyFirst/', views.applyFirst, name='applyFirst'),

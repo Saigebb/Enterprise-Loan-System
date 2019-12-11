@@ -210,57 +210,14 @@ $("#add_btn").click(function() {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("//", data, function(data) {
+        $.post("/addloanPost/", data, function(data) {
             if (data == '0') {
-                alert('贷款编号格式输入错误');
+                alert('编辑失败');
                 window.location.href ="/loanDetails/";      
             }
             else if (data == '1') {
-                alert('贷款产品格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '2') {
-                alert('贷款额度格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '3') {
-                alert('贷款期限格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '4') {
-                alert('贷款利率格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '5') {
-                alert('贷款简介格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '6') {
-                alert('贷款费用说明格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '7') {
-                alert('贷款还款说明格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '8') {
-                alert('贷款申请条件格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '9') {
-                alert('贷款详细描述格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '10') {
-                alert('贷款所需材料格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '11') {
-                alert('贷款产品格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else{
                 alert('编辑成功');
+                window.location.href ="/loanManage/";      
             }
         })
     }

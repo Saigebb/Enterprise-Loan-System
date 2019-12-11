@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.views.decorators import csrf
 from django.shortcuts import redirect  #重新定向模块
 import re
@@ -126,7 +126,11 @@ def loanManage(request):
     return render(request, 'admin/loanManage/loanManage.html',{'credit': credit})
 
 def loanDetails(request):
-    return render(request, 'admin/loanDetails/loanDetails.html')
+    credit=models.Credit.objects.filter(name = request.GET['id'])
+    print (credit)
+    for x in credit:
+        print (x.detail)
+    return render(request, 'admin/loanDetails/loanDetails.html',{'credit': credit[0]})
 
 def loanDetails2(request):
     return render(request, 'admin/loanDetails2/loanDetails2.html')
@@ -138,9 +142,13 @@ def loanApprovalDetails(request):
     return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html')
 
 def personnelManage(request):
-    return render(request, 'admin/personnelManage/personnelManage.html')
+    customer=models.Customer.objects.all()
+    return render(request, 'admin/personnelManage/personnelManage.html',{'customer': customer})
 
 def personnelEdit(request):
+    customer=models.Customer.objects.filter(cname = request.GET['id'])
+    return render(request, 'admin/personnelEdit/personnelEdit.html',{'customer': customer[0]})
+
     return render(request, 'admin/personnelEdit/personnelEdit.html')
 
 def personnelAdd(request):
@@ -174,6 +182,7 @@ EMAIL_FROM = '413469406@qq.com' # 你的 QQ 账号
 EMAIL_FALSE=0
 EMAIL_TRUE=1
 
+#发送邮件
 def sendMail(request):
     request.encoding='utf-8'
     if request.POST:
@@ -324,3 +333,57 @@ def page_error(request):
 
 def page_not_found(request):
     return render(request, 'errorPages/404.html', status=404)
+
+SQL_FALSE=0
+SQL_TURE=1
+#贷款详情编辑
+def loanDetailsPost(request):
+        if request.POST:
+            credit=models.Credit.objects.get(id = request.POST['num'])
+            credit.name=request.POST['name']
+            credit.way=request.POST['way']
+            credit.detail=request.POST['detail']
+            credit.else_field=request.POST['fee']
+            credit.advance=request.POST['repayment']
+            credit.info=request.POST['introduction']
+            credit.advance=request.POST['condition']
+            credit.advance=request.POST['material']
+            if credit.save():
+                    return HttpResponse(SQL_FALSE, status=200)
+            else:
+                    return HttpResponse(SQL_TURE, status=200)
+
+#贷款详情新增
+def addloanPost(request):
+    request.encoding='utf-8'
+    if request.POST:
+        add = models.Credit(name=request.POST['name'],way=request.POST['way'],detail=request.POST['detail'],fee=request.POST['fee']) 
+        if add.save():
+            return HttpResponse(SQL_FALSE, status=200)
+        else:
+            return HttpResponse(SQL_TURE, status=200)
+
+#人员详情编辑
+def personnelEditPost(request):
+        if request.POST:
+            customer=models.Customer.objects.get(cname = request.POST['cname'])
+            customer.cname=request.POST['cname']
+            customer.idcard=request.POST['idcard']
+            customer.email=request.POST['email']
+            customer.company=request.POST['company']
+            customer.legal_name=request.POST['legal_name']
+            if customer.save():
+                    return HttpResponse(SQL_FALSE, status=200)
+            else:
+                    return HttpResponse(SQL_TURE, status=200)
+
+#人员详情新增
+def personnelAddPost(request):
+    request.encoding='utf-8'
+    if request.POST:
+        add = models.Customer(cname=request.POST['cname'],idcard=request.POST['idcard'],email=request.POST['email'],company=request.POST['company'],legal_name=request.POST['legal_name']) 
+        if add.save():
+            return HttpResponse(SQL_FALSE, status=200)
+        else:
+            return HttpResponse(SQL_TURE, status=200)
+

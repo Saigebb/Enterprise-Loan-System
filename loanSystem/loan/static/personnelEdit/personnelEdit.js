@@ -78,10 +78,11 @@ $("#edit_btn").click(function () {
     var $legal_name = $("#legal_name");
     var $legal_id = $("#legal_id");
     var $objInfo = $("#info");
-    if (!$re1.test($idcard.val())) {
+    console.log($cname.val());
+    if (!$re1.test($cname.val())) {
         alert('用户姓名格式输入错误');
     }
-    else if (!$re2.test($name.val())) {
+    else if (!$re2.test($idcard.val())) {
         alert('用户身份证格式输入错误');
     }
     else if (!$re3.test($email.val())) {
@@ -109,35 +110,16 @@ $("#edit_btn").click(function () {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("//", data, function (data) {
+        $.post("/personnelEditPost/", data, function (data) {
             if (data == '0') {
-                alert('用户姓名格式输入错误');
-                window.location.href = "/personnelManage/";
+                alert('编辑失败');
+                window.location.href ="/personnelEdit/";      
             }
-
             else if (data == '1') {
-                alert('用户身份证格式输入错误');
-                window.location.href = "/personnelManage/";
-            }
-            else if (data == '2') {
-                alert('用户邮箱格式输入错误');
-                window.location.href = "/personnelManage/";
-            }
-            else if (data == '3') {
-                alert('贷款企业名称格式输入错误');
-                window.location.href = "/personnelManage/";
-            }
-            else if (data == '4') {
-                alert('法定代表人名称格式输入错误');
-                window.location.href = "/personnelManage/";
-            }
-            else if (data == '5') {
-                alert('法定代表人身份证号码格式输入错误');
-                window.location.href = "/personnelManage/";
-            }
-            else {
                 alert('编辑成功');
+                window.location.href ="/personnelManage/";      
             }
         })
+        
     }
 })

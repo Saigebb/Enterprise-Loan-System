@@ -173,24 +173,24 @@ $("#edit_btn").click(function() {
     else if (!$re2.test($way.val())) {
         alert('贷款方式格式输入错误');
     }
-    else if (!$re2.test($introduction.val())) {
-        alert('贷款简介格式输入错误');
-    }
-    else if (!$re2.test($fee.val())) {
-        alert('贷款费用说明格式输入错误');
-    }
-    else if (!$re2.test($repayment.val())) {
-        alert('贷款还款说明格式输入错误');
-    }
-    else if (!$re2.test($condition.val())) {
-        alert('贷款申请条件格式输入错误');
-    }
-    else if (!$re2.test($detail.val())) {
-        alert('贷款详细描述格式输入错误');
-    }
-    else if (!$re2.test($material.val())) {
-        alert('贷款所需材料格式输入错误');
-    }
+    // else if (!$re2.test($introduction.val())) {
+    //     alert('贷款简介格式输入错误');
+    // }
+    // else if (!$re2.test($fee.val())) {
+    //     alert('贷款费用说明格式输入错误');
+    // }
+    // else if (!$re2.test($repayment.val())) {
+    //     alert('贷款还款说明格式输入错误');
+    // }
+    // else if (!$re2.test($condition.val())) {
+    //     alert('贷款申请条件格式输入错误');
+    // }
+    // else if (!$re2.test($detail.val())) {
+    //     alert('贷款详细描述格式输入错误');
+    // }
+    // else if (!$re2.test($material.val())) {
+    //     alert('贷款所需材料格式输入错误');
+    // }
     else {
         data = {}
         data.num = $("#num").val();//编号
@@ -205,63 +205,20 @@ $("#edit_btn").click(function() {
         data.detail = $("#detail").val();//详细描述
         data.condition = $("#condition").val();//申请条件
         data.material = $("#material ").val();//所需材料
-
+        console.log(data);
         $.ajaxSetup({
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("//", data, function(data) {
+        $.post("/loanDetailsPost/", data, function(data) {
             if (data == '0') {
-                alert('贷款编号格式输入错误');
+                alert('编辑失败');
                 window.location.href ="/loanDetails/";      
             }
             else if (data == '1') {
-                alert('贷款产品格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '2') {
-                alert('贷款额度格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '3') {
-                alert('贷款期限格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '4') {
-                alert('贷款利率格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '5') {
-                alert('贷款简介格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '6') {
-                alert('贷款费用说明格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '7') {
-                alert('贷款还款说明格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '8') {
-                alert('贷款申请条件格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '9') {
-                alert('贷款详细描述格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '10') {
-                alert('贷款所需材料格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else if (data == '11') {
-                alert('贷款产品格式输入错误');
-                window.location.href ="/loanDetails/";      
-            }
-            else{
                 alert('编辑成功');
+                window.location.href ="/loanManage/";      
             }
         })
     }

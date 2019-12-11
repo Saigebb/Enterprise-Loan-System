@@ -3,7 +3,6 @@
 
 {% extends "admin/sidebar.html" %}
 {% load static %}
-{% load staticfiles %}
 <!--预先加载基本模板-->
 
 {% block title %}【高庄银行】我的贷款{% endblock %}
@@ -27,7 +26,7 @@
 {% block content %}
 <div class="mainbar">
 <p id="info"></p>
-    <form class="form-horizontal" role="form"action="/loanDetailsPost/" method="post">
+    <form class="form-horizontal" role="form">
         {% csrf_token %}
         <div class="mainbar_input">
             <div class="form-group">
@@ -109,7 +108,7 @@
                 <span>所需材料</span>
                 <textarea value="{{credit.material | safe}}"id="material"></textarea>
             </div>
-            <button type="submit" class="btn btn-info" style="margin-left:50px; opacity: 1;margin-top:20px"
+            <input type="button" class="btn btn-info" style="margin-left:50px; opacity: 1;margin-top:20px"
                 id="edit_btn">提交编辑</button>
         </div>
     </form>
