@@ -1,8 +1,10 @@
 let nameInput = $("#companyName");
 let codeInput = $("#creditCode");
+
 let flagOne = [false,false,false,false,false];
 let flagTwo = [false,false,false];
-
+let flagThree = [false,false];
+let flagFour = [false,false,false];
 
 if($("#stepOne").hasClass("active")){
     console.log(222);
@@ -55,8 +57,23 @@ codeInput.blur(function codeCheck() {
 });
 
 // 限制文件大小5M
-function checkfile(size,i) {
-    let hint = `#${baseRes[i]}Hint`;
+function checkfile(size,i,formNum) {
+    let hint = '';
+    switch (formNum) {
+        case 1:
+            hint = `#${baseRes[i]}Hint`;
+            break;
+        case 2:
+            hint = `#${financeRes[i]}Hint`;
+            break;
+        case 3:
+            hint = `#${representRes[i]}Hint`;
+            break;
+        case 4:
+            hint = `#${othersRes[i]}Hint`;
+            break;
+    }
+
     const isLt2M = size / 1024 / 1024 < 5;
     if(size == "" || size == null || size == 0){
         $(hint).html("文件未上传");
@@ -80,7 +97,7 @@ function checkfile(size,i) {
 let allDatas = new Array();
 
 //基础材料(第一个表单)的id、name名称
-let baseRes = ['companyName','creditCode','license','taxRegist','companyCredit'];
+let baseRes = ['companyName','creditCode','license','taxRegist','companyRight'];
 
 //基础材料(第一个表单)校验及跳转
 $("#nextStep1").click(function () {
@@ -97,7 +114,7 @@ $("#nextStep1").click(function () {
 
     // 校验文件大小
     for(let i = 2; i < 5; i++){
-        if(checkfile(datas[i].size,i)){
+        if(checkfile(datas[i].size,i,1)){
             flagOne[i] = true;
         }
     }
@@ -118,9 +135,6 @@ $("#nextStep1").click(function () {
     else{
         let txt = "信息有误";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-        // $('.ok').click(function(){
-        //     window.location.reload();
-        // });
     }
 
 });
@@ -140,7 +154,7 @@ $("#nextStep2").click(function () {
 
     // 校验文件大小
     for(let i = 0; i < 3; i++){
-        if(checkfile(datas[i].size,i)){
+        if(checkfile(datas[i].size,i,2)){
             flagTwo[i] = true;
         }
     }
@@ -160,34 +174,33 @@ $("#nextStep2").click(function () {
     else{
         let txt = "信息有误";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-        // $('.ok').click(function(){
-        //     window.location.reload();
-        // });
     }
 
 });
 
 
-
+let representRes = ['personRight','personFile'];
+// 个人资料上传表单
 $("#nextStep3").click(function () {
     let datas = new Array();
-    let form = document.getElementById("financeForm");
+    let form = document.getElementById("representForm");
     let formdata = new FormData(form);
 
     //将form中的值传到添加到datas中
-    for(let i in financeRes) {
-        datas[i] = formdata.get(financeRes[i]);
+    for(let i in representRes) {
+        datas[i] = formdata.get(representRes[i]);
     }
 
     // 校验文件大小
-    for(let i = 0; i < 3; i++){
-        if(checkfile(datas[i].size,i)){
-            flagTwo[i] = true;
+    for(let i = 0; i < 2; i++){
+        if(checkfile(datas[i].size,i,3)){
+            flagThree[i] = true;
         }
     }
-    console.log(flagTwo);
+    console.log(flagThree);
 
-    if(flagTwo[0] == true && flagTwo[1] == true && flagTwo[2] == true){
+    if(flagThree[0] == true && flagThree[1] == true
+    ){
         allDatas.push(datas);
 
         $("#step3").addClass("fade");
@@ -201,13 +214,98 @@ $("#nextStep3").click(function () {
     else{
         let txt = "信息有误";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-        // $('.ok').click(function(){
-        //     window.location.reload();
-        // });
     }
 
 
 });
 
+let othersRes = ['loanFor','guarantor','natural'];
+//最后汇总和提交
+$("#submit").click(function () {
+    let datas = new Array();
+    let form = document.getElementById("otherForm");
+    let formdata = new FormData(form);
 
+    //将form中的值传到添加到datas中
+    for(let i in othersRes) {
+        datas[i] = formdata.get(othersRes[i]);
+    }
+
+    // 校验文件大小
+    for(let i = 0; i < 3; i++){
+        if(checkfile(datas[i].size,i,4)){
+            flagFour[i] = true;
+        }
+    }
+    console.log(flagFour);
+
+    if(flagFour[0] == true && flagFour[1] == true && flagFour[2] == true) {
+        allDatas.push(datas);
+
+        console.log(allDatas);
+        let sendData = {
+            'companyName': allDatas[0][0],
+
+        };
+        let sendFormData = new FormData();
+        sendFormData.append('companyName',allDatas[0][0]);
+        sendFormData.append('creditCode', allDatas[0][1]);
+        sendFormData.append('license', allDatas[0][2].files);
+        sendFormData.append('taxRegist', allDatas[0][3]);
+        sendFormData.append('companyRight',allDatas[0][4]);
+        sendFormData.append('finance',allDatas[1][0]);
+        sendFormData.append('assets',allDatas[1][1]);
+        sendFormData.append('companyCredit',allDatas[1][2]);
+        sendFormData.append('personRight',allDatas[2][0]);
+        sendFormData.append('personFile',allDatas[2][1]);
+        sendFormData.append('loanFor',allDatas[3][0]);
+        sendFormData.append('guarantor',allDatas[3][1]);
+        sendFormData.append('natural',allDatas[3][2]);
+
+        console.log(sendFormData);
+
+        $.ajaxSetup({
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+        });
+        $.ajax({
+            type:'POST',
+            url:"/applyFiles/",
+            processData:false,
+            contentType:false,
+            dataType:"json",
+            data: sendFormData,
+            success: function (res) {
+                if (res == '1') {
+                    let txt = "提交成功";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                    // $('.ok').click(function(){
+                    //     window.location.reload();
+                    // });
+                }
+                else {
+                    let txt = "提交失败";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                    // $('.ok').click(function(){
+                    //     window.location.reload();
+                    // });
+                }
+            },
+            error:function () {
+                let txt = "提交失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                // $('.ok').click(function(){
+                //     window.location.reload();
+                // });
+            }
+        })
+    }
+    else{
+        let txt = "信息有误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+    }
+
+
+});
 

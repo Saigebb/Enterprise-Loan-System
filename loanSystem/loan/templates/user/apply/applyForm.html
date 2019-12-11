@@ -92,8 +92,8 @@
                     <div class="form-group">
                         <label for="inputfile">公司征信查询授权书</label><br>
                         <input type="file"
-                               id="companyCredit"
-                               name="companyCredit"
+                               id="companyRight"
+                               name="companyRight"
                                accept="image/png, image/jpeg, image/jpg"
                                class="btn btn-light">
                         <p id="companyCreditHint">请上传公司征信查询授权书</p>
@@ -104,9 +104,9 @@
                 </form>
             </div>
 
-            <div id="step2" id="financeForm" class="container tab-pane fade"><br>
+            <div id="step2" class="container tab-pane fade"><br>
                 {# 财务资料表单 #}
-                <form role="form" style="width: 50%;margin-left: 25%;">
+                <form role="form" id="financeForm" style="width: 50%;margin-left: 25%;">
 
                     <div class="form-group">
                         <label for="inputfile">公司财务报表</label><br>
@@ -124,7 +124,6 @@
                                id="assets"
                                name="assets"
                                accept="application/pdf, application/msword, text/html"
-                               onchange="upPdf(this)"
                                class="btn btn-light">
                         <p id="assetsHint">请上传今年最近月份的资产负债明细表</p>
                     </div>
@@ -135,7 +134,6 @@
                                id="companyCredit"
                                name="companyCredit"
                                accept="image/png, image/jpeg, image/jpg"
-                               onchange="upImage(this)"
                                class="btn btn-light">
                         <p id="companyCreditHint">请上传至今月份的缴税完税凭证</p>
                     </div>
@@ -147,7 +145,7 @@
 
             <div id="step3" class="container tab-pane fade"><br>
                 {# 法定代表人资料表单 #}
-                <form role="form" style="width: 50%;margin-left: 25%;">
+                <form role="form" id="representForm" style="width: 50%;margin-left: 25%;">
 
                     <div class="form-group">
                         <label for="inputfile">个人征信授权书</label><br>
@@ -155,7 +153,6 @@
                                id="personRight"
                                name="personRight"
                                accept="image/png, image/jpeg, image/jpg"
-                               onchange="upImage(this)"
                                class="btn btn-light">
                         <p>请上传法定代表人的个人征信授权书</p>
                     </div>
@@ -172,7 +169,6 @@
                                id="personFile"
                                name="personFile"
                                accept="application/vnd.ms-excel"
-                               onchange="upExcel(this)"
                                class="btn btn-light">
                         <p>请上传填写后的文件</p>
                     </div>
@@ -183,7 +179,7 @@
 
             <div id="step4" class="container tab-pane fade"><br>
                 {# 其他资料表单 #}
-                <form role="form" style="width: 50%;margin-left: 25%;">
+                <form role="form" id="otherForm" style="width: 50%;margin-left: 25%;">
 
                     <div class="form-group">
                         <label for="inputfile">与申请借款用途相关的采购合同</label><br>
@@ -191,7 +187,6 @@
                                id="loanFor"
                                name="loanFor"
                                accept="application/pdf, application/msword, text/html"
-                               onchange="upPdf(this)"
                                class="btn btn-light">
                         <p>请上传与申请借款用途相关的采购合同</p>
                     </div>
@@ -202,7 +197,6 @@
                                id="guarantor"
                                name="guarantor"
                                accept="application/pdf, application/msword, text/html"
-                               onchange="upPdf(this)"
                                class="btn btn-light">
                         <p>请上传企业类担保人资料</p>
                     </div>
@@ -213,7 +207,6 @@
                                id="natural"
                                name="natural"
                                accept="application/pdf, application/msword, text/html"
-                               onchange="upPdf(this)"
                                class="btn btn-light">
                         <p>请上传至今月份的缴税完税凭证</p>
                     </div>

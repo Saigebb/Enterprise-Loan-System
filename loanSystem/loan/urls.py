@@ -33,6 +33,7 @@ urlpatterns = [
     #url('', views.home, name='home'),
     url('sidebar/', views.sidebar, name='sidebar'),
     url('applyFirst/', views.applyFirst, name='applyFirst'),
+    url('applyFiles/',views.applyFiles,name='applyFiles'),
     url('error404/',views.page_not_found,name='page_error'),
     url('error500/',views.page_error,name='page_error'),
 ]

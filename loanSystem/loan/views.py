@@ -315,3 +315,14 @@ def page_error(request):
 
 def page_not_found(request):
     return render(request, 'errorPages/404.html', status=404)
+
+GET_FILE_TRUE = 1
+GET_FILE_FAIL = 0
+def applyFiles(request):
+    request.encoding = 'utf-8'
+    print(request.POST)
+    print(request.FILES)
+    # datas1 = request.POST.get['companyName']
+    # datas2 = request.FILES["license"]
+    # print(datas2)
+    return HttpResponse(GET_FILE_TRUE)
