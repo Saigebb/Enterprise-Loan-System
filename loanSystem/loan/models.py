@@ -2,7 +2,7 @@
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
-#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
@@ -95,6 +95,19 @@ class AuthUserUserPermissions(models.Model):
         managed = False
         db_table = 'auth_user_user_permissions'
         unique_together = (('user_id', 'permission_id'),)
+
+
+class Basicdata(models.Model):
+    companyname = models.CharField(db_column='companyName', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    code = models.CharField(max_length=20, blank=True, null=True)
+    license = models.CharField(max_length=50, blank=True, null=True)
+    taxregist = models.CharField(db_column='taxRegist', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    companycredit = models.CharField(db_column='companyCredit', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    email = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'basicData'
 
 
 class Credit(models.Model):
@@ -219,6 +232,28 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
+class Elsedata(models.Model):
+    email = models.CharField(max_length=50, blank=True, null=True)
+    loanfor = models.CharField(db_column='loanFor', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    guarantor = models.CharField(max_length=50, blank=True, null=True)
+    natural = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'elseData'
+
+
+class Financedata(models.Model):
+    license = models.CharField(max_length=50, blank=True, null=True)
+    assests = models.CharField(max_length=50, blank=True, null=True)
+    companycredit = models.CharField(db_column='companyCredit', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    email = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'financeData'
+
+
 class Interest(models.Model):
     ino = models.CharField(primary_key=True, max_length=8)
     cno = models.CharField(max_length=8)
@@ -231,15 +266,27 @@ class Interest(models.Model):
         unique_together = (('ino', 'cno'),)
 
 
+class Legaldata(models.Model):
+    personright = models.CharField(db_column='personRight', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    personfile = models.CharField(db_column='personFile', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    email = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'legalData'
+
+
 class Loan(models.Model):
-    lno = models.CharField(primary_key=True, max_length=8)
-    cno = models.CharField(max_length=8)
+    lno = models.AutoField(primary_key=True)
+    cno = models.IntegerField()
     ino = models.CharField(max_length=8)
     kind = models.CharField(max_length=20)
     money = models.CharField(max_length=20)
     foreclosure = models.CharField(max_length=20)
-    limittime = models.CharField(max_length=20)
+    limittime = models.IntegerField()
     recycle = models.CharField(max_length=20)
+    progress = models.CharField(max_length=50, blank=True, null=True)
+    time = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
         managed = False

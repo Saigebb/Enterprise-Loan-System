@@ -1,6 +1,6 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.views.decorators import csrf
-from django.shortcuts import redirect  #重新定向模块
+from django.shortcuts import redirect  # 重新定向模块
 import re
 from . import models
 from . import credit
@@ -11,226 +11,272 @@ from django.http import HttpResponse
 import os
 # Create your views here.
 
+
 def login(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
-        return render(request, 'user/login/login.html',msg)
+        msg["login"] = 0
+        return render(request, 'user/login/login.html', msg)
     else:
-        msg["login"]=1
+        msg["login"] = 1
         return redirect('loan:home')
 
+
 def aboutus(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
     else:
-        msg["login"]=1
-    return render(request, 'user/aboutus/aboutus.html',msg)
+        msg["login"] = 1
+    return render(request, 'user/aboutus/aboutus.html', msg)
+
 
 def connect(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
     else:
-        msg["login"]=1
-    return render(request, 'user/aboutus/connect.html',msg)
+        msg["login"] = 1
+    return render(request, 'user/aboutus/connect.html', msg)
+
 
 def company(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
     else:
-        msg["login"]=1
-    return render(request, 'user/aboutus/company.html',msg)
+        msg["login"] = 1
+    return render(request, 'user/aboutus/company.html', msg)
+
 
 def service(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
     else:
-        msg["login"]=1
-    return render(request, 'user/aboutus/service.html',msg)
+        msg["login"] = 1
+    return render(request, 'user/aboutus/service.html', msg)
+
 
 def home(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
     else:
-        msg["login"]=1
-    return render(request, 'user/home/home.html',msg)
+        msg["login"] = 1
+    return render(request, 'user/home/home.html', msg)
+
 
 def loans(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
     else:
-        msg["login"]=1
-    credit=models.Credit.objects.all()
-    mortgage=models.Mortgage.objects.all()
+        msg["login"] = 1
+    credit = models.Credit.objects.all()
+    mortgage = models.Mortgage.objects.all()
     # print(credit[1].monthmin)
     return render(request, 'user/loans/loans.html',
                   {'credit': credit,
                    'mortgage': mortgage,
-                   "msg":msg})
+                   "msg": msg})
+
 
 def apply(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
         return redirect('loan:login')
     else:
-        msg["login"]=1
-    credit=models.Credit.objects.filter(id = request.GET['id'])
-    print (credit)
+        msg["login"] = 1
+    credit = models.Credit.objects.filter(id=request.GET['id'])
+    print(credit)
     for x in credit:
-        print (x.detail)
+        print(x.detail)
     return render(request, 'user/apply/apply.html',
                   {'credit': credit[0],
-                   "msg":msg})
+                   "msg": msg})
+
 
 def register(request):
     return render(request, 'user/register/register.html')
 
+
 def certification(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
         return redirect('loan:login')
     else:
-        msg["login"]=1
-        return render(request, 'user/certification/certification.html',msg)
+        msg["login"] = 1
+        return render(request, 'user/certification/certification.html', msg)
+
 
 def myLoan(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
         return redirect('loan:login')
     else:
-        msg["login"]=1
+        msg["login"] = 1
         return render(request, 'user/myLoan/myLoan.html')
 
+
 def personal(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
         return redirect('loan:login')
     else:
-        msg["login"]=1
-        msg["user"]=request.session["user"]
-        return render(request, 'user/personal/personal.html',msg)
+        msg["login"] = 1
+        msg["user"] = request.session["user"]
+        return render(request, 'user/personal/personal.html', msg)
 
 # 后台的“贷款管理”
+
+
 def loanManage(request):
-    credit=models.Credit.objects.all()
-    return render(request, 'admin/loanManage/loanManage.html',{'credit': credit})
+    credit = models.Credit.objects.all()
+    return render(request, 'admin/loanManage/loanManage.html', {'credit': credit})
+
 
 def loanDetails(request):
-    return render(request, 'admin/loanDetails/loanDetails.html')
+    credit = models.Credit.objects.filter(name=request.GET['id'])
+    print(credit)
+    for x in credit:
+        print(x.detail)
+    return render(request, 'admin/loanDetails/loanDetails.html', {'credit': credit[0]})
+
 
 def loanDetails2(request):
     return render(request, 'admin/loanDetails2/loanDetails2.html')
 
+
 def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html')
 
+
+def loanApprovalDetails(request):
+    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html')
+
+
 def personnelManage(request):
-    return render(request, 'admin/personnelManage/personnelManage.html')
+    customer = models.Customer.objects.all()
+    return render(request, 'admin/personnelManage/personnelManage.html', {'customer': customer})
+
+
+def personnelEdit(request):
+    customer = models.Customer.objects.filter(cname=request.GET['id'])
+    return render(request, 'admin/personnelEdit/personnelEdit.html', {'customer': customer[0]})
+
+    return render(request, 'admin/personnelEdit/personnelEdit.html')
+
+
+def personnelAdd(request):
+    return render(request, 'admin/personnelAdd/personnelAdd.html')
+
 
 def certify(request):
     return render(request, 'user/certify/certify.html')
 
+
 def applyForm(request):
-    msg={}
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
+        msg["login"] = 0
         return redirect('loan:login')
     else:
-        msg["login"]=1
-        return render(request, 'user/apply/applyForm.html',msg)
+        msg["login"] = 1
+        return render(request, 'user/apply/applyForm.html', msg)
 
-def code():  
-    code=""
+
+def code():
+    code = ""
     while len(code) < 5:
         code += str(random.randint(0, 10))
     return code
 
+
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '413469406@qq.com' # 你的 QQ 账号
+EMAIL_HOST_USER = '413469406@qq.com'  # 你的 QQ 账号
 EMAIL_HOST_PASSWORD = 'gkgcapcopbajcbcg'
-EMAIL_USE_TLS = True # 这里必须是 True，否则发送不成功
-EMAIL_FROM = '413469406@qq.com' # 你的 QQ 账号
+EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
+EMAIL_FROM = '413469406@qq.com'  # 你的 QQ 账号
 
-EMAIL_FALSE=0
-EMAIL_TRUE=1
+EMAIL_FALSE = 0
+EMAIL_TRUE = 1
 
+# 发送邮件
 def sendMail(request):
-    request.encoding='utf-8'
+    request.encoding = 'utf-8'
     if request.POST:
-        request.session["code"]=code()
+        request.session["code"] = code()
         email_title = '发送验证码'
-        email_body= '欢迎登录高老庄银行，您的验证码为'+str(request.session["code"])
-        email = request.POST['email']  #对方的邮箱
-        #email='413469406@qq.com'
+        email_body = '欢迎登录高老庄银行，您的验证码为'+str(request.session["code"])
+        email = request.POST['email']  # 对方的邮箱
+        # email='413469406@qq.com'
         send_status = send_mail(email_title, email_body, EMAIL_FROM, [email])
         if send_status:
             return HttpResponse(EMAIL_TRUE, status=200)
         else:
             return HttpResponse(EMAIL_FALSE, status=200)
 
-#注册逻辑
+# 注册逻辑
 def signupPost(request):
-    request.encoding='utf-8'
+    request.encoding = 'utf-8'
     if request.POST:
-        ctx ={}
-        if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
-            ctx["msg"]="邮箱格式不正确"
+        ctx = {}
+        if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$', request.POST['phone_email']):
+            ctx["msg"] = "邮箱格式不正确"
             return render(request, "user/register/register.html", ctx)
-        if not re.match('^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$',request.POST['idCard']):
-            ctx["msg"]="身份证格式不正确"
+        if not re.match('^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$', request.POST['idCard']):
+            ctx["msg"] = "身份证格式不正确"
             return render(request, "user/register/register.html", ctx)
-        if not re.match('^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$',request.POST['phone']):
-            ctx["msg"]="手机号格式不正确"
+        if not re.match('^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$', request.POST['phone']):
+            ctx["msg"] = "手机号格式不正确"
             return render(request, "user/register/register.html", ctx)
-        if not request.POST['password']==request.session["code"]:
-            ctx["msg"]="验证码不正确"
+        if not request.POST['password'] == request.session["code"]:
+            ctx["msg"] = "验证码不正确"
             return render(request, "user/register/register.html", ctx)
         else:
-            add = models.Customer(email=request.POST['phone_email'],cname=request.POST['username'],idcard=request.POST['idCard'],phone=request.POST['phone'])
+            add = models.Customer(email=request.POST['phone_email'], cname=request.POST['username'],
+                                  idcard=request.POST['idCard'], phone=request.POST['phone'])
             add.save()
             # models.Customer.objects.create(id=null,email=request.email_text,idcard=request.idCard,phone=request.phone)
             return redirect('loan:login')
 
-#登录逻辑
+# 登录逻辑
 def loginPost(request):
-    request.encoding='utf-8'
+    request.encoding = 'utf-8'
     if request.POST:
-        ctx ={}
-        if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',request.POST['phone_email']):
-            ctx["msg"]="邮箱格式不正确"
+        ctx = {}
+        if not re.match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$', request.POST['phone_email']):
+            ctx["msg"] = "邮箱格式不正确"
             return render(request, "user/login/login.html", ctx)
-        if not models.Customer.objects.filter(email = request.POST['phone_email']):
-            ctx["msg"]="用户不存在"
+        if not models.Customer.objects.filter(email=request.POST['phone_email']):
+            ctx["msg"] = "用户不存在"
             return render(request, "user/login/login.html", ctx)
-        if not request.POST['password']==request.session["code"]:
-            ctx["msg"]="验证码不正确"
+        if not request.POST['password'] == request.session["code"]:
+            ctx["msg"] = "验证码不正确"
             return render(request, "user/login/login.html", ctx)
         else:
-            request.session["user"]=request.POST['phone_email']
+            request.session["user"] = request.POST['phone_email']
             return redirect('loan:home')
 
-#修改邮箱
+# 修改邮箱
+
+
 def personalPost(request):
-    request.encoding='utf-8'
-    msg={}
+    request.encoding = 'utf-8'
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
-        return render(request, 'user/login/login.html',msg)
+        msg["login"] = 0
+        return render(request, 'user/login/login.html', msg)
     if request.POST:
-        ctx ={}
-        if not request.POST['code']==request.session["code"]:
-            ctx["msg"]="验证码不正确"
+        ctx = {}
+        if not request.POST['code'] == request.session["code"]:
+            ctx["msg"] = "验证码不正确"
             return render(request, "user/login/login.html", ctx)
         else:
             user = models.Customer.objects.get(email=request.session["user"])
@@ -238,58 +284,62 @@ def personalPost(request):
             user.save()
             return render(request, 'user/personal/personal.html')
 
-#企业认证
-COMPANY_NAME_FALSE=0
-CREDIT_ID_FALSE=1
-LEGAL_NAME_FALSE=2
-LEGAL_ID_FALSE=3
-CARD_FALSE=4
-PHONE_FALSE=5
-SQL_FALSE=6
-SQL_TURE=7
+
+# 企业认证
+COMPANY_NAME_FALSE = 0
+CREDIT_ID_FALSE = 1
+LEGAL_NAME_FALSE = 2
+LEGAL_ID_FALSE = 3
+CARD_FALSE = 4
+PHONE_FALSE = 5
+SQL_FALSE = 6
+SQL_TURE = 7
+
+
 def sendCertification(request):
-    request.encoding='utf-8'
-    msg={}
+    request.encoding = 'utf-8'
+    msg = {}
     if not request.session.get("user"):
-        msg["login"]=0
-        return render(request, 'user/login/login.html',msg)
+        msg["login"] = 0
+        return render(request, 'user/login/login.html', msg)
 
     if request.POST:
-        if not re.match('^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$',request.POST['Company_Name']):
+        if not re.match('^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$', request.POST['Company_Name']):
             return HttpResponse(COMPANY_NAME_FALSE, status=200)
-        Legal_representative_name=credit.UnifiedSocialCreditIdentifier()
+        Legal_representative_name = credit.UnifiedSocialCreditIdentifier()
         if not Legal_representative_name.check_social_credit_code(code=request.POST['Credit_code']):
             return HttpResponse(CREDIT_ID_FALSE, status=200)
-        if not re.match('^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$',request.POST['Legal_representative_name']):
+        if not re.match('^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$', request.POST['Legal_representative_name']):
             return HttpResponse(LEGAL_NAME_FALSE, status=200)
-        if not re.match('^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$',request.POST['Legal_representative_id']):
+        if not re.match('^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$', request.POST['Legal_representative_id']):
             return HttpResponse(LEGAL_ID_FALSE, status=200)
-        if not re.match('^([1-9]{1})(\d{15}|\d{18})$',request.POST['Legal_representative_card']):
+        if not re.match('^([1-9]{1})(\d{15}|\d{18})$', request.POST['Legal_representative_card']):
             return HttpResponse(CARD_FALSE, status=200)
-        if not re.match('^1[3456789]\d{9}$',request.POST['Bank_phone']):
+        if not re.match('^1[3456789]\d{9}$', request.POST['Bank_phone']):
             return HttpResponse(PHONE_FALSE, status=200)
 
-        else:    
+        else:
             user = models.Customer.objects.get(email=request.session["user"])
-            user.company=request.POST['Company_Name']
-            user.credit_id=request.POST['Credit_code']
-            user.legal_name=request.POST['Legal_representative_name']
-            user.legal_id=request.POST['Legal_representative_id']
-            user.card=request.POST['Legal_representative_card']
-            user.phone=request.POST['Bank_phone']
-            #user.save()
-            
+            user.company = request.POST['Company_Name']
+            user.credit_id = request.POST['Credit_code']
+            user.legal_name = request.POST['Legal_representative_name']
+            user.legal_id = request.POST['Legal_representative_id']
+            user.card = request.POST['Legal_representative_card']
+            user.phone = request.POST['Bank_phone']
+            # user.save()
+
             if user.save():
-                    return HttpResponse(SQL_FALSE, status=200)
+                return HttpResponse(SQL_FALSE, status=200)
             else:
-                    return HttpResponse(SQL_TURE, status=200)
+                return HttpResponse(SQL_TURE, status=200)
+
 
 APPLY_FIRST_FAIL = 0
 APPLY_FIRST_TRUE = 1
 
 # 贷款详情页的表单提交
 def applyFirst(request):
-    request.encoding='utf-8'
+    request.encoding = 'utf-8'
     # msg={}
     # if not request.session.get("user"):
     #     msg["login"]=0
@@ -303,15 +353,19 @@ def applyFirst(request):
         else:
             return HttpResponse(APPLY_FIRST_FAIL, status=200)
 
+
 def send(request):
     os.system("python lastmodel.py")
 
+
 def sidebar(request):
-    request.encoding='utf-8'
+    request.encoding = 'utf-8'
     return render(request, 'admin/sidebar.html')
+
 
 def page_error(request):
     return render(request, 'errorPages/500.html', status=500)
+
 
 def page_not_found(request):
     return render(request, 'errorPages/404.html', status=404)
@@ -326,3 +380,60 @@ def applyFiles(request):
     # datas2 = request.FILES["license"]
     # print(datas2)
     return HttpResponse(GET_FILE_TRUE)
+
+
+SQL_FALSE = 0
+SQL_TURE = 1
+# 贷款详情编辑
+def loanDetailsPost(request):
+    if request.POST:
+        credit = models.Credit.objects.get(id=request.POST['num'])
+        credit.name = request.POST['name']
+        credit.way = request.POST['way']
+        credit.detail = request.POST['detail']
+        credit.else_field = request.POST['fee']
+        credit.advance = request.POST['repayment']
+        credit.info = request.POST['introduction']
+        credit.advance = request.POST['condition']
+        credit.advance = request.POST['material']
+        if credit.save():
+            return HttpResponse(SQL_FALSE, status=200)
+        else:
+            return HttpResponse(SQL_TURE, status=200)
+
+# 贷款详情新增
+def addloanPost(request):
+    request.encoding = 'utf-8'
+    if request.POST:
+        add = models.Credit(name=request.POST['name'], way=request.POST['way'],
+                            detail=request.POST['detail'], fee=request.POST['fee'])
+        if add.save():
+            return HttpResponse(SQL_FALSE, status=200)
+        else:
+            return HttpResponse(SQL_TURE, status=200)
+
+# 人员详情编辑
+def personnelEditPost(request):
+    if request.POST:
+        customer = models.Customer.objects.get(cname=request.POST['cname'])
+        customer.cname = request.POST['cname']
+        customer.idcard = request.POST['idcard']
+        customer.email = request.POST['email']
+        customer.company = request.POST['company']
+        customer.legal_name = request.POST['legal_name']
+        if customer.save():
+            return HttpResponse(SQL_FALSE, status=200)
+        else:
+            return HttpResponse(SQL_TURE, status=200)
+
+# 人员详情新增
+def personnelAddPost(request):
+    request.encoding = 'utf-8'
+    if request.POST:
+        add = models.Customer(cname=request.POST['cname'], idcard=request.POST['idcard'],
+                              email=request.POST['email'], company=request.POST['company'], legal_name=request.POST['legal_name'])
+        if add.save():
+            return HttpResponse(SQL_FALSE, status=200)
+        else:
+            return HttpResponse(SQL_TURE, status=200)
+

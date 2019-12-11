@@ -36,47 +36,46 @@
     <section class="sidebar">
         <ul class="sidebar-menu">
             <li class="header" style="font-size:17px">我的金融助手</li>
-            <li><a href="#"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+            <li><a href="/myLoan/"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
             <li class="header" style="font-size:17px">公司资料管理</li>
-            <li><a href="#"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+            <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
             <li class="header" style="font-size:17px">基本设置</li>
-            <li><a href="#"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
-            <li><a href="#"><i class="fa fa-user-circle-o"></i> <span>成为金蝶用户</span></a></li>
+            <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
         </ul>
     </section>
 </aside>
 <!-- 表格 -->
-
+{% for x in customer %}
 <div class="mainbar">
     <table class="table table-bordered">
-        <p><strong>贷款编号：</strong>a0012</p>
+        <p><strong>贷款编号：</strong>{{x.lno}}</p>
         <thead>
             <tr>
                 <td>
                     <p>金额/万</p>
-                    <h6 id="money">43</h6>
+                    <h6 id="money">{{x.loanmoney}}</h6>
                 </td>
                 <td>
                     <p>利率</p>
-                    <h6 id="interest_rate">0.025%</h6>
+                    <h6 id="interest_rate">{{x.}}</h6>
                 </td>
                 <td>
                     <p>申请时间</p>
-                    <h6 id="time">2019/04/05</h6>
+                    <h6 id="time">{{x.}}</h6>
                 </td>
                 <td>
                     <p>贷款期限</p>
-                    <h6 id="the_term">12个月</h6>
+                    <h6 id="the_term">{{x.}}</h6>
                 </td>
                 <td>
                     <p>贷款进度</p>
-                    <h6 class="loan_status" id="progress">正在审核</h6>
+                    <h6 class="loan_status" id="progress">{{x.}}</h6>
                 </td>
             </tr>
         </thead>
     </table>
 </div>
-
+{% endfor%}
 
 <!-- <img src="{% static 'image/lb1.jpg' %}" > -->
 <script type="text/javascript" src="{% static 'myLoan/myLoan.js' %}"></script>

@@ -1,7 +1,10 @@
+<<<<<<< Updated upstream
 #index{
   color:#007bff;
   font-weight: bolder;
 }
+=======
+>>>>>>> Stashed changes
 .item_img{
   width: 100%;
   height: 500px;
@@ -317,6 +320,7 @@ margin-bottom: 30px;
 }
 .m4_p{
 /* font-size: 12px; */
+<<<<<<< Updated upstream
   opacity: 0.8;
 }
 .m4_p a{
@@ -326,6 +330,13 @@ margin-bottom: 30px;
 /*.main3{*/
 /*background: url('../image/bk2.jpg');*/
 /*}*/
+=======
+opacity: 0.8;
+}
+.main3{
+background: url('../image/bk2.jpg');
+}
+>>>>>>> Stashed changes
 .shining{
   background-color: #60baff;
 }
