@@ -23,6 +23,7 @@ urlpatterns = [
     url('applyForm/', views.applyForm, name='applyForm'),
     url('personalPost/', views.personalPost, name='personalPost'),
     url('sendCertification/', views.sendCertification, name='sendCertification'),
+    url('logoutPost/', views.logoutPost, name='logoutPost'),
     # 后台
     url('loanManage/', views.loanManage, name='loanManage'),
     url('loanDetails/', views.loanDetails, name='loanDetails'),

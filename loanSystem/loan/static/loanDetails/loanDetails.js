@@ -23,7 +23,7 @@ var $re1 = /^[0-9]*$/;//验证数字
 var $re2 = /^[0-9a-zA-Z\u4e00-\u9fa5]+$///中文英文数字
 var $re3 = /[\u4e00-\u9fa5]///纯中文
 var $re4 = /\d+-?\d*///数字加-
-var $re5 = /\d+[.]?\d*%?/g//数字加- %
+var $re5 = /^((\d+\.?\d*)|(\d*\.\d+))\%$///数字加- %
 
 // $('#rich_text1').load('../../templates/admin/loanDetails/loanRich1.html');
 // $('#rich_text2').load('../../templates/admin/loanDetails/loanRich2.html');
@@ -148,37 +148,6 @@ $repayment.blur(function () {
     }
 });
 
-// 富文本编辑器
-
-//申请条件输入信息校验
-// $condition.blur(function () {
-//     if ($re2.test($condition.val())) {
-//         $objInfo.html("贷款申请条件格式输入正确").css("color", "green");
-//     } else {
-//         $objInfo.html("贷款申请条件格式输入错误").css("color", "red");
-//         $condition.focus();
-//     }
-// });
-
-// //详细描述输入信息校验
-// $detail.blur(function () {
-//     if ($re2.test($detail.val())) {
-//         $objInfo.html("贷款详细描述格式输入正确").css("color", "green");
-//     } else {
-//         $objInfo.html("贷款详细描述格式输入错误").css("color", "red");
-//         $detail.focus();
-//     }
-// });
-
-// //所需材料输入信息校验
-// $material.blur(function () {
-//     if ($re2.test($material.val())) {
-//         $objInfo.html("贷款所需材料格式输入正确").css("color", "green");
-//     } else {
-//         $objInfo.html("贷款所需材料格式输入错误").css("color", "red");
-//         $material.focus();
-//     }
-// });
 
 $("#edit_btn").click(function () {
     var $num = $("#num");
@@ -235,15 +204,6 @@ $("#edit_btn").click(function () {
     else if (!$re3.test($repayment.val())) {
         alert('贷款还款说明格式输入错误');
     }
-    // else if (!$re2.test($condition.val())) {
-    //     alert('贷款申请条件格式输入错误');
-    // }
-    // else if (!$re2.test($detail.val())) {
-    //     alert('贷款详细描述格式输入错误');
-    // }
-    // else if (!$re2.test($material.val())) {
-    //     alert('贷款所需材料格式输入错误');
-    // }
     else {
         data = {}
         data.num = $("#num").val();//编号
@@ -255,14 +215,16 @@ $("#edit_btn").click(function () {
         data.introduction = $("#introduction").val();//简介
         data.fee = $("#fee").val();//费用说明
         data.repayment = $("#repayment").val();//还款说明
-        
+        data.quota_min = $("#quota_min").val();
+        data.quota_max = $("#quota_max").val();
+        data.time_min = $("#time_min").val();
+        data.time_max = $("#time_max").val();
+        data.rate_min = $("#rate_min").val();
+        data.rate_max = $("#rate_max").val();
+    
         data.detail = CKEDITOR.instances.loanRich1.getData();
         data.condition = CKEDITOR.instances.loanRich2.getData();
         data.material = CKEDITOR.instances.loanRich3.getData();
-
-        // data.detail = $("#detail").val();//详细描述
-        // data.condition = $("#condition").val();//申请条件
-        // data.material = $("#material ").val();//所需材料
 
         $.ajaxSetup({
             data: {
@@ -284,9 +246,9 @@ $("#edit_btn").click(function () {
 
 
 $.getScript("//cdn.ckeditor.com/4.12.1/standard/ckeditor.js", function () {
-    CKEDITOR.instances.loanRich1.setData("{{ credit.detail }}"); 
-    CKEDITOR.instances.loanRich2.setData("{{ credit.condition }}"); 
-    CKEDITOR.instances.loanRich3.setData("{{ credit.material }}"); 
+    // CKEDITOR.instances.loanRich1.setData({{ credit.detail }}); 
+    // CKEDITOR.instances.loanRich2.setData({{ credit.condition }}); 
+    // CKEDITOR.instances.loanRich3.setData({{ credit.material }}); 
     $("#cke_loanRich1_arialbl").html("");
     $("#cke_loanRich1_arialbl").html("详细描述");
     $("#cke_loanRich1_arialbl").css("color", "rgb(75, 130, 233)");

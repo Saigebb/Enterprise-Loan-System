@@ -31,8 +31,7 @@ if (1) {
 else {
     $login_or_personal.append(h2);
 }
-function loginOut(){
-    data.x ="0";
+$("#out_btn").click(function(){
     var txt = "确定退出？";
     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info);
     $('.ok').click(function(){
@@ -41,10 +40,10 @@ function loginOut(){
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("//", data, function (data) {
-          
+        $.post("/logoutPost/", function (data) {
+            if(data=="1")
+            window.location.href="/login/";
         })
-        window.location.reload();
     });
-}
+})
 

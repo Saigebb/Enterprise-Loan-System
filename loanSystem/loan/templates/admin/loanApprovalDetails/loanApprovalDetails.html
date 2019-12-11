@@ -12,15 +12,73 @@
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'loanApprovalDetails/loanApprovalDetails.css' %}" />
 <style>
+    .mainbar img {
+        width: 350px;
+        height: 230px;
+    }
 
+    /* a{
+       display: block;
+       margin-top: -15px;
+       margin-bottom: 20px;
+   } */
 </style>
 
 {% endblock %}
-
 {% block content %}
+<div class="mainbar">
+    <p> <span>统一信用代码：</span>
+        <span>{{ customer.credit_id }}</span></p>
 
+    <div class="imgbar">
+        <div>
+            <p>营业执照</p>
+            <img src={{ basicdata.license}}>
+        </div>
+        <div>
+            <p>税务登记证</p>
+            <img src={{ basicdata.taxregist}}>
+        </div>
+        <div>
+            <!-- 数据库是companyCredit -->
+            <p>公司征信查询授权书</p>
+            <!-- <img src={{ .companyright}}> -->
+            <img src={{ basicdata.companyCredit }}>
+        </div>
 
+    </div>
+    <div class="imgbar">
+        <div>
+            <p>公司缴税完税凭证</p>
+            <img src={{ financedata.companycredit }}>
+        </div>
+        <div>
+            <p>个人征信授权书</p>
+            <img src={{ legaldata.personright}}>
+        </div>
+    </div>
+    <div class="mainbar_a">
+        <h4>审批资料</h4>
+        <p>
+            <span>公司财务报表:</span>
+            <a href={{ financedate.license }}></a>
+        </p>
 
+        <p> <span>资产负债明细表:</span>
+            <a href={{ financedate.assets }}></a></p>
+
+        <p> <span>采购合同:</span>
+            <a href={{ elsedate.loanFor }}></a></p>
+
+        <p> <span>企业类担保人资料:</span>
+            <a href={{ elsedate.guarantor}}></a></p>
+
+        <p> <span>自然人担保人资料:</span>
+            <a href={{ elsedate.natural}}></a></p>
+
+    </div>
+    <button type="button" class="btn btn-info"id="Approved_btn">审批通过</button>
+</div>
 <script type="text/javascript" src="{% static 'loanApprovalDetails/loanApprovalDetails.js' %}"></script>
 <!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
 {% endblock %}

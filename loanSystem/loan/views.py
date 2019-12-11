@@ -265,8 +265,6 @@ def loginPost(request):
             return redirect('loan:home')
 
 # 修改邮箱
-
-
 def personalPost(request):
     request.encoding = 'utf-8'
     msg = {}
@@ -383,8 +381,15 @@ def loanDetailsPost(request):
         credit.else_field = request.POST['fee']
         credit.advance = request.POST['repayment']
         credit.info = request.POST['introduction']
-        credit.advance = request.POST['condition']
-        credit.advance = request.POST['material']
+        credit.condition = request.POST['condition']
+        credit.material = request.POST['material']
+        credit.amountmin = request.POST['quota_min']
+        credit.amountmax =  request.POST['quota_max']
+        credit.monthmin =  request.POST['time_min']
+        credit.monthmax = request.POST['time_max']
+        credit.monthirmin = request.POST['rate_min']
+        credit.monthirmax =  request.POST['rate_max']
+
         if credit.save():
             return HttpResponse(SQL_FALSE, status=200)
         else:
@@ -394,8 +399,10 @@ def loanDetailsPost(request):
 def addloanPost(request):
     request.encoding = 'utf-8'
     if request.POST:
-        add = models.Credit(name=request.POST['name'], way=request.POST['way'],
-                            detail=request.POST['detail'], fee=request.POST['fee'])
+        add = models.Credit(name=request.POST['name'], way=request.POST['way'],detail=request.POST['detail'], else_field=request.POST['fee'],advance = request.POST['repayment'],
+                            info = request.POST['introduction'],condition = request.POST['condition'],material = request.POST['material'],
+                            amountmin = request.POST['quota_min'],amountmax =  request.POST['quota_max'],monthmin =  request.POST['time_min'],
+                            monthmax = request.POST['time_max'],monthirmin = request.POST['rate_min'],monthirmax =  request.POST['rate_max'])
         if add.save():
             return HttpResponse(SQL_FALSE, status=200)
         else:
@@ -425,4 +432,9 @@ def personnelAddPost(request):
             return HttpResponse(SQL_FALSE, status=200)
         else:
             return HttpResponse(SQL_TURE, status=200)
+
+#退出登录
+def logoutPost(request):
+    request.session.flush()
+    return HttpResponse(1, status=200)
 
