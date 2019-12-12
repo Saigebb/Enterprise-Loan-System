@@ -12,16 +12,13 @@
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'loanApprovalDetails/loanApprovalDetails.css' %}" />
 <style>
+     #loanApproval{
+        color:rgb(33, 86, 233);
+    }
     .mainbar img {
         width: 350px;
         height: 230px;
     }
-
-    /* a{
-       display: block;
-       margin-top: -15px;
-       margin-bottom: 20px;
-   } */
 </style>
 
 {% endblock %}
@@ -57,6 +54,7 @@
             <img src={{ legaldata.personright}}>
         </div>
     </div>
+    
     <div class="mainbar_a">
         <h4>审批资料</h4>
         <p>
