@@ -12,9 +12,10 @@
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'loanApprovalDetails/loanApprovalDetails.css' %}" />
 <style>
-     #loanApproval{
-        color:rgb(33, 86, 233);
+    #loanApproval {
+        color: rgb(33, 86, 233);
     }
+
     .mainbar img {
         width: 350px;
         height: 230px;
@@ -55,7 +56,7 @@
             <img src={{ legaldata.personright}}>
         </div>
     </div>
-    
+
     <div class="mainbar_a">
         <h4>审批资料</h4>
         <p>
@@ -76,7 +77,11 @@
             <a href={{ elsedate.natural}}></a></p>
 
     </div>
-    <button type="button" class="btn btn-info"id="Approved_btn">审批通过</button>
+    <div class="btn_bar">
+        <button type="button" class="btn btn-info" id="Approved_btn">审批通过</button>
+        <button type="button" class="btn btn-info" id="Approved_no_btn">审批不通过</button>
+    </div>
+
 </div>
 <script type="text/javascript" src="{% static 'loanApprovalDetails/loanApprovalDetails.js' %}"></script>
 <!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->

@@ -151,6 +151,10 @@ def loanDetails(request):
 def loanDetails2(request):
     return render(request, 'admin/loanDetails2/loanDetails2.html')
 
+def backstageLogin(request):
+    return render(request, 'admin/backstageLogin/backstageLogin.html')
+
+
 
 def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html')
@@ -162,9 +166,9 @@ def loanApprovalDetails(request):
     legal=models.Legaldata.objects.all()
     elsedata=models.Elsedata.objects.all()
     return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
-        'basic':basic,
-        'finance':finance,
-        'legal':legal,
+        'basicdata':basic,
+        'financedata':finance,
+        'legaldata':legal,
         'elsedata':elsedata,
     })
 
@@ -457,15 +461,5 @@ def personnelAddPost(request):
 def logoutPost(request):
     request.session.flush()
     return HttpResponse(1, status=200)
-# 审批页查询
-basic=models.Basicdata.objects.all()
-finance=models.Financedata.objects.all()
-legal=models.Legaldata.objects.all()
-elsedata=models.Elsedata.objects.all()
-    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
-        'basicdata':basic,
-        'financedata':finance,
-        'legaldata':legal,
-        'elsedata':elsedata
-    })
+
 
