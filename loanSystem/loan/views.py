@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from django.utils.timezone import now
 from django.views.decorators import csrf
 from django.shortcuts import redirect  # 重新定向模块
 import re
+
+from loanSystem import settings
 from . import models
 from . import credit
 from django.core.mail import send_mail
@@ -151,10 +154,19 @@ def loanDetails(request):
 def loanDetails2(request):
     return render(request, 'admin/loanDetails2/loanDetails2.html')
 
+def backstageLogin(request):
+    return render(request, 'admin/backstageLogin/backstageLogin.html')
+
+
 
 def loanApproval(request):
-    myloan=models.myloan.objects.all()
+    myloan=models.Myloan.objects.all()
+
     return render(request, 'admin/loanApproval/loanApproval.html',{'myloan':myloan})
+
+def loanApprovalDatas(request):
+    myloan=models.Myloan.objects.all()
+    return HttpResponse(myloan, status=200)
 
 def loanApprovalDetails(request):
     basic=models.Basicdata.objects.filter(companyname=request.GET['id'])
@@ -162,9 +174,9 @@ def loanApprovalDetails(request):
     legal=models.Legaldata.objects.filter(companyname=request.GET['id'])
     elsedata=models.Elsedata.objects.filter(companyname=request.GET['id'])
     return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
-        'basic':basic,
-        'finance':finance,
-        'legal':legal,
+        'basicdata':basic,
+        'financedata':finance,
+        'legaldata':legal,
         'elsedata':elsedata,
     })
 
@@ -370,18 +382,34 @@ def sidebar(request):
 
 
 def page_error(request):
+    timenow = now()
+    timenow.replace(' ',)
+    print(timenow)
     return render(request, 'errorPages/500.html', status=500)
 
 
 def page_not_found(request):
     return render(request, 'errorPages/404.html', status=404)
 
-GET_FILE_TRUE = 1
 GET_FILE_FAIL = 0
+GET_FILE_TRUE = 1
+SAVE_FILE_FAIL = 2
+SAVE_FILE_TRUE = 3
+
 def applyFiles(request):
     request.encoding = 'utf-8'
+    taxRegist = request.FILES['taxRegist']
+    # 将文件重命名为放入用户名的文件夹 文件名为时间+文件键
+    # timestr = str(time.time()).replace('.', '')
+    # customer = models.Customer.objects.filter(email=request.session["user"])
+    # userstr = customer.cname
+    # path = os.path.join(settings.BASE_DIR,'lib\\user\\{0}\\{1}'.format("user",taxRegist))
+    # f = open(path, 'wb+')
+    # for chunk in license.chunks():
+    #     f.write(chunk)
+    # f.close()
     print(request.POST)
-    print(request.FILES)
+    print(request.FILES.get('taxRegist'))
     # datas1 = request.POST.get['companyName']
     # datas2 = request.FILES["license"]
     # print(datas2)
@@ -456,3 +484,5 @@ def personnelAddPost(request):
 def logoutPost(request):
     request.session.flush()
     return HttpResponse(1, status=200)
+
+
