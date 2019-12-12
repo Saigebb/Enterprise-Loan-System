@@ -153,14 +153,14 @@ def loanDetails2(request):
 
 
 def loanApproval(request):
-    return render(request, 'admin/loanApproval/loanApproval.html')
-
+    myloan=models.myloan.objects.all()
+    return render(request, 'admin/loanApproval/loanApproval.html',{'myloan':myloan})
 
 def loanApprovalDetails(request):
-    basic=models.Basicdata.objects.all()
-    finance=models.Financedata.objects.all()
-    legal=models.Legaldata.objects.all()
-    elsedata=models.Elsedata.objects.all()
+    basic=models.Basicdata.objects.filter(cname=request.GET['id'])
+    finance=models.Financedata.objects.filter(cname=request.GET['id'])
+    legal=models.Legaldata.objects.filter(cname=request.GET['id'])
+    elsedata=models.Elsedata.objects..filter(cname=request.GET['id'])
     return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
         'basic':basic,
         'finance':finance,
@@ -457,15 +457,3 @@ def personnelAddPost(request):
 def logoutPost(request):
     request.session.flush()
     return HttpResponse(1, status=200)
-# 审批页查询
-basic=models.Basicdata.objects.all()
-finance=models.Financedata.objects.all()
-legal=models.Legaldata.objects.all()
-elsedata=models.Elsedata.objects.all()
-    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
-        'basicdata':basic,
-        'financedata':finance,
-        'legaldata':legal,
-        'elsedata':elsedata
-    })
-
