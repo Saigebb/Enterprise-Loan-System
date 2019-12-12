@@ -157,10 +157,10 @@ def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html',{'myloan':myloan})
 
 def loanApprovalDetails(request):
-    basic=models.Basicdata.objects.filter(cname=request.GET['id'])
-    finance=models.Financedata.objects.filter(cname=request.GET['id'])
-    legal=models.Legaldata.objects.filter(cname=request.GET['id'])
-    elsedata=models.Elsedata.objects..filter(cname=request.GET['id'])
+    basic=models.Basicdata.objects.filter(companyname=request.GET['id'])
+    finance=models.Financedata.objects.filter(companyname=request.GET['id'])
+    legal=models.Legaldata.objects.filter(companyname=request.GET['id'])
+    elsedata=models.Elsedata.objects.filter(companyname=request.GET['id'])
     return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
         'basic':basic,
         'finance':finance,
