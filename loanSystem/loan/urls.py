@@ -29,6 +29,7 @@ urlpatterns = [
     url('loanDetails/', views.loanDetails, name='loanDetails'),
     url('loanDetails2/', views.loanDetails2, name='loanDetails2'),
     url('loanApproval/', views.loanApproval, name='loanApproval'),
+    url('loanApprovalDatas/',views.loanApprovalDatas),
     url('personnelManage/', views.personnelManage, name='personnelManage'),
     url('personnelEdit/', views.personnelEdit, name='personnelEdit'),
     url('personnelAdd/', views.personnelAdd, name='personnelAdd'),
