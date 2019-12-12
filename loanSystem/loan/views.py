@@ -168,7 +168,6 @@ def loanApprovalDetails(request):
         'elsedata':elsedata,
     })
 
-{}
 def personnelManage(request):
     customer = models.Customer.objects.all()
     return render(request, 'admin/personnelManage/personnelManage.html', {'customer': customer})
