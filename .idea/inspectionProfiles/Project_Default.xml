@@ -7,6 +7,7 @@
           <option value="loanSystem.loanSystem.urls.loan" />
           <option value="loan" />
           <option value="loanSystem.loanSystem.urls.views" />
+          <option value="loanSystem.settings" />
         </list>
       </option>
     </inspection_tool>

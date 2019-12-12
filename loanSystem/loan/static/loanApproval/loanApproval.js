@@ -65,9 +65,6 @@ for(let i in data){
     }
 }
 
-
-
-
 function fillTable(datas){
     console.log(2);
     let content = `

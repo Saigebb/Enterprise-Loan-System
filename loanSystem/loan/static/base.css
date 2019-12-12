@@ -42,20 +42,13 @@ footer{
     font-size: 12px;
 }
 
-<<<<<<< Updated upstream
-@media all and (max-width: 1220px){
-    body{
+@media all and (max-width: 1220px) {
+    body {
         width: 1220px;
     }
-    .container{
+
+    .container {
         width: 1220px;
-=======
-@media all and (max-width: 1200px){
-    body{
-        width: 1200px;
-    }
-    .container{
-        width: 1200px;
->>>>>>> Stashed changes
     }
 }
+
