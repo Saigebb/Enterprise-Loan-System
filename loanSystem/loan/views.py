@@ -448,4 +448,15 @@ def personnelAddPost(request):
 def logoutPost(request):
     request.session.flush()
     return HttpResponse(1, status=200)
+# 审批页查询
+basic=models.Basicdata.objects.all()
+finance=models.Financedata.objects.all()
+legal=models.Legaldata.objects.all()
+elsedata=models.Elsedata.objects.all()
+    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
+        'basicdata':basic,
+        'financedata':finance,
+        'legaldata':legal,
+        'elsedata':elsedata
+    })
 
