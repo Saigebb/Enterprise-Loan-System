@@ -1,14 +1,13 @@
 $("#Approved_btn").click(function(){
-    $.post("//", data, function(data) {
-        if (data == '0') {
+    $.post("/loanPost/", data, function(data) {
+        if (data == '1') {
             alert('审批通过');
+        }
+        else{
+            alert('数据库提交失败');
         }
     })
 })
 $("#Approved_no_btn").click(function(){
-    $.post("//", data, function(data) {
-        if (data == '0') {
-            alert('审批不通过');
-        }
-    })
+    window.location.href="/loanApproval/";
 })

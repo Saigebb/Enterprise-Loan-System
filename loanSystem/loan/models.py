@@ -19,6 +19,15 @@ class Accountant(models.Model):
         db_table = 'accountant'
 
 
+class Admin(models.Model):
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    pwd = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'admin'
+
+
 class Amount(models.Model):
     ano = models.CharField(primary_key=True, max_length=8)
     cno = models.CharField(max_length=8)

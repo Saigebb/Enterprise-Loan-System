@@ -160,24 +160,23 @@ def backstageLogin(request):
 
 
 def loanApproval(request):
-    myloan=models.Myloan.objects.all()
-
-    return render(request, 'admin/loanApproval/loanApproval.html',{'myloan':myloan})
+    return render(request, 'admin/loanApproval/loanApproval.html')
 
 def loanApprovalDatas(request):
     myloan=models.Myloan.objects.all()
     return HttpResponse(myloan, status=200)
 
 def loanApprovalDetails(request):
-    basic=models.Basicdata.objects.filter(companyname=request.GET['id'])
-    finance=models.Financedata.objects.filter(companyname=request.GET['id'])
-    legal=models.Legaldata.objects.filter(companyname=request.GET['id'])
-    elsedata=models.Elsedata.objects.filter(companyname=request.GET['id'])
+    request.encoding = 'utf-8'
+    basic= models.Basicdata.objects.filter(id=request.GET['id'])
+    finance= models.Financedata.objects.filter(id=request.GET['id'])
+    legal= models.Legaldata.objects.filter(id=request.GET['id'])
+    elsedata= models.Elsedata.objects.filter(id=request.GET['id'])
     return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
-        'basicdata':basic,
-        'financedata':finance,
-        'legaldata':legal,
-        'elsedata':elsedata,
+        'basicdata':basic[0],
+        'financedata':finance[0],
+        'legaldata':legal[0],
+        'elsedata':elsedata[0],
     })
 
 def personnelManage(request):
@@ -485,4 +484,19 @@ def logoutPost(request):
     request.session.flush()
     return HttpResponse(1, status=200)
 
+#管理员登录
+def backPost(request):
+    if not models.Admin.objects.filter(phone=request.POST['phone'],pwd=request.POST["pwd"]):
+        return HttpResponse(0, status=200)
+    else:
+        return HttpResponse(1, status=200)
+
+#贷款审批页提交
+def loanPost(request):
+    myloan=models.Myloan.objects.get(id=request.GET['id'])
+    myLoan.status=2
+    if myLoan.save():
+        return HttpResponse(SQL_FALSE, status=200)
+    else:
+        return HttpResponse(SQL_TURE, status=200)
 

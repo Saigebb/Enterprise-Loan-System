@@ -1,39 +1,39 @@
 //state = 0,1,2,3,4,5分别对应提交申请,正在审核,申请成功,拨放贷款,待还贷款,还清贷款;
 let data = [
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'1', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'0'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'2', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'0'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'3', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'0'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'1', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'1'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'1', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'2'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'1', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'3'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'1', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'4'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'1', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'5'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'2', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'5'
     },
 ];
@@ -73,7 +73,7 @@ function fillTable(datas){
     let content = `
         <tr>
             <td>${datas.id}</td>
-            <td><a href="/loanDetails/?id=${datas.id}">${datas.product}</a></td>
+            <td><a href="/loanApprovalDetails/?id=${datas.id}">${datas.product}</a></td>
             <td>${datas.money}</td>
             <td>${datas.company}</td>
             <td>${datas.month}个月</td>
@@ -97,7 +97,7 @@ function fillTable1(datas){
     let content = `
         <tr>
             <td>${datas.id}</td>
-            <td><a href="/loanDetails/?id=${datas.id}">${datas.product}</a></td>
+            <td><a href="/loanApprovalDetails/?id=${datas.id}">${datas.product}</a></td>
             <td>${datas.money}</td>
             <td>${datas.company}</td>
             <td>${datas.month}个月</td>
