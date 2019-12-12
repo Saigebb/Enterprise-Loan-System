@@ -156,8 +156,13 @@ def loanDetails2(request):
 
 
 def loanApproval(request):
-    myloan=models.myloan.objects.all()
+    myloan=models.Myloan.objects.all()
+
     return render(request, 'admin/loanApproval/loanApproval.html',{'myloan':myloan})
+
+def loanApprovalDatas(request):
+    myloan=models.Myloan.objects.all()
+    return HttpResponse(myloan, status=200)
 
 def loanApprovalDetails(request):
     basic=models.Basicdata.objects.filter(companyname=request.GET['id'])

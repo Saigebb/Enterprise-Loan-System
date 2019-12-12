@@ -1,4 +1,4 @@
-//state = 0,1,2,3,4,5分别对应提交申请,正在审核,申请成功,拨放贷款,待还贷款,还清贷款;
+// state = 0,1,2,3,4,5分别对应提交申请,正在审核,申请成功,拨放贷款,待还贷款,还清贷款;
 let data = [
     {
         'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
@@ -9,11 +9,15 @@ let data = [
         'state':'0'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'061', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'0'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'014', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'state':'1'
+    },
+    {
+        'id':'008', 'product': '易企贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'1'
     },
     {
@@ -25,30 +29,43 @@ let data = [
         'state':'3'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'002', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'4'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'003', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'5'
     },
     {
-        'id':'001', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
+        'id':'004', 'product': '阳光贷', 'money': '100', 'company':'XX食品有限公司', 'month':'24',
         'state':'5'
     },
 ];
+
+// $.ajax({
+//     type:'GET',
+//     url:"/loanApprovalDatas/",
+//
+//     success: function (res) {
+//         data = res["loan"];
+//         console.log(data)
+//     },
+//     error:function(){
+//
+//     }
+// });
+
 let state = ["提交申请","正在审核","申请成功","拨放贷款","待还贷款","还清贷款"];
-console.log(data);
 
 for(let i in data){
-    console.log(1);
+    // console.log(1);
     switch (data[i].state) {
         case '0':
             fillTable1(data[i]);
             break;
         case '1':
             fillTable(data[i]);
-                break;
+            break;
         case '2':
             fillTable(data[i]);
             break;
