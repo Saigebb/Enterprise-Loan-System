@@ -102,7 +102,7 @@ class Basicdata(models.Model):
     code = models.CharField(max_length=20, blank=True, null=True)
     license = models.CharField(max_length=50, blank=True, null=True)
     taxregist = models.CharField(db_column='taxRegist', max_length=50, blank=True, null=True)  # Field name made lowercase.
-    companycredit = models.CharField(db_column='companyCredit', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    companyright = models.CharField(db_column='companyRight', max_length=50, blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
@@ -156,7 +156,6 @@ class Customer(models.Model):
     ino = models.CharField(max_length=8, blank=True, null=True)
     cono = models.CharField(max_length=8, blank=True, null=True)
     eap = models.CharField(max_length=8, blank=True, null=True)
-    loanmoney = models.CharField(max_length=20, blank=True, null=True)
     email = models.CharField(max_length=40)
     phone = models.CharField(max_length=40, blank=True, null=True)
     company = models.CharField(max_length=100, blank=True, null=True)
@@ -309,3 +308,14 @@ class Mortgage(models.Model):
     class Meta:
         managed = False
         db_table = 'mortgage'
+
+
+class Myloan(models.Model):
+    credit = models.IntegerField(blank=True, null=True)
+    user = models.IntegerField(blank=True, null=True)
+    month = models.IntegerField(blank=True, null=True)
+    money = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'myloan'

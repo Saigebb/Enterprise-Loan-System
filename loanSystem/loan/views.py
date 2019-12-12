@@ -157,9 +157,18 @@ def loanApproval(request):
 
 
 def loanApprovalDetails(request):
-    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html')
+    basic=models.Basicdata.objects.all()
+    finance=models.Financedata.objects.all()
+    legal=models.Legaldata.objects.all()
+    elsedata=models.Elsedata.objects.all()
+    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html',{
+        'basic':basic,
+        'finance':finance,
+        'legal':legal,
+        'elsedata':elsedata,
+    })
 
-
+{}
 def personnelManage(request):
     customer = models.Customer.objects.all()
     return render(request, 'admin/personnelManage/personnelManage.html', {'customer': customer})
