@@ -102,12 +102,12 @@ class Basicdata(models.Model):
     code = models.CharField(max_length=20, blank=True, null=True)
     license = models.CharField(max_length=50, blank=True, null=True)
     taxregist = models.CharField(db_column='taxRegist', max_length=50, blank=True, null=True)  # Field name made lowercase.
-    companycredit = models.CharField(db_column='companyCredit', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    companyright = models.CharField(db_column='companyRight', max_length=50, blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'basicData'
+        db_table = 'basicdata'
 
 
 class Credit(models.Model):
@@ -156,7 +156,6 @@ class Customer(models.Model):
     ino = models.CharField(max_length=8, blank=True, null=True)
     cono = models.CharField(max_length=8, blank=True, null=True)
     eap = models.CharField(max_length=8, blank=True, null=True)
-    loanmoney = models.CharField(max_length=20, blank=True, null=True)
     email = models.CharField(max_length=40)
     phone = models.CharField(max_length=40, blank=True, null=True)
     company = models.CharField(max_length=100, blank=True, null=True)
@@ -237,10 +236,11 @@ class Elsedata(models.Model):
     loanfor = models.CharField(db_column='loanFor', max_length=50, blank=True, null=True)  # Field name made lowercase.
     guarantor = models.CharField(max_length=50, blank=True, null=True)
     natural = models.CharField(max_length=50, blank=True, null=True)
+    companyname = models.CharField(db_column='companyName', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'elseData'
+        db_table = 'elsedata'
 
 
 class Financedata(models.Model):
@@ -248,10 +248,11 @@ class Financedata(models.Model):
     assests = models.CharField(max_length=50, blank=True, null=True)
     companycredit = models.CharField(db_column='companyCredit', max_length=50, blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True, null=True)
+    companyname = models.CharField(db_column='companyName', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'financeData'
+        db_table = 'financedata'
 
 
 class Interest(models.Model):
@@ -270,10 +271,11 @@ class Legaldata(models.Model):
     personright = models.CharField(db_column='personRight', max_length=50, blank=True, null=True)  # Field name made lowercase.
     personfile = models.CharField(db_column='personFile', max_length=50, blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True, null=True)
+    companyname = models.CharField(db_column='companyName', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'legalData'
+        db_table = 'legaldata'
 
 
 class Loan(models.Model):
@@ -309,3 +311,15 @@ class Mortgage(models.Model):
     class Meta:
         managed = False
         db_table = 'mortgage'
+
+
+class Myloan(models.Model):
+    credit = models.CharField(max_length=10, blank=True, null=True)
+    company = models.CharField(max_length=50, blank=True, null=True)
+    month = models.IntegerField(blank=True, null=True)
+    money = models.IntegerField(blank=True, null=True)
+    status = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'myloan'

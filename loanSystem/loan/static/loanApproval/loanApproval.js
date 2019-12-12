@@ -44,7 +44,7 @@ for(let i in data){
     console.log(1);
     switch (data[i].state) {
         case '0':
-            fillTable(data[i]);
+            fillTable1(data[i]);
             break;
         case '1':
             fillTable(data[i]);
@@ -77,7 +77,31 @@ function fillTable(datas){
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                        提交申请
+                        ${state[datas.state-1]}
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#" style="text-align:center;font-size:16px">${state[datas.state]}</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    `;
+    let appendclass = `.state${datas.state}`;
+    $(appendclass).append(content);
+}
+function fillTable1(datas){
+    console.log(2);
+    let content = `
+        <tr>
+            <td>${datas.id}</td>
+            <td><a href="/loanDetails/?id=${datas.id}">${datas.product}</a></td>
+            <td>${datas.money}</td>
+            <td>${datas.company}</td>
+            <td>${datas.month}个月</td>
+            <td>
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                       提交申请
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#" style="text-align:center;font-size:16px">${state[datas.state]}</a>
