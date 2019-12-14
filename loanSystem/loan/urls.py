@@ -26,6 +26,8 @@ urlpatterns = [
     url('logoutPost/', views.logoutPost, name='logoutPost'),
     # 后台
     url('loanManage/', views.loanManage, name='loanManage'),
+    url('loanPost/', views.loanPost, name='loanPost'),
+    url('backPost/', views.backPost, name='backPost'),
     url('loanDetails/', views.loanDetails, name='loanDetails'),
     url('loanDetails2/', views.loanDetails2, name='loanDetails2'),
     url('loanApproval/', views.loanApproval, name='loanApproval'),
@@ -38,6 +40,7 @@ urlpatterns = [
     url('addloanPost/', views.addloanPost, name='addloanPost'),
     url('personnelEditPost/', views.personnelEditPost, name='personnelEditPost'),
     url('personnelAddPost/', views.personnelAddPost, name='personnelAddPost'),
+    url('backstageLogin/', views.backstageLogin, name='backstageLogin'),
     #url('', views.home, name='home'),
     url('sidebar/', views.sidebar, name='sidebar'),
     url('applyFirst/', views.applyFirst, name='applyFirst'),
