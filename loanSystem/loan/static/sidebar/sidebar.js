@@ -40,3 +40,22 @@ $(function() {
     $(window).ready(setsidebartype);
     $(window).on("resize", setsidebartype);
 });
+
+//退出登录
+
+$("#out_btn").click(function(){
+    var txt = "确定退出？";
+    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info);
+    $('.ok').click(function(){
+        $.ajaxSetup({
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+        });
+        $.post("/backLogoutPost/", function (data) {
+            if(data=="1")
+            window.location.href="/backStageLogin/";
+        })
+    });
+})
+

@@ -50,7 +50,8 @@
           <th>邮箱</th>
           <th>企业名称</th>
           <th>法定代表人姓名</th>
-          <th>法定代表人身份证号码</th>
+          <!-- <th>法定代表人身份证号码</th> -->
+          <th>操作</th>
         </tr>
       </thead>
       <div id="loanManage_tbody">
@@ -59,12 +60,20 @@
           {% autopaginate customer 10 %}
           {% for x in customer %}
           <tr>
-            <td id="loan_username"><a href="/personnelEdit/?id={{ x.cname }}">{{ x.cname }}</a></td>
+            <!-- <td id="loan_username"><a href="/personnelEdit/?id={{ x.cname }}">{{ x.cname }}</a></td> -->
+            <td id="loan_username">{{ x.cname }}</td>
             <td id="loan_card">{{ x.idcard }}</td>
             <td id="loan_email">{{ x.email }}</td>
             <td id="loan_enterpriseName">{{ x.company }}</td>
             <td id="loan_legalUsername">{{ x.legal_name }}</td>
-            <td id="loan_legalCard">{{ x.legal_id }}</td>
+            <!-- <td id="loan_legalCard">{{ x.legal_id }}</td> -->
+            <td id="loan_legalUsername">
+              <div style="display: flex;flex-direction: row;text-align: center;padding-left: 50px;">
+                <a href="/personnelEdit/?id={{ x.cname }}"><i class="iconfont" style="font-size:17px; ">&#xe614;</i></a>
+                <a href="javascript:void(0);" id="del_btn" onclick="Delete(`{{x.cname}}`)"><i class="iconfont" style="font-size:20px; ">&#xe684;</i></a>
+                <!-- <i class="iconfont" style="font-size:20px; ">&#xe684;</i> -->
+              </div>
+            </td>
           </tr>
           {% endfor%}
         </tbody>

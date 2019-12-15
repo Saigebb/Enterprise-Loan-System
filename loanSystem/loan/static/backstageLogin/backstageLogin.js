@@ -27,12 +27,20 @@ $password.blur(function () {
     }
 });
 
-$("#login_btn").click(function() {
+$("#login_btn").click(function () {
     if (!$re1.test($username.val())) {
-        alert('手机号码格式错误');
+        let txt = "手机号码格式错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
     }
     else if (!$re2.test($password.val())) {
-        alert('密码格式错误');
+        let txt = "密码格式错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
     } else {
         data = {}
         data.phone = $("#username").val();
@@ -42,12 +50,16 @@ $("#login_btn").click(function() {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("/backPost/", data, function(data) {
+        $.post("/backPost/", data, function (data) {
             if (data == '0') {
-                alert("用户名或密码错误");
+                let txt = "用户名或密码错误";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.reload();
+                });
             }
-            else{
-                window.location.href="/loanManage/";
+            else {
+                window.location.href = "/loanManage/";
             }
         })
     }
