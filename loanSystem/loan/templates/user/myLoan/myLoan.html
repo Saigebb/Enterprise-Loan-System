@@ -31,55 +31,61 @@
     <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/personal"> 个人中心</a>
 </div>
 <hr>
-
-    <div class="container" style="display: flex">
-        <!-- 侧边栏 -->
-        <aside class="main-sidebar">
-            <section class="sidebar">
-                <ul class="sidebar-menu">
-                    <li class="header" style="font-size:17px">我的金融助手</li>
-                    <li><a href="/myLoan/" style="color: #007bff; font-weight: bolder"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
-                    <li class="header" style="font-size:17px">公司资料管理</li>
-                    <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
-                    <li class="header" style="font-size:17px">基本设置</li>
-                    <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
-                </ul>
-            </section>
-        </aside>
-        <!-- 表格 -->
-        {% for x in customer %}
-            <div class="mainbar">
-                <table class="table table-bordered">
-                    <p><strong>贷款编号：</strong>{{x.lno}}</p>
-                    <thead>
-                    <tr>
-                        <td>
-                            <p>金额/万</p>
-                            <h6 id="money">{{x.loanmoney}}</h6>
-                        </td>
-                        <td>
-                            <p>利率</p>
-                            <h6 id="interest_rate">{{x.}}-{{x.}}</h6>
-                        </td>
-                        <td>
-                            <p>申请时间</p>
-                            <h6 id="time">{{x.}}</h6>
-                        </td>
-                        <td>
-                            <p>贷款期限</p>
-                            <h6 id="the_term">{{x.}}-{{x.}}</h6>
-                        </td>
-                        <td>
-                            <p>贷款进度</p>
-                            <h6 class="loan_status" id="progress">{{x.}}</h6>
-                        </td>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
-        {% endfor%}
-
-    </div>
+<!-- 侧边栏 -->
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu">
+            <li class="header" style="font-size:17px">我的金融助手</li>
+            <li><a href="/myLoan/"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+            <li class="header" style="font-size:17px">公司资料管理</li>
+            <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+            <li class="header" style="font-size:17px">基本设置</li>
+            <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+        </ul>
+    </section>
+</aside>
+<!-- 表格 -->
+{% for x in myloan %}
+<div class="mainbar">
+    <table class="table table-bordered">
+        <p><strong>贷款编号：</strong>{{x.id}}</p>
+        <thead>
+            <tr>
+                <td>
+                    <p>金额/万</p>
+                    <h6 id="money">{{x.money}}</h6>
+                </td>
+                <td>
+                    <p>申请月份</p>
+                    <h6 id="time">{{x.month}}</h6>
+                </td>
+                <td>
+                    <p>贷款进度</p>
+                    {% if  x.status == 0 %}
+                    <h6 id="the_term">提交申请</h6>
+                    {% endif %}
+                    {% if  x.status == 1 %}
+                    <h6 id="the_term">正在审核</h6>
+                    {% endif %}
+                    {% if  x.status == 2 %}
+                    <h6 id="the_term">申请成功</h6>
+                    {% endif %}
+                    {% if  x.status == 3 %}
+                    <h6 id="the_term">拨放贷款</h6>
+                    {% endif %}
+                    {% if  x.status == 4 %}
+                    <h6 id="the_term">待还贷款</h6>
+                    {% endif %}
+                    {% if  x.status == 5 %}
+                    <h6 id="the_term">还清贷款</h6>
+                    {% endif %}
+                </td>
+              
+            </tr>
+        </thead>
+    </table>
+</div>
+{% endfor %}
 
 <!-- <img src="{% static 'image/lb1.jpg' %}" > -->
 <script type="text/javascript" src="{% static 'myLoan/myLoan.js' %}"></script>

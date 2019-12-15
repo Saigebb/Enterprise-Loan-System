@@ -1,5 +1,5 @@
 $("#Approved_btn").click(function(){
-    $.post("/loanPost/", data, function(data) {
+    $.post("/loanPost/", function(data) {
         if (data == '1') {
             let txt = "审批通过";
             window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
