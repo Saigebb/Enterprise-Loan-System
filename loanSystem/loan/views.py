@@ -123,7 +123,7 @@ def myLoan(request):
     else:
         msg["login"] = 1
         myloan=models.Myloan.objects.all()
-        return render(request, 'user/myLoan/myLoan.html',{'myloan':myloan})
+        return render(request, 'user/myLoan/myLoan.html',{'myloan':myloan,'msg':msg})
 
 
 def personal(request):
@@ -393,26 +393,9 @@ def page_not_found(request):
 
 GET_FILE_FAIL = 0
 GET_FILE_TRUE = 1
-SAVE_FILE_FAIL = 2
-SAVE_FILE_TRUE = 3
 
 def applyFiles(request):
     request.encoding = 'utf-8'
-    taxRegist = request.FILES['taxRegist']
-    # 将文件重命名为放入用户名的文件夹 文件名为时间+文件键
-    # timestr = str(time.time()).replace('.', '')
-    # customer = models.Customer.objects.filter(email=request.session["user"])
-    # userstr = customer.cname
-    # path = os.path.join(settings.BASE_DIR,'lib\\user\\{0}\\{1}'.format("user",taxRegist))
-    # f = open(path, 'wb+')
-    # for chunk in license.chunks():
-    #     f.write(chunk)
-    # f.close()
-    print(request.POST)
-    print(request.FILES.get('taxRegist'))
-    # datas1 = request.POST.get['companyName']
-    # datas2 = request.FILES["license"]
-    # print(datas2)
     return HttpResponse(GET_FILE_TRUE)
 
 
