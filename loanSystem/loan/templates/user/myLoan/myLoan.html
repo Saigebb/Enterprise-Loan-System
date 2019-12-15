@@ -31,51 +31,55 @@
     <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/personal"> 个人中心</a>
 </div>
 <hr>
-<!-- 侧边栏 -->
-<aside class="main-sidebar">
-    <section class="sidebar">
-        <ul class="sidebar-menu">
-            <li class="header" style="font-size:17px">我的金融助手</li>
-            <li><a href="/myLoan/"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
-            <li class="header" style="font-size:17px">公司资料管理</li>
-            <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
-            <li class="header" style="font-size:17px">基本设置</li>
-            <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
-        </ul>
-    </section>
-</aside>
-<!-- 表格 -->
-{% for x in customer %}
-<div class="mainbar">
-    <table class="table table-bordered">
-        <p><strong>贷款编号：</strong>{{x.lno}}</p>
-        <thead>
-            <tr>
-                <td>
-                    <p>金额/万</p>
-                    <h6 id="money">{{x.loanmoney}}</h6>
-                </td>
-                <td>
-                    <p>利率</p>
-                    <h6 id="interest_rate">{{x.}}-{{x.}}</h6>
-                </td>
-                <td>
-                    <p>申请时间</p>
-                    <h6 id="time">{{x.}}</h6>
-                </td>
-                <td>
-                    <p>贷款期限</p>
-                    <h6 id="the_term">{{x.}}-{{x.}}</h6>
-                </td>
-                <td>
-                    <p>贷款进度</p>
-                    <h6 class="loan_status" id="progress">{{x.}}</h6>
-                </td>
-            </tr>
-        </thead>
-    </table>
-</div>
-{% endfor%}
+
+    <div class="container" style="display: flex">
+        <!-- 侧边栏 -->
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header" style="font-size:17px">我的金融助手</li>
+                    <li><a href="/myLoan/" style="color: #007bff; font-weight: bolder"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+                    <li class="header" style="font-size:17px">公司资料管理</li>
+                    <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+                    <li class="header" style="font-size:17px">基本设置</li>
+                    <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+                </ul>
+            </section>
+        </aside>
+        <!-- 表格 -->
+        {% for x in customer %}
+            <div class="mainbar">
+                <table class="table table-bordered">
+                    <p><strong>贷款编号：</strong>{{x.lno}}</p>
+                    <thead>
+                    <tr>
+                        <td>
+                            <p>金额/万</p>
+                            <h6 id="money">{{x.loanmoney}}</h6>
+                        </td>
+                        <td>
+                            <p>利率</p>
+                            <h6 id="interest_rate">{{x.}}-{{x.}}</h6>
+                        </td>
+                        <td>
+                            <p>申请时间</p>
+                            <h6 id="time">{{x.}}</h6>
+                        </td>
+                        <td>
+                            <p>贷款期限</p>
+                            <h6 id="the_term">{{x.}}-{{x.}}</h6>
+                        </td>
+                        <td>
+                            <p>贷款进度</p>
+                            <h6 class="loan_status" id="progress">{{x.}}</h6>
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        {% endfor%}
+
+    </div>
 
 <!-- <img src="{% static 'image/lb1.jpg' %}" > -->
 <script type="text/javascript" src="{% static 'myLoan/myLoan.js' %}"></script>
