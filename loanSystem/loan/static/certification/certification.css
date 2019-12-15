@@ -1,3 +1,7 @@
+#myloan{
+    color:#007bff;
+    font-weight: bolder;
+}
 .form-group{
     display: flex;
     flex-direction: row;

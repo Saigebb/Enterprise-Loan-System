@@ -280,9 +280,9 @@ $("#submit").click(function () {
                 if (res == '1') {
                     let txt = "提交成功";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
-                    // $('.ok').click(function(){
-                    //     window.location.reload();
-                    // });
+                    $('.ok').click(function(){
+                        window.location.href="/myLoan/";
+                    });
                 }
                 else {
                     let txt = "提交失败";

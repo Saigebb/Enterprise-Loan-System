@@ -1,27 +1,24 @@
+.breadnav{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    padding-top: 20px;
+}
 .login_img{
     width: 100%;
     opacity:0.7;
 }
+
 .login_bar{
     background-color: white;
     width: 420px;
-    /* margin-top: 30px; */
-    /* margin-left: 300px; */
-    /* text-align: center; */
-    /* float:center; */
-    float: left;
-    margin-left:550px;
-    margin-top: 50px;
     box-shadow: 0px 0px 2px 2px rgb(94, 128, 240);
-    
-
 }
 
 .login_bar_top{
     /* margin-top: 30px; */
     height: 40px;
     padding-left: 20px;
-     padding-top: 10px;
+    padding-top: 10px;
     padding-bottom: 10px; 
     background-color: #0b76d3;
     color: white;
@@ -43,6 +40,7 @@
     background-repeat:no-repeat;
     background-size:cover;
     opacity:0.7;
+    padding-top: 60px;
 }
 
 .email_btn{

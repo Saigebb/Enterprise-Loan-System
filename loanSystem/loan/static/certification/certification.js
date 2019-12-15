@@ -119,23 +119,14 @@ $(".btn_submit").click(function() {
     var $Bank_phone = $("#Bank_phone");
     var $btn_submit = $("#btn_submit");
     var $objInfo = $("#info");
-    if (!$re1.test($Company_Name.val())) {
-        alert('企业名称格式输入错误');
-    }
-    else if (!$re2.test($Credit_code.val())) {
-        alert('社会信用代码格式输入错误');
-    }
-    else if (!$re3.test($Legal_representative_name.val())) {
-        alert('法人代表姓名格式输入错误');
-    }
-    else if (!$re4.test($Legal_representative_id.val())) {
-        alert('法人代表身份证格式输入错误');
-    }
-    else if (!$re5.test($Legal_representative_card.val())) {
-        alert('银行卡格式输入错误');
-    }
-    else if (!$re6.test($Bank_phone.val())) {
-        alert('手机号码格式输入错误');
+    if (!$re1.test($Company_Name.val())||!$re2.test($Credit_code.val())||
+    !$re3.test($Legal_representative_name.val())||!$re4.test($Legal_representative_id.val())||
+    !$re5.test($Legal_representative_card.val())||!$re6.test($Bank_phone.val())) {
+        let txt = "认证信息输入失败";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
     }
 
     else {

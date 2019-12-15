@@ -79,7 +79,7 @@ for(let i in data){
     // console.log(1);
     switch (data[i].state) {
         case '0':
-            fillTable1(data[i]);
+            fillTable(data[i]);
             break;
         case '1':
             fillTable(data[i]);
@@ -94,15 +94,15 @@ for(let i in data){
             fillTable(data[i]);
             break;
         case '5':
-            fillTable(data[i]);
+            fillTableEnd(data[i]);
             break;
 
     }
 }
 
 function fillTable(datas){
-    // console.log(2);
-    console.log(datas.state);
+    intState = parseInt(datas.state);
+
     let content = `
         <tr id="${datas.id}">
             <td>${datas.id}</td>
@@ -113,10 +113,10 @@ function fillTable(datas){
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                        ${state[datas.state-1]}
+                        ${state[datas.state]}
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" onclick="pass(${datas.id})" style="text-align:center;font-size:16px">${state[datas.state]}</a>
+                        <a class="dropdown-item" onclick="pass(${datas.id})" style="text-align:center;font-size:16px">${state[intState+1]}</a>
                     </div>
                 </div>
             </td>
@@ -127,8 +127,7 @@ function fillTable(datas){
 }
 
 
-function fillTable1(datas){
-    // console.log(2);
+function fillTableEnd(datas){
     let content = `
         <tr id="${datas.id}">
             <td>${datas.id}</td>
@@ -139,7 +138,7 @@ function fillTable1(datas){
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                       提交申请
+                       还清贷款
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" onclick="pass(${datas.id})" href="#" style="text-align:center;font-size:16px">${state[datas.state]}</a>
@@ -148,7 +147,7 @@ function fillTable1(datas){
             </td>
         </tr>
     `;
-    let appendclass = `.state0`;
+    let appendclass = `.state5`;
     $(appendclass).append(content);
 }
 //审批按钮
