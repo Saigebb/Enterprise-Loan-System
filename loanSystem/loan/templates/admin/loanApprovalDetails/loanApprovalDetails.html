@@ -17,7 +17,7 @@
     }
 
     .mainbar img {
-        width: 350px;
+        width: 90%;
         height: 230px;
     }
 </style>
@@ -27,7 +27,7 @@
 {% block content %}
 <div class="mainbar">
     <p> <span>统一信用代码：</span>
-        <span>{{ customer.code }}</span></p>
+        <span>{{ basicdata.code }}</span></p>
 
     <div class="imgbar">
         <div>
@@ -79,7 +79,7 @@
     </div>
     <div class="btn_bar">
         <button type="button" class="btn btn-info" id="Approved_btn">审批通过</button>
-        <button type="button" class="btn btn-info" id="Approved_no_btn">审批不通过</button>
+        <button type="button" class="btn btn-light" background-color="gray" id="Approved_no_btn">审批不通过</button>
     </div>
 
 </div>

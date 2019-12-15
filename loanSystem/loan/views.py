@@ -122,7 +122,8 @@ def myLoan(request):
         return redirect('loan:login')
     else:
         msg["login"] = 1
-        return render(request, 'user/myLoan/myLoan.html')
+        myloan=models.Myloan.objects.all()
+        return render(request, 'user/myLoan/myLoan.html',{'myloan':myloan})
 
 
 def personal(request):
@@ -454,6 +455,15 @@ def addloanPost(request):
         else:
             return HttpResponse(SQL_TURE, status=200)
 
+#贷款审批页提交
+def loanPost(request):
+    myloan=models.Myloan.objects.get(id=1)
+    myloan.status=2
+    if myloan.save():
+        return HttpResponse(SQL_FALSE, status=200)
+    else:
+        return HttpResponse(SQL_TURE, status=200)
+
 # 人员详情编辑
 def personnelEditPost(request):
     if request.POST:
@@ -491,12 +501,4 @@ def backPost(request):
     else:
         return HttpResponse(1, status=200)
 
-#贷款审批页提交
-def loanPost(request):
-    myloan=models.Myloan.objects.get(id=request.GET['id'])
-    myLoan.status=2
-    if myLoan.save():
-        return HttpResponse(SQL_FALSE, status=200)
-    else:
-        return HttpResponse(SQL_TURE, status=200)
 

@@ -1,7 +1,9 @@
 $("#Approved_btn").click(function(){
-    $.post("/loanPost/", data, function(data) {
+    $.post("/loanPost/", function(data) {
         if (data == '1') {
             alert('审批通过');
+            window.location.href="/loanManage/";
+            
         }
         else{
             alert('数据库提交失败');
