@@ -484,4 +484,12 @@ def backPost(request):
     else:
         return HttpResponse(1, status=200)
 
-
+#信用评级
+def credit(request):
+    msg = {}
+    if not request.session.get("user"):
+        msg["login"] = 0
+        return redirect('loan:login')
+    else:
+        msg["login"] = 1
+        return render(request, 'user/personal/credit.html', msg)
