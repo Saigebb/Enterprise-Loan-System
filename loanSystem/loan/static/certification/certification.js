@@ -1,9 +1,9 @@
-var $re1=/^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$/;
-var $re2=/^[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}$/g;
-var $re3=/^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
-var $re4= /^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$/;
-var $re5=/^([1-9]{1})(\d{15}|\d{18})$/;
-var $re6=/^1[3456789]\d{9}$/;
+var $re1 = /^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$/;
+var $re2 = /^[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}$/g;
+var $re3 = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
+var $re4 = /^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$/;
+var $re5 = /^([1-9]{1})(\d{15}|\d{18})$/;
+var $re6 = /^1[3456789]\d{9}$/;
 var $Company_Name = $("#Company_Name");
 var $Credit_code = $("#Credit_code");
 var $Legal_representative_name = $("#Legal_representative_name");
@@ -11,7 +11,7 @@ var $Legal_representative_id = $("#Legal_representative_id");
 var $Legal_representative_card = $("#Legal_representative_card");
 var $Bank_phone = $("#Bank_phone");
 var $btn_submit = $("#btn_submit");
-var $objInfo = $("#info");  
+var $objInfo = $("#info");
 
 //企业名称输入信息校验
 $Company_Name.blur(function () {
@@ -86,13 +86,13 @@ $Bank_phone.blur(function () {
     }
 });
 
-$(".btn_submit").click(function() {
-    var $re1=/^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$/;
-    var $re2=/^[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}$/g;
-    var $re3=/^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
-    var $re4= /^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$/;
-    var $re5=/^([1-9]{1})(\d{15}|\d{18})$/;
-    var $re6=/^1[3456789]\d{9}$/;
+$(".btn_submit").click(function () {
+    var $re1 = /^[\u4e00-\u9fa5]{1,}((·[\u4e00-\u9fa5]{1,}){0,3})$/;
+    var $re2 = /^[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}$/g;
+    var $re3 = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
+    var $re4 = /^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|1|2])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$/;
+    var $re5 = /^([1-9]{1})(\d{15}|\d{18})$/;
+    var $re6 = /^1[3456789]\d{9}$/;
     var $Company_Name = $("#Company_Name");
     var $Credit_code = $("#Credit_code");
     var $Legal_representative_name = $("#Legal_representative_name");
@@ -100,7 +100,7 @@ $(".btn_submit").click(function() {
     var $Legal_representative_card = $("#Legal_representative_card");
     var $Bank_phone = $("#Bank_phone");
     var $btn_submit = $("#btn_submit");
-    var $objInfo = $("#info");  
+    var $objInfo = $("#info");
     data = {};
     data.Company_Name = $("#Company_Name").val();
     data.Credit_code = $("#Credit_code").val();
@@ -119,9 +119,9 @@ $(".btn_submit").click(function() {
     var $Bank_phone = $("#Bank_phone");
     var $btn_submit = $("#btn_submit");
     var $objInfo = $("#info");
-    if (!$re1.test($Company_Name.val())||!$re2.test($Credit_code.val())||
-    !$re3.test($Legal_representative_name.val())||!$re4.test($Legal_representative_id.val())||
-    !$re5.test($Legal_representative_card.val())||!$re6.test($Bank_phone.val())) {
+    if (!$re1.test($Company_Name.val()) || !$re2.test($Credit_code.val()) ||
+        !$re3.test($Legal_representative_name.val()) || !$re4.test($Legal_representative_id.val()) ||
+        !$re5.test($Legal_representative_card.val()) || !$re6.test($Bank_phone.val())) {
         let txt = "认证信息输入失败";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
         $('.ok').click(function () {
@@ -143,37 +143,22 @@ $(".btn_submit").click(function() {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("/sendCertification/", data, function(data) {
-            if (data == '0') {
-                alert('企业名称格式输入错误');
-                window.location.href ="/certification/";      
+        $.post("/sendCertification/", data, function (data) {
+            if (data == '7') {
+                let txt = "信息输入正确";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                $('.ok').click(function () {
+                    // window.location.reload();
+                    window.location.href = "/loans/";
+                });
             }
-            else if (data == '1') {
-                alert('社会信用代码格式输入错误');
-                window.location.href ="/certification/";      
-            }
-            else if (data == '2') {
-                alert('法人代表姓名格式输入错误');
-                window.location.href ="/certification/";      
-            }
-            else if (data == '3') {
-                alert('法人代表身份证格式输入错误');
-                window.location.href ="/certification/";      
-            }
-            else if (data == '4') {
-                alert('银行卡格式输入错误');
-                window.location.href ="/certification/";      
-            }
-            else if (data == '5') {
-                alert('手机号码格式输入错误');
-                window.location.href ="/certification/";      
-            }
-            else if (data == '6') {
-                alert('保存失败');
-                window.location.href ="/certification/";      
-            }
-            else{
-                window.location.href ="/loans/";      
+
+            else {
+                let txt = "信息格式输入错误";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.reload();
+                });
             }
         })
     }

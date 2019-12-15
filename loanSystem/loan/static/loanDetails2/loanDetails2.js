@@ -169,41 +169,19 @@ $("#add_btn").click(function () {
     // var $condition = $("#condition");
     // var $material = $("#material");
 
-    if (!$re1.test($num.val())) {
-        alert('贷款编号格式输入错误');
-    }
-    else if (!$re3.test($name.val())) {
-        alert('贷款产品格式输入错误');
-    }
-    else if (!$re1.test($quota_min.val())) {
-        alert('贷款额度格式输入错误');
-    }
-    else if (!$re1.test($quota_max.val())) {
-        alert('贷款额度格式输入错误');
-    }
-    else if (!$re1.test($time_min.val())) {
-        alert('贷款期限格式输入错误');
-    }
-    else if (!$re1.test($time_max.val())) {
-        alert('贷款期限格式输入错误');
-    }
-    else if (!$re5.test($rate_min.val())) {
-        alert('贷款利率格式输入错误');
-    }
-    else if (!$re5.test($rate_max.val())) {
-        alert('贷款利率格式输入错误');
-    }
-    else if (!$re2.test($way.val())) {
-        alert('贷款方式格式输入错误');
-    }
-    else if (!$re3.test($introduction.val())) {
-        alert('贷款简介格式输入错误');
-    }
-    else if (!$re3.test($fee.val())) {
-        alert('贷款费用说明格式输入错误');
-    }
-    else if (!$re3.test($repayment.val())) {
-        alert('贷款还款说明格式输入错误');
+    if (!$re1.test($num.val()) || !$re3.test($name.val()) ||
+        !$re1.test($quota_min.val()) || !$re1.test($quota_max.val()) ||
+        !$re1.test($time_min.val()) || !$re1.test($time_max.val()) ||
+        !$re1.test($time_max.val()) || !$re5.test($rate_min.val()) ||
+        !$re5.test($rate_max.val()) || !$re2.test($way.val()) ||
+        !$re3.test($introduction.val()) || !$re3.test($fee.val()) ||
+        !$re3.test($repayment.val())) {
+        let txt = "贷款详情信息输入错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
+
     }
     else {
         data = {}
@@ -233,12 +211,18 @@ $("#add_btn").click(function () {
         });
         $.post("/addloanPost/", data, function(data) {
             if (data == '0') {
-                alert('编辑失败');
-                window.location.href ="/loanDetails2/";      
+                let txt = "新增失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.href = "/loanDetails/";
+                });
             }
             else if (data == '1') {
-                alert('编辑成功');
-                window.location.href ="/loanManage/";      
+                let txt = "新增成功";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                $('.ok').click(function () {
+                    window.location.href = "/loanManage/";
+                });
             }
         })
     }

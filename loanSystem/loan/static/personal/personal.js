@@ -10,22 +10,27 @@ $('#btn').click(function () {
     var countdown = setInterval(CountDown, 500);
     function CountDown() {
         $("#btn").attr("disabled", true);
-        $("#btn").val( count + " seconds!");
-        $("#btn").css({'background-color':'#0b76d3'})
-        $("#btn").css({'color':'white'})
+        $("#btn").val(count + " seconds!");
+        $("#btn").css({ 'background-color': '#0b76d3' })
+        $("#btn").css({ 'color': 'white' })
         if (count == 0) {
             $("#btn").val("发送验证码").removeAttr("disabled");
             clearInterval(countdown);
-            $("#btn").css({'background-color':'#ebebeb'})
-            $("#btn").css({'color':'#696969'})
+            $("#btn").css({ 'background-color': '#ebebeb' })
+            $("#btn").css({ 'color': '#696969' })
         }
         count--;
     }
 })
 
-$("#btn").click(function() {
+$("#btn").click(function () {
     if (!isCorrectEmail_text($("#firstname").val())) {
-        alert('邮箱格式错误');
+        let txt = "邮件发送失败";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
+
     } else {
         data = {}
         data.email = $("#firstname").val();
@@ -35,9 +40,14 @@ $("#btn").click(function() {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("http://127.0.0.1:8000/sendMail/", data, function(data) {
+        $.post("http://127.0.0.1:8000/sendMail/", data, function (data) {
             if (data == '0') {
-                alert('邮件没有发送成功');
+                let txt = "邮件发送失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.reload();
+                });
+
             }
         })
     }

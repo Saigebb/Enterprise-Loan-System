@@ -29,13 +29,13 @@ function isCorrectPhone(s) {
 
 //姓名校验
 function isCorrectUsername(s) {
-    var $re =/^[\u4E00-\u9FA5]{2,4}$/;
+    var $re = /^[\u4E00-\u9FA5]{2,4}$/;
     if (!$re.test(s)) return false;
     return true;
 }
 
 //邮箱输入信息校验
-$email_text.blur(function() {
+$email_text.blur(function () {
     // console.log("1");
     var $email_text_info = $email_text.val();
     if (isCorrectEmail_text($email_text_info)) {
@@ -48,7 +48,7 @@ $email_text.blur(function() {
 
 
 //身份证输入信息校验
-$idCard.blur(function() {
+$idCard.blur(function () {
     // console.log("1");
     var $idCard_info = $idCard.val();
     if (isCorrectIdCard($idCard_info)) {
@@ -60,7 +60,7 @@ $idCard.blur(function() {
 });
 
 //手机号码输入信息校验
-$phone.blur(function() {
+$phone.blur(function () {
     // console.log("1");
     var $phone_info = $phone.val();
     if (isCorrectPhone($phone_info)) {
@@ -72,7 +72,7 @@ $phone.blur(function() {
 });
 
 //手机号码输入信息校验
-$username.blur(function() {
+$username.blur(function () {
     // console.log("1");
     var $username_info = $username.val();
     if (isCorrectUsername($username_info)) {
@@ -83,9 +83,14 @@ $username.blur(function() {
     }
 });
 
-$("#btn").click(function() {
+$("#btn").click(function () {
     if (!isCorrectEmail_text($("#email_text").val())) {
-        alert('邮箱格式错误');
+        let txt = "邮件格式错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
+
     } else {
         data = {}
         data.email = $("#email_text").val();
@@ -95,9 +100,14 @@ $("#btn").click(function() {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("http://127.0.0.1:8000/sendMail/", data, function(data) {
+        $.post("http://127.0.0.1:8000/sendMail/", data, function (data) {
             if (data == '0') {
-                alert('邮件没有发送成功');
+                let txt = "邮件发送失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.reload();
+                });
+
             }
         })
     }
@@ -108,14 +118,14 @@ $('#btn').click(function () {
     var countdown = setInterval(CountDown, 500);
     function CountDown() {
         $("#btn").attr("disabled", true);
-        $("#btn").val( count + " seconds!");
-        $("#btn").css({'background-color':'#0b76d3'})
-        $("#btn").css({'color':'white'})
+        $("#btn").val(count + " seconds!");
+        $("#btn").css({ 'background-color': '#0b76d3' })
+        $("#btn").css({ 'color': 'white' })
         if (count == 0) {
             $("#btn").val("发送验证码").removeAttr("disabled");
             clearInterval(countdown);
-            $("#btn").css({'background-color':'#ebebeb'})
-            $("#btn").css({'color':'#696969'})
+            $("#btn").css({ 'background-color': '#ebebeb' })
+            $("#btn").css({ 'color': '#696969' })
         }
         count--;
     }

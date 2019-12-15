@@ -168,41 +168,19 @@ $("#edit_btn").click(function () {
     // var $condition = $("#condition");
     // var $material = $("#material");
 
-    if (!$re1.test($num.val())) {
-        alert('贷款编号格式输入错误');
-    }
-    else if (!$re3.test($name.val())) {
-        alert('贷款产品格式输入错误');
-    }
-    else if (!$re1.test($quota_min.val())) {
-        alert('贷款额度格式输入错误');
-    }
-    else if (!$re1.test($quota_max.val())) {
-        alert('贷款额度格式输入错误');
-    }
-    else if (!$re1.test($time_min.val())) {
-        alert('贷款期限格式输入错误');
-    }
-    else if (!$re1.test($time_max.val())) {
-        alert('贷款期限格式输入错误');
-    }
-    else if (!$re5.test($rate_min.val())) {
-        alert('贷款利率格式输入错误');
-    }
-    else if (!$re5.test($rate_max.val())) {
-        alert('贷款利率格式输入错误');
-    }
-    else if (!$re2.test($way.val())) {
-        alert('贷款方式格式输入错误');
-    }
-    else if (!$re3.test($introduction.val())) {
-        alert('贷款简介格式输入错误');
-    }
-    else if (!$re3.test($fee.val())) {
-        alert('贷款费用说明格式输入错误');
-    }
-    else if (!$re3.test($repayment.val())) {
-        alert('贷款还款说明格式输入错误');
+    if (!$re1.test($num.val()) || !$re3.test($name.val()) ||
+        !$re1.test($quota_min.val()) || !$re1.test($quota_max.val()) ||
+        !$re1.test($time_min.val()) || !$re1.test($time_max.val()) ||
+        !$re1.test($time_max.val()) || !$re5.test($rate_min.val()) ||
+        !$re5.test($rate_max.val()) || !$re2.test($way.val()) ||
+        !$re3.test($introduction.val()) || !$re3.test($fee.val()) ||
+        !$re3.test($repayment.val())) {
+        let txt = "贷款详情信息输入错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
+
     }
     else {
         data = {}
@@ -221,7 +199,7 @@ $("#edit_btn").click(function () {
         data.time_max = $("#time_max").val();
         data.rate_min = $("#rate_min").val();
         data.rate_max = $("#rate_max").val();
-    
+
         data.detail = CKEDITOR.instances.loanRich1.getData();
         data.condition = CKEDITOR.instances.loanRich2.getData();
         data.material = CKEDITOR.instances.loanRich3.getData();
@@ -231,14 +209,20 @@ $("#edit_btn").click(function () {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
-        $.post("/loanDetailsPost/", data, function(data) {
+        $.post("/loanDetailsPost/", data, function (data) {
             if (data == '0') {
-                alert('编辑失败');
-                window.location.href ="/loanDetails/";      
+                let txt = "编辑失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.href = "/loanDetails/";
+                });
             }
             else if (data == '1') {
-                alert('编辑成功');
-                window.location.href ="/loanManage/";      
+                let txt = "编辑成功";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                $('.ok').click(function () {
+                    window.location.href = "/loanManage/";
+                });
             }
         })
     }

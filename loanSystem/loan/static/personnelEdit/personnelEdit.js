@@ -79,23 +79,16 @@ $("#edit_btn").click(function () {
     var $legal_id = $("#legal_id");
     var $objInfo = $("#info");
     console.log($cname.val());
-    if (!$re1.test($cname.val())) {
-        alert('用户姓名格式输入错误');
-    }
-    else if (!$re2.test($idcard.val())) {
-        alert('用户身份证格式输入错误');
-    }
-    else if (!$re3.test($email.val())) {
-        alert('用户邮箱格式输入错误');
-    }
-    else if (!$re1.test($company.val())) {
-        alert('贷款企业名称格式输入错误');
-    }
-    else if (!$re1.test($legal_name.val())) {
-        alert('法定代表人名称格式输入错误');
-    }
-    else if (!$re2.test($legal_id.val())) {
-        alert('法定代表人身份证号码格式输入错误');
+    if (!$re1.test($cname.val()) || !$re2.test($idcard.val()) ||
+        !$re3.test($email.val()) || !$re1.test($company.val()) ||
+        !$re1.test($legal_name.val()) || !$re2.test($legal_id.val())) {
+
+        let txt = "用户信息输入错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function () {
+            window.location.reload();
+        });
+
     }
     else {
         data = {}
@@ -112,12 +105,18 @@ $("#edit_btn").click(function () {
         });
         $.post("/personnelEditPost/", data, function (data) {
             if (data == '0') {
-                alert('编辑失败');
-                window.location.href ="/personnelEdit/";      
+                let txt = "编辑失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function () {
+                    window.location.href = "/personnelEdit/";
+                });
             }
             else if (data == '1') {
-                alert('编辑成功');
-                window.location.href ="/personnelManage/";      
+                let txt = "编辑成功";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                $('.ok').click(function () {
+                    window.location.href = "/personnelManage/";
+                });
             }
         })
         
