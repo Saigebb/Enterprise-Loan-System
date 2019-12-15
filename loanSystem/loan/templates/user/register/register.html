@@ -44,16 +44,15 @@
 
 {% block content %}
 <div class="body">
-    <div class="bread" style="margin-bottom:20px;">
-        <span><a href="/index" style="color:rgb(160, 160, 160)"><i class="fa fa-home"></i> 首页 </a> > <a href="/login">
+    <div class="breadnav">
+        <span><a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/register">
                 注册</a></span>
     </div>
+    <hr>
 </div>
 
-{% load static %}
 <div class="login" style="text-align:center">
-    <!-- <img src="{% static 'image/login.jpg' %}" class="login_img"> -->
-    <div class="login_bar" style="opacity:1;">
+    <div class="login_bar" style="margin: auto;opacity:1;">
         <div class="login_bar_top">
             <p>注册</p>
         </div>
