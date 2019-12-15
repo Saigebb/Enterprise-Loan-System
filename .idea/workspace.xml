@@ -3,6 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="bb3e08a9-5478-476c-b6f1-03d5a3222a61" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/home/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/loanApprovalDetails/loanApprovalDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/loanApprovalDetails/loanApprovalDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApproval/loanApproval.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApproval/loanApproval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApprovalDetails/loanApprovalDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApprovalDetails/loanApprovalDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/admin/personnelManage/personnelManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/admin/personnelManage/personnelManage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/certification/certification.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/certification/certification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loanSystem/loanSystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/loanSystem/loanSystem/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,26 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7678">
-              <caret line="362" column="47" selection-start-line="362" selection-start-column="47" selection-end-line="362" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6952">
-              <caret line="316" column="10" selection-start-line="316" selection-start-column="4" selection-end-line="316" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+            <state relative-caret-position="440">
+              <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
             </state>
           </provider>
         </entry>
@@ -42,35 +41,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApproval/loanApproval.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4730">
-              <caret line="215" column="90" selection-start-line="215" selection-start-column="90" selection-end-line="215" selection-end-column="90" />
+            <state relative-caret-position="4553">
+              <caret line="213" column="14" lean-forward="true" selection-start-line="213" selection-start-column="14" selection-end-line="213" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/base.html">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApprovalDetails/loanApprovalDetails.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutBase.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="946">
+              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutus.html">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/personnelManage/personnelManage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="208">
+              <caret line="72" column="59" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
+              <folding>
+                <element signature="e#845#872#0#HTML" expanded="true" />
+                <element signature="e#1841#1879#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loanSystem/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="65" column="61" lean-forward="true" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -78,26 +90,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="77" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
+            <state relative-caret-position="-3183">
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5566">
-              <caret line="253" column="29" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
+            <state relative-caret-position="154">
+              <caret line="34" column="19" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/sidebar.html">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApprovalDetails/loanApprovalDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="242">
+              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/applyForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -123,6 +152,9 @@
       <find>loanManage</find>
       <find>\n</find>
       <find>myloan</find>
+      <find>bk</find>
+      <find>bk2</find>
+      <find>立即贷款</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,43 +164,29 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/login/login.css" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutBase.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/apply.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/loans.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/certify/certify.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/register/register.js" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.js" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.css" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutus.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/certification/certification.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.js" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/admin/sidebar.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/models.py" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/base.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/errorPages/404.html" />
         <option value="$PROJECT_DIR$/loanSystem/loanSystem/urls.py" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/errorPages/500.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/myLoan/myLoan.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/apply/applyForm.css" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/apply/applyForm.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/apply/applyForm.js" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/certify/certify.css" />
-        <option value="$PROJECT_DIR$/loanSystem/loanSystem/settings.py" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/loans/loans.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/login/login.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/register/register.html" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/home/home.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/apply/apply.css" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/base.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutBase.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/company.html" />
@@ -177,9 +195,26 @@
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/service.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/loans/loans.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/urls.py" />
-        <option value="$PROJECT_DIR$/loanSystem/loan/views.py" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/certification/certification.html" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/home/home.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.css" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css" />
         <option value="$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApproval/loanApproval.html" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/loanApprovalDetails/loanApprovalDetails.js" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/login/login.js" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.js" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApprovalDetails/loanApprovalDetails.html" />
         <option value="$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.js" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/views.py" />
+        <option value="$PROJECT_DIR$/loanSystem/loanSystem/settings.py" />
+        <option value="$PROJECT_DIR$/loanSystem/loan/templates/admin/personnelManage/personnelManage.html" />
       </list>
     </option>
   </component>
@@ -196,8 +231,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="193" />
-    <option name="y" value="33" />
+    <option name="x" value="431" />
+    <option name="y" value="16" />
     <option name="width" value="1567" />
     <option name="height" value="985" />
   </component>
@@ -221,36 +256,6 @@
               <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
               <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Loan-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Loan-System" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="aboutus" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,7 +346,7 @@
       <workItem from="1576156861283" duration="91000" />
       <workItem from="1576168729523" duration="821000" />
       <workItem from="1576207025613" duration="18000" />
-      <workItem from="1576331114976" duration="910000" />
+      <workItem from="1576331114976" duration="17702000" />
     </task>
     <task id="LOCAL-00001" summary="写了部分申请页">
       <created>1574219112658</created>
@@ -532,16 +537,24 @@
       <option name="project" value="LOCAL" />
       <updated>1576156917199</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="修改">
+      <created>1576332162237</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1576332162237</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238055000" />
+    <option name="totallyTimeSpent" value="254847000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="155" y="27" width="1253" height="788" extended-state="1" />
+    <frame x="450" y="22" width="1253" height="788" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12217573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12217573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -556,9 +569,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.48601398" visible="true" weight="0.24580152" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.513986" side_tool="true" weight="0.32874617" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4972973" weight="0.11755725" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.80753136" visible="true" weight="0.41679388" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.19246861" side_tool="true" visible="true" weight="0.41679388" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49121338" weight="0.0" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49369368" weight="0.038748138" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -640,49 +653,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/afterBase.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="136" selection-start-line="7" selection-start-column="136" selection-end-line="7" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.IntelliJIdea2018.2/system/python_stubs/1310655275/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="2198" column="8" selection-start-line="2198" selection-start-column="8" selection-end-line="2198" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loanSystem/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/image/logo.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/image/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loans/loans.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/loanManage/loanManage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanManage/loanManage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -690,36 +660,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="77" lean-forward="true" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/base.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loanSystem/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="82" column="27" lean-forward="true" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/applyForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4118">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -749,16 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/myLoan/myLoan.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="2" column="24" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/certify/certify.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -766,18 +698,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/errorPages/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/connect.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -800,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loanSystem/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -818,16 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/apply/apply.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/home/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -845,29 +754,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="5" column="77" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/register/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-352">
           <caret line="98" column="30" lean-forward="true" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1021" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/loans/loans.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -885,31 +775,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7678">
-          <caret line="362" column="47" selection-start-line="362" selection-start-column="47" selection-end-line="362" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6952">
-          <caret line="316" column="10" selection-start-line="316" selection-start-column="4" selection-end-line="316" selection-end-column="10" />
+          <caret line="325" column="10" selection-start-line="325" selection-start-column="4" selection-end-line="325" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
-          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApproval/loanApproval.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4730">
-          <caret line="215" column="90" selection-start-line="215" selection-start-column="90" selection-end-line="215" selection-end-column="90" />
+          <caret line="46" column="58" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -927,20 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="77" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5566">
-          <caret line="253" column="29" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -950,8 +812,231 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/aboutus/aboutus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="374">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/loans/loans.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1278">
+          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/certification/certification.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/certification/certification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding>
+            <element signature="e#582#603#0#HTML" expanded="true" />
+            <element signature="e#760#782#0#HTML" expanded="true" />
+            <element signature="e#936#958#0#HTML" expanded="true" />
+            <element signature="e#1021#1064#0#HTML" expanded="true" />
+            <element signature="e#1166#1188#0#HTML" expanded="true" />
+            <element signature="e#1552#1578#0#HTML" expanded="true" />
+            <element signature="e#1677#1703#0#HTML" expanded="true" />
+            <element signature="e#1939#1961#0#HTML" expanded="true" />
+            <element signature="e#2325#2347#0#HTML" expanded="true" />
+            <element signature="e#2724#2746#0#HTML" expanded="true" />
+            <element signature="e#3126#3148#0#HTML" expanded="true" />
+            <element signature="e#3524#3546#0#HTML" expanded="true" />
+            <element signature="e#3876#3898#0#HTML" expanded="true" />
+            <element signature="e#4005#4082#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/personal/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="e#583#607#0#HTML" expanded="true" />
+            <element signature="e#1107#1150#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/personal/personal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/myLoan/myLoan.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/myLoan/myLoan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="54" column="24" lean-forward="true" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="e#761#782#0#HTML" expanded="true" />
+            <element signature="e#995#1038#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/afterBase/afterBase.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1543">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/aboutus/aboutus.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2209">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/home/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="190" column="23" lean-forward="true" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/sidebar/sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/apply/apply.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/applyForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/user/apply/apply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-703">
+          <caret line="282" column="19" lean-forward="true" selection-start-line="278" selection-start-column="16" selection-end-line="282" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/alert/xcConfirm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApprovalDetails/loanApprovalDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApproval/loanApproval.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4553">
+          <caret line="213" column="14" lean-forward="true" selection-start-line="213" selection-start-column="14" selection-end-line="213" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/static/loanApproval/loanApproval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3183">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/loanApprovalDetails/loanApprovalDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loanSystem/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="65" column="61" lean-forward="true" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loanSystem/loan/templates/admin/personnelManage/personnelManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="72" column="59" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
+          <folding>
+            <element signature="e#845#872#0#HTML" expanded="true" />
+            <element signature="e#1841#1879#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

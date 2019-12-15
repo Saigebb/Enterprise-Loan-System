@@ -5,12 +5,12 @@
 }
 .main-sidebar{
   border:solid 0px ;
-	position: absolute;
+    /*position: absolute;*/
     /* top: 0; */
-    margin-top: -20px;
-	left: 60px;
-	height: 8%;
-	min-height: 88%;
+    /*margin-top: -20px;*/
+	/*left: 60px;*/
+	/*height: 8%;*/
+	/*min-height: 88%;*/
 	width: 230px;
 	z-index: 810;
   background-color: #ffffff;

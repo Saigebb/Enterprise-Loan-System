@@ -43,7 +43,11 @@ $('#btn').click(function () {
 
 $("#btn").click(function() {
     if (!isCorrectEmail_text($("#email_text").val())) {
-        alert('邮箱格式错误');
+        let txt = "信息错误";
+        window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+        $('.ok').click(function(){
+            window.location.reload();
+        });
     } else {
         data = {}
         data.email = $("#email_text").val();
@@ -55,7 +59,11 @@ $("#btn").click(function() {
         });
         $.post("/sendMail/", data, function(data) {
             if (data == '0') {
-                alert('邮件没有发送成功');
+                let txt = "邮件发送失败";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                $('.ok').click(function(){
+                    window.location.reload();
+                });
             }
         })
     }

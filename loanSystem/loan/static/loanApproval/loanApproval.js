@@ -72,17 +72,18 @@ let data = [
     },
 ];
 let state = ["提交申请","正在审核","申请成功","拨放贷款","待还贷款","还清贷款"];
-console.log(data);
+// console.log(data);
+let datas = new Array();
 
 for(let i in data){
-    console.log(1);
+    // console.log(1);
     switch (data[i].state) {
         case '0':
             fillTable1(data[i]);
             break;
         case '1':
             fillTable(data[i]);
-                break;
+            break;
         case '2':
             fillTable(data[i]);
             break;
@@ -99,15 +100,13 @@ for(let i in data){
     }
 }
 
-
-
-
 function fillTable(datas){
-    console.log(2);
+    // console.log(2);
+    console.log(datas.state);
     let content = `
-        <tr>
+        <tr id="${datas.id}">
             <td>${datas.id}</td>
-            <td><a href="/loanApprovalDetails/?id=${datas.id}">${datas.product}</a></td>
+            <td><a href="/loanApprovalDetails/?id=${datas.id}" style="color:#2962ff">${datas.product}</a></td>
             <td>${datas.money}</td>
             <td>${datas.company}</td>
             <td>${datas.month}个月</td>
@@ -117,7 +116,7 @@ function fillTable(datas){
                         ${state[datas.state-1]}
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#" style="text-align:center;font-size:16px">${state[datas.state]}</a>
+                        <a class="dropdown-item" onclick="pass(${datas.id})" style="text-align:center;font-size:16px">${state[datas.state]}</a>
                     </div>
                 </div>
             </td>
@@ -126,10 +125,12 @@ function fillTable(datas){
     let appendclass = `.state${datas.state}`;
     $(appendclass).append(content);
 }
+
+
 function fillTable1(datas){
-    console.log(2);
+    // console.log(2);
     let content = `
-        <tr>
+        <tr id="${datas.id}">
             <td>${datas.id}</td>
             <td><a href="/loanApprovalDetails/?id=${datas.id}">${datas.product}</a></td>
             <td>${datas.money}</td>
@@ -141,13 +142,29 @@ function fillTable1(datas){
                        提交申请
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#" style="text-align:center;font-size:16px">${state[datas.state]}</a>
+                        <a class="dropdown-item" onclick="pass(${datas.id})" href="#" style="text-align:center;font-size:16px">${state[datas.state]}</a>
                     </div>
                 </div>
             </td>
         </tr>
     `;
-    let appendclass = `.state${datas.state}`;
+    let appendclass = `.state0`;
     $(appendclass).append(content);
 }
 //审批按钮
+
+function pass(id) {
+
+    let txt = "确定通过？";
+    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.confirm);
+    $('.ok').click(function(){
+        for (let i in data){
+            if(data[i].id == id){
+                data[i].state++;
+                dataId = `#${data[i].id}`;
+                $(dataId).css("display","none");
+                fillTable(data[i])
+            }
+        }
+    });
+}

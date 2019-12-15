@@ -39,6 +39,8 @@
 {% block content %}
  
 <div class="mainbar">
+    <a href="/personnelAdd/">  <button type="button" class="btn"id="add_btn" style="margin-bottom: 10px">新增</button></a>
+
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -53,6 +55,8 @@
       </thead>
       <div id="loanManage_tbody">
         <tbody>
+          {% load pagination_tags %}
+          {% autopaginate customer 10 %}
           {% for x in customer %}
           <tr>
             <td id="loan_username"><a href="/personnelEdit/?id={{ x.cname }}">{{ x.cname }}</a></td>
@@ -66,7 +70,11 @@
         </tbody>
       </div>
     </table>
-  <a href="/personnelAdd/">  <button type="button" class="btn"id="add_btn">新增</button></a>
+    <div class="page" style="width: 100%;text-align: center">
+        {% paginate %}
+    </div>
+
+
   </div>
 <script type="text/javascript" src="{% static 'personnelManage/personnelManage.js' %}"></script>
 <!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
