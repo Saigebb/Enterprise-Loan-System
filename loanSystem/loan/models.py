@@ -107,7 +107,8 @@ class AuthUserUserPermissions(models.Model):
 
 
 class Basicdata(models.Model):
-    companyname = models.CharField(db_column='companyName', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    companyname = models.CharField(db_column='companyName', max_length=20,
+                                   blank=True, null=True)  # Field name made lowercase.
     code = models.CharField(max_length=20, blank=True, null=True)
     license = models.CharField(max_length=50, blank=True, null=True)
     taxregist = models.CharField(db_column='taxRegist', max_length=50, blank=True, null=True)  # Field name made lowercase.
@@ -126,8 +127,8 @@ class Credit(models.Model):
     amountmax = models.IntegerField(db_column='amountMax', blank=True, null=True)  # Field name made lowercase.
     monthmin = models.IntegerField(db_column='monthMin', blank=True, null=True)  # Field name made lowercase.
     monthmax = models.IntegerField(db_column='monthMax', blank=True, null=True)  # Field name made lowercase.
-    monthirmin = models.CharField(db_column='monthIrMin', max_length=50, blank=True, null=True)  # Field name made lowercase. 
-    monthirmax = models.CharField(db_column='monthIrMax', max_length=11, blank=True, null=True)  # Field name made lowercase. 
+    monthirmin = models.CharField(db_column='monthIrMin', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    monthirmax = models.CharField(db_column='monthIrMax', max_length=11, blank=True, null=True)  # Field name made lowercase.
     way = models.CharField(max_length=11, blank=True, null=True)
     else_field = models.CharField(max_length=50, blank=True, null=True)
     advance = models.CharField(max_length=50, blank=True, null=True)
@@ -173,6 +174,7 @@ class Customer(models.Model):
     legal_id = models.CharField(max_length=50, blank=True, null=True)
     card = models.CharField(max_length=50, blank=True, null=True)
     bank_phone = models.CharField(max_length=50, blank=True, null=True)
+    rank = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -242,10 +244,11 @@ class DjangoSession(models.Model):
 
 class Elsedata(models.Model):
     email = models.CharField(max_length=50, blank=True, null=True)
-    loanfor = models.CharField(db_column='loanFor', max_length=50, blank=True, null=True)  # Field name made lowercase.       
+    loanfor = models.CharField(db_column='loanFor', max_length=50, blank=True, null=True)  # Field name made lowercase.
     guarantor = models.CharField(max_length=50, blank=True, null=True)
     natural = models.CharField(max_length=50, blank=True, null=True)
-    companyname = models.CharField(db_column='companyName', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    companyname = models.CharField(db_column='companyName', max_length=50,
+                                   blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -257,7 +260,8 @@ class Financedata(models.Model):
     assests = models.CharField(max_length=50, blank=True, null=True)
     companycredit = models.CharField(db_column='companyCredit', max_length=50, blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True, null=True)
-    companyname = models.CharField(db_column='companyName', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    companyname = models.CharField(db_column='companyName', max_length=50,
+                                   blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -277,10 +281,12 @@ class Interest(models.Model):
 
 
 class Legaldata(models.Model):
-    personright = models.CharField(db_column='personRight', max_length=50, blank=True, null=True)  # Field name made lowercase.
-    personfile = models.CharField(db_column='personFile', max_length=50, blank=True, null=True)  # Field name made lowercase. 
+    personright = models.CharField(db_column='personRight', max_length=50,
+                                   blank=True, null=True)  # Field name made lowercase.
+    personfile = models.CharField(db_column='personFile', max_length=50, blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True, null=True)
-    companyname = models.CharField(db_column='companyName', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    companyname = models.CharField(db_column='companyName', max_length=50,
+                                   blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False

@@ -54,7 +54,7 @@ $("#out_btn").click(function(){
         });
         $.post("/backLogoutPost/", function (data) {
             if(data=="1")
-            window.location.href="/backStageLogin/";
+            window.location.href="/backstageLogin/";
         })
     });
 })

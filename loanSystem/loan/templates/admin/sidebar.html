@@ -21,7 +21,18 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{% static 'alert/xcConfirm.js' %}"></script>
+    <style type="text/css">
+        .xcConfirm .popBox .txtBox .bigIcon {
+            background-image: url({% static 'image/icons.png' %});
+            background-repeat: no-repeat;
+            background-position: 48px 0;
+        }
 
+        .xcConfirm .popBox .ttBox .clsBtn {
+            background: url({% static 'image/icons.png' %}) -48px -96px no-repeat;
+        }
+
+    </style>
     {% block header %}{% endblock %}
 </head>
 

@@ -42,7 +42,7 @@ $email.blur(function () {
 
 //贷款企业名称输入信息校验
 $company.blur(function () {
-    if ($re1.test($company.val())) {
+    if ($company.val() != "" || $company.val() != null) {
         $objInfo.html("贷款企业名称输入正确").css("color", "green");
     } else {
         $objInfo.html("贷款企业名称格式输入错误").css("color", "red");
@@ -52,7 +52,7 @@ $company.blur(function () {
 
 //法定代表人名称输入信息校验
 $legal_name.blur(function () {
-    if ($re1.test($legal_name.val())) {
+    if ($legal_name.val() != "" || $legal_name.val() != null) {
         $objInfo.html("法定代表人名称输入正确").css("color", "green");
     } else {
         $objInfo.html("法定代表人名称格式输入错误").css("color", "red");
@@ -80,8 +80,7 @@ $("#edit_btn").click(function () {
     var $objInfo = $("#info");
     console.log($cname.val());
     if (!$re1.test($cname.val()) || !$re2.test($idcard.val()) ||
-        !$re3.test($email.val()) || !$re1.test($company.val()) ||
-        !$re1.test($legal_name.val()) || !$re2.test($legal_id.val())) {
+        !$re3.test($email.val())) {
 
         let txt = "用户信息输入错误";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);

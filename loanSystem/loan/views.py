@@ -7,7 +7,7 @@ import re
 from loanSystem import settings
 from . import models
 from . import creditCode
-from . import creditModel
+# from . import creditModel
 from django.core.mail import send_mail
 import random
 import json
@@ -175,17 +175,16 @@ def loanApprovalDatas(request):
 
 def loanApprovalDetails(request):
     request.encoding = 'utf-8'
-    if request.POST:
-        basic = models.Basicdata.objects.filter(id=request.GET['id'])
-        finance = models.Financedata.objects.filter(id=request.GET['id'])
-        legal = models.Legaldata.objects.filter(id=request.GET['id'])
-        elsedata = models.Elsedata.objects.filter(id=request.GET['id'])
-        return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html', {
-            'basicdata': basic[0],
-            'financedata': finance[0],
-            'legaldata': legal[0],
-            'elsedata': elsedata[0],
-        })
+    basic = models.Basicdata.objects.filter(id=request.GET['id'])
+    finance = models.Financedata.objects.filter(id=request.GET['id'])
+    legal = models.Legaldata.objects.filter(id=request.GET['id'])
+    elsedata = models.Elsedata.objects.filter(id=request.GET['id'])
+    return render(request, 'admin/loanApprovalDetails/loanApprovalDetails.html', {
+        'basicdata': basic[0],
+        'financedata': finance[0],
+        'legaldata': legal[0],
+        'elsedata': elsedata[0],
+    })
 
 
 def personnelManage(request):
@@ -352,7 +351,7 @@ def sendCertification(request):
             user.legal_name = request.POST['Legal_representative_name']
             user.legal_id = request.POST['Legal_representative_id']
             user.card = request.POST['Legal_representative_card']
-            user.phone = request.POST['Bank_phone']
+            user.bank_phone = request.POST['Bank_phone']
             # user.save()
 
             if user.save():
@@ -360,6 +359,30 @@ def sendCertification(request):
             else:
                 return HttpResponse(SQL_TU, status=200)
 
+
+#信用评价提交
+def creditRankPost(request):
+    msg = {}
+    if not request.session.get("user"):
+        msg["login"] = 0
+        return redirect('loan:login')
+    else:
+        msg["login"] = 1
+    if request.POST:
+        myFile =request.FILES.get("myfile", None)
+        # 获取上传的文件，如果没有文件，则默认为None
+        if not myFile:
+            return render(request, 'user/personal/credit.html',msg)
+        destination = open(os.path.join("\\lib\\admin",request.session["user"]),'wb+')
+        # 打开特定的文件进行二进制的写操作
+        for chunk in myFile.chunks():      # 分块写入文件
+            destination.write(chunk)
+        destination.close()
+        customer=models.Customer.objects.filter(rank=request.session["user"])
+        customer.rank=1
+        customer.save()
+        os.system("python creditModel.py"+request.session["user"]+".xls")   #计算信用评分
+        return redirect('loan:credit')
 
 APPLY_FIRST_FAIL = 0
 APPLY_FIRST_TRUE = 1
@@ -387,11 +410,10 @@ def send(request):
 
 #人员删除
 def personnelDelPost(request):
-    if request.POST:
-        if models.Customer.objects.get(cname=request.POST['name']).delete():
-            return HttpResponse(SQL_FALSE, status=200)
-        else:
-            return HttpResponse(SQL_TURE, status=200)
+    if models.Customer.objects.filter(cname=request.POST['name']).delete():
+        return HttpResponse(SQL_TURE, status=200)
+    else:
+        return HttpResponse(SQL_FALSE, status=200)
 
 
 def sidebar(request):
@@ -530,4 +552,9 @@ def credit(request):
         return redirect('loan:login')
     else:
         msg["login"] = 1
+        customer=models.Customer.objects.filter(email=request.session["user"])
+        msg['code']=customer[0].rank
+        # return render(request, 'user/personal/credit.html', {'msg':msg,'customer':customer[0]})
         return render(request, 'user/personal/credit.html', msg)
+
+
